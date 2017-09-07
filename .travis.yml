@@ -38,10 +38,7 @@ before_script:
     fi
 
 script:
-  - |
-    if [[ ! -z "$WP_VERSION" ]] ; then
-      - find . -name "*.php" ! -path "./vendor/*" -exec php -l {} \;
-    fi
+  - find . -name "*.php" ! -path "./vendor/*" -exec php -l {} \;
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
       phpcs
