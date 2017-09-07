@@ -26,8 +26,5 @@ None yet
 
 == Changelog ==
 
-= Version 1.0.1 =
-* Open link in new tab failing when cart with ajax is enabled.
-
 = Version 1.0.0 =
 * Initial release
