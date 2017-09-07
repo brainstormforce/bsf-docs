@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Documentation WordPress
- * Plugin URI: https://github.com/brainstormforce/documentation-wordpress
+ * Plugin URI: http://brainstormforce.com/
  * Author: Brainstorm Force
  * Author URI: https://www.brainstormforce.com
  * Version: 1.0.0
  * Description: Easily build documentation website with AJAX based live search functionality. This plugin provides shortcodes to display category list & live search input box.
  * Text Domain: doc-wp
  *
- * @package Documentation_WordPress
+ * @package Documentation/Wordpress
  */
 
 // Including class doc loader.
