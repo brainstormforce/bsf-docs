@@ -11,6 +11,8 @@ branches:
   only:
     - master
 
+dist: precise
+
 cache:
   directories:
     - vendor
