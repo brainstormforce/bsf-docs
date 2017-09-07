@@ -1,5 +1,5 @@
 === Documentation Wordpress ===
-Contributors: brainstormforce, aniljbsfio
+Contributors: BrainstormForce, aniljbsfio
 Tags: docs, wpdocs, documentation
 Requires at least: 3.0
 Tested up to: 4.8.1
