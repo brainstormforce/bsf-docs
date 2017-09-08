@@ -25,11 +25,9 @@ function bsf_docs_load_widget() {
  * @param int $classes returns an array of classes.
  */
 function docs_body_classes( $classes ) {
-
 	$classes[] = 'override-single-page-template-enabled';
 
-		 return $classes;
-
+	return $classes;
 }
 
 /**
