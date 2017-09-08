@@ -32,7 +32,6 @@ function docs_body_classes( $classes ) {
 
 }
 
-
 /**
  * Creating the widget.
  */
@@ -53,16 +52,14 @@ class Bsf_Docs_Widget extends WP_Widget {
 			)
 		);
 	}
-
-
-	public
+	
 	/**
 	 * Creating widget front-end.
 	 *
 	 * @param int $args Get the before and after widget arguments.
 	 * @param int $instance Get the title of the widget title.
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 		$title = apply_filters( 'widget_title', $instance['title'] );
 
 		// Before and after widget arguments are defined by themes.
@@ -88,14 +85,12 @@ class Bsf_Docs_Widget extends WP_Widget {
 		echo $args['after_widget'];
 	}
 
-
-	public
 	/**
 	 * Widget Backend.
 	 *
 	 * @param int $instance Get the titles for the recent docs in widget area.
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
@@ -119,14 +114,13 @@ class Bsf_Docs_Widget extends WP_Widget {
 	<?php
 	}
 
-	public
 	/**
 	 * Updating widget replacing old instances with new.
 	 *
 	 * @param int $new_instance Returns the new instance.
 	 * @param int $old_instance Returns the old instance.
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
@@ -139,9 +133,9 @@ class Bsf_Docs_Widget extends WP_Widget {
 function bsf_docs_widgets_area() {
 	register_sidebar(
 		array(
-			'name' => __( 'Docs Sidebar', 'doc-wp' ),
+			'name' => __( 'Docs Sidebar', 'documentation-wordpress' ),
 			'id' => 'docs-sidebar-1',
-			'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'doc-wp' ),
+			'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'documentation-wordpress' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="docs-widget-title">',

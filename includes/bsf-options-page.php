@@ -12,17 +12,17 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 <div class="wrap">
 	<div class="bsf-options-form-wrap clearfix">
 
-		<h1><?php esc_html_e( 'Docs Settings', 'doc-wp' ); ?></h1>
+		<h1><?php esc_html_e( 'Docs Settings', 'documentation-wordpress' ); ?></h1>
 		<form method="post" action="options.php"> 
-				<h2 class="title"><?php _e( 'Live Search', 'doc-wp' ); ?></h2>
-				<p><?php _e( "Settings to control the live search functionality & it's search area.", 'doc-wp' ); ?></p>
+				<h2 class="title"><?php _e( 'Live Search', 'documentation-wordpress' ); ?></h2>
+				<p><?php _e( "Settings to control the live search functionality & it's search area.", 'documentation-wordpress' ); ?></p>
 				
 					<?php settings_fields( 'bsf-docs-settings-group' ); ?>
 					<?php do_settings_sections( 'bsf-docs-settings-group' ); ?>
 
 					<table  class="form-table">
 						<tr valign="top">
-							<th scope="row"><?php _e( 'Enable Live Search', 'doc-wp' ); ?></th>
+							<th scope="row"><?php _e( 'Enable Live Search', 'documentation-wordpress' ); ?></th>
 							<td>
 								<?php
 								$checked = '';
@@ -34,7 +34,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 						</tr>
 
 						<tr valign="top">
-							<th scope="row"><?php _e( 'Search Within Post Types', 'doc-wp' ); ?></th>
+							<th scope="row"><?php _e( 'Search Within Post Types', 'documentation-wordpress' ); ?></th>
 							<td>	
 								<fieldset>
 									<?php
@@ -73,7 +73,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 						</tr>
 
 						<tr valign="top">
-							<th scope="row"><?php _e( 'Enable built-in single page template', 'doc-wp' ); ?></th>
+							<th scope="row"><?php _e( 'Enable built-in single page template', 'documentation-wordpress' ); ?></th>
 							<td>
 								<?php
 								$checked = '';
@@ -84,7 +84,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							</td>
 						</tr>
 						<tr valign="top">
-							<th scope="row"><?php _e( 'Enable built-in category page template', 'doc-wp' ); ?></th>
+							<th scope="row"><?php _e( 'Enable built-in category page template', 'documentation-wordpress' ); ?></th>
 							<td>
 								<?php
 								$checked = '';
@@ -95,7 +95,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							</td>
 						</tr>	
 						<tr valign="top">
-							<th scope="row"><?php _e( "Turn Off Doc's Comments", 'doc-wp' ); ?></th>
+							<th scope="row"><?php _e( "Turn Off Doc's Comments", 'documentation-wordpress' ); ?></th>
 							<td>
 								<?php
 								$checked = '';
@@ -107,7 +107,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							</td>
 						</tr>
 						<tr valign="top">
-							<th scope="row"><?php _e( 'Doc Archive Page Title', 'doc-wp' ); ?></th>
+							<th scope="row"><?php _e( 'Doc Archive Page Title', 'documentation-wordpress' ); ?></th>
 							<td>
 								<input type="text" class="regular-text code" name="bsf_doc_title" value="<?php echo get_option( 'bsf_doc_title' ); ?> "/>
 							</td>
@@ -121,13 +121,13 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 	</div>
 	<div class="bsf-shortcodes-wrap">
 
-		<h2 class="title"><?php _e( 'Shortcodes', 'doc-wp' ); ?></h2>
-		<p><?php _e( 'Copy below shortcode and paste it into your post, page, or text widget.', 'doc-wp' ); ?></p>
+		<h2 class="title"><?php _e( 'Shortcodes', 'documentation-wordpress' ); ?></h2>
+		<p><?php _e( 'Copy below shortcode and paste it into your post, page, or text widget.', 'documentation-wordpress' ); ?></p>
 
 		<div class="bsf-shortcode-container">
 			<table class="form-table">
 				 <tr valign="top">
-					 <th scope="row"><?php _e( 'Display Live Search Box', 'doc-wp' ); ?></th>
+					 <th scope="row"><?php _e( 'Display Live Search Box', 'documentation-wordpress' ); ?></th>
 					<td>
 						   <div class="bsf-shortcode-container wp-ui-text-highlight">
 							   [doc_wp_live_search placeholder="Have a question?"]
@@ -135,7 +135,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 					</td>
 				</tr>
 				<tr valign="top">
-					 <th scope="row"><?php _e( "Display Doc's Category List", 'doc-wp' ); ?></th>
+					 <th scope="row"><?php _e( "Display Doc's Category List", 'documentation-wordpress' ); ?></th>
 					<td>
 						   <div class="bsf-shortcode-container wp-ui-text-highlight">
 							   [doc_wp_category_list]

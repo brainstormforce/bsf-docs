@@ -25,7 +25,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 	ob_start();
 	$args = shortcode_atts(
 		array(
-			'placeholder' => __( 'Enter search string', 'doc-wp' ),
+			'placeholder' => __( 'Enter search string', 'documentation-wordpress' ),
 		), $atts
 	);
 
@@ -41,7 +41,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 					</div>
 					<button type="submit" id="bsf-searchsubmit">
 						<span class="docswp-search"></span>
-						<span><?php _e( 'Search', 'doc-wp' ); ?></span>
+						<span><?php _e( 'Search', 'documentation-wordpress' ); ?></span>
 					</button>
 				</form>
 		  </div>
@@ -102,7 +102,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 				<a class="bsf-cat-link" href="<?php echo esc_url( $cat_link ); ?>">
 					<h4><?php echo $object->name; ?></h4>
 					<span class="bsf-cat-count">
-						<?php echo $count . ' ' . __( 'Articles', 'doc-wp' ); ?> 
+						<?php echo $count . ' ' . __( 'Articles', 'documentation-wordpress' ); ?> 
 					</span>
 				</a>
 			</div>
