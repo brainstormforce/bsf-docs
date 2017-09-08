@@ -9,26 +9,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_action( 'widgets_init', 'bsf_docs_load_widget' );
-add_action( 'widgets_init', 'bsf_docs_widgets_area' );
 
-/**
- * Loads docs widget in the sidebar
- */
-function bsf_docs_load_widget() {
-	register_widget( 'bsf_docs_widget' );
-}
 
-/**
- * Returns array of classes of override single page template enabled
- *
- * @param int $classes returns an array of classes.
- */
-function docs_body_classes( $classes ) {
-	$classes[] = 'override-single-page-template-enabled';
 
-	return $classes;
-}
 
 /**
  * Creating the widget.
@@ -38,15 +21,19 @@ class Bsf_Docs_Widget extends WP_Widget {
 	 * Constructor calling the docs widgets
 	 */
 	function __construct() {
+
+
+		add_action( 'widgets_init', array( $this, 'bsf_docs_widgets_area' ) );
+
 		parent::__construct(
 
 			// Base ID of your widget.
 			'bsf_docs_widget',
 			// Widget name will appear in UI.
-			__( 'Docs Widget', 'bsf_docs_widget_domain' ) ,
+			__( 'Docs Widget', 'documentation-wordpress' ) ,
 			// Widget description.
 			array(
-				'description' => __( 'Widget for recent Docs', 'bsf_docs_widget_domain' ),
+				'description' => __( 'Widget for recent Docs', 'documentation-wordpress' ),
 			)
 		);
 	}
@@ -123,23 +110,42 @@ class Bsf_Docs_Widget extends WP_Widget {
 		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
 	}
+
+
+	/**
+	 * Returns array of classes of override single page template enabled
+	 *
+	 * @param int $classes returns an array of classes.
+	 */
+	function docs_body_classes( $classes ) {
+		$classes[] = 'override-single-page-template-enabled';
+
+		return $classes;
+	}
+
+	/**
+	 * Rgister Doc widget area
+	 */
+	function bsf_docs_widgets_area() {
+
+		register_widget( 'bsf_docs_widget' );
+		register_sidebar(
+			array(
+				'name' => __( 'Docs Sidebar', 'documentation-wordpress' ),
+				'id' => 'docs-sidebar-1',
+				'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'documentation-wordpress' ),
+				'before_widget' => '<div id="%1$s" class="widget %2$s">',
+				'after_widget' => '</div>',
+				'before_title' => '<h2 class="docs-widget-title">',
+				'after_title' => '</h2>',
+			)
+		);
+	}
+
 } // Class bsf_docs_widget ends here.
 
-/**
- * Rgister Doc widget area
- */
-function bsf_docs_widgets_area() {
-	register_sidebar(
-		array(
-			'name' => __( 'Docs Sidebar', 'documentation-wordpress' ),
-			'id' => 'docs-sidebar-1',
-			'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'documentation-wordpress' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h2 class="docs-widget-title">',
-			'after_title' => '</h2>',
-		)
-	);
-}
+new Bsf_Docs_Widget();
+
+
 
 

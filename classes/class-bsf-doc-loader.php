@@ -208,7 +208,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @author BrainstormForce
 		 */
 		function get_bsf_docs_archive_template( $archive_template ) {
-			 global $post;
 
 			if ( is_post_type_archive( BSF_DOCS_POST_TYPE ) ) {
 				$archive_template = BSF_DOCS_BASE_DIR . 'includes/bsf-archive-template.php';
@@ -223,7 +222,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @author BrainstormForce
 		 */
 		function get_bsf_docs_single_template( $single_template ) {
-			 global $post;
 
 			if ( is_singular( 'docs' ) ) {
 				$single_template = BSF_DOCS_BASE_DIR . 'includes/bsf-single-template.php';

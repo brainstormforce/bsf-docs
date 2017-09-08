@@ -3,7 +3,7 @@
 **Tags:** docs, wpdocs, documentation  
 **Requires at least:** 3.0  
 **Tested up to:** 4.8.1  
-**Stable tag:** 1.0.1  
+**Stable tag:** 1.0.0
 
 Documentation Wordpress allows you to create documentation website within minute with ajax search.
 
