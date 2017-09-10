@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 
 		addtextdomain: {
 			options: {
-				textdomain: 'documentation-wordpress',
+				textdomain: 'wp-docs',
 			},
 			update_all_domains: {
 				options: {
@@ -31,8 +31,8 @@ module.exports = function( grunt ) {
 			target: {
 				options: {
 					domainPath: '/languages',
-					mainFile: 'documentation-wordpress.php',
-					potFilename: 'documentation-wordpress.pot',
+					mainFile: 'wp-docs.php',
+					potFilename: 'wp-docs.pot',
 					potHeaders: {
 						poedit: true,
 						'x-poedit-keywordslist': true

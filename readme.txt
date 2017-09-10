@@ -1,18 +1,15 @@
-=== Documentation Wordpress ===
+=== WP Docs ===
 Contributors: BrainstormForce, aniljbsfio  
-Tags: docs, wpdocs, documentation, documentation-wordpress  
+Tags: docs, wpdocs, documentation, wp_docs  
 Requires at least: 3.0  
 Tested up to: 4.8.1  
 Stable tag: 1.0.0
 
-Documentation Wordpress allows you to create documentation website within minute with ajax search.
+WP Docs allows you to create documentation website within minute with ajax search.
 
 == Description ==
 
-A Documentation Wordpress Easily build documentation website with AJAX based live search functionality. This plugin provides shortcodes to display category list & live search input box.
-
-= Want to contribute to the plugin? =
-You may now contribute to the plugin on Github: [Documentation Wordpress - on Github]
+A WP Docs Easily build documentation website with AJAX based live search functionality. This plugin provides shortcodes to display category list & live search input box.
 
 == Installation ==
 

@@ -174,8 +174,8 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		function register_options_menu() {
 			add_submenu_page(
 				'edit.php?post_type=docs',
-				__( 'Settings', 'documentation-wordpress' ),
-				__( 'Settings', 'documentation-wordpress' ),
+				__( 'Settings', 'wp-docs' ),
+				__( 'Settings', 'wp-docs' ),
 				'manage_options',
 				'documentation_wordpress_settings',
 				array( $this, 'render_options_page' )
@@ -196,7 +196,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 */
 		function php_version_notice() {
 
-			$message = __( 'Your server seems to be running outdated, unsupported and vulnerable version of PHP. You are advised to contact your host provider and upgrade to PHP version 5.6 or greater.', 'documentation-wordpress' );
+			$message = __( 'Your server seems to be running outdated, unsupported and vulnerable version of PHP. You are advised to contact your host provider and upgrade to PHP version 5.6 or greater.', 'wp-docs' );
 
 			$this->render_admin_notice( $message, 'warning' );
 		}
