@@ -9,7 +9,7 @@ module.exports = function( grunt ) {
 
 		addtextdomain: {
 			options: {
-				textdomain: 'wp-docs',
+				textdomain: 'bsf-docs',
 			},
 			update_all_domains: {
 				options: {
@@ -31,8 +31,8 @@ module.exports = function( grunt ) {
 			target: {
 				options: {
 					domainPath: '/languages',
-					mainFile: 'wp-docs.php',
-					potFilename: 'wp-docs.pot',
+					mainFile: 'bsf-docs.php',
+					potFilename: 'bsf-docs.pot',
 					potHeaders: {
 						poedit: true,
 						'x-poedit-keywordslist': true

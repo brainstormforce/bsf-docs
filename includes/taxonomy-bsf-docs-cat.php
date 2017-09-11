@@ -52,9 +52,9 @@ get_header(); ?>
 			endwhile;
 			the_posts_pagination(
 				array(
-					'prev_text' => '&laquo;<span class="screen-reader-text">' . __( 'Previous page', 'wp-docs' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'wp-docs' ) . '</span>&raquo;',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'wp-docs' ) . ' </span>',
+					'prev_text' => '&laquo;<span class="screen-reader-text">' . __( 'Previous page', 'bsf-docs' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'bsf-docs' ) . '</span>&raquo;',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bsf-docs' ) . ' </span>',
 				)
 			);
 

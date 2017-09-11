@@ -30,10 +30,10 @@ class Bsf_Docs_Widget extends WP_Widget {
 			// Base ID of your widget.
 			'bsf_docs_widget',
 			// Widget name will appear in UI.
-			__( 'Docs Widget', 'wp-docs' ) ,
+			__( 'BSF Docs Widget', 'bsf-docs' ) ,
 			// Widget description.
 			array(
-				'description' => __( 'Widget for recent Docs', 'wp-docs' ),
+				'description' => __( 'Widget for recent Docs', 'bsf-docs' ),
 			)
 		);
 	}
@@ -131,9 +131,9 @@ class Bsf_Docs_Widget extends WP_Widget {
 		register_widget( 'bsf_docs_widget' );
 		register_sidebar(
 			array(
-				'name' => __( 'Docs Sidebar', 'wp-docs' ),
+				'name' => __( 'Docs Sidebar', 'bsf-docs' ),
 				'id' => 'docs-sidebar-1',
-				'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'wp-docs' ),
+				'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'bsf-docs' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
 				'after_widget' => '</div>',
 				'before_title' => '<h2 class="docs-widget-title">',
