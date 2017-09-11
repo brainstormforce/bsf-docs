@@ -1,6 +1,6 @@
 # BSF Docs #
-**Contributors:** brainstormforce, aniljbsfio
-**Tags:** docs, wpdocs, documentation, wp_docs, peoduct_documentation
+**Contributors:** brainstormforce, aniljbsfio  
+**Tags:** docs, wpdocs, documentation, wp_docs, peoduct_documentation  
 **Requires at least:** 3.0  
 **Tested up to:** 4.8.1  
 **Stable tag:** 1.0.0
