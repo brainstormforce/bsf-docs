@@ -23,7 +23,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 		<div class="bsf-page-header">
 			<?php
-				echo '<h1 class="page-title">' . single_cat_title( '', false ) .'</h1>';
+				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			?>
 		</div><!-- .page-header -->
@@ -52,9 +52,9 @@ get_header(); ?>
 			endwhile;
 			the_posts_pagination(
 				array(
-					'prev_text' => '&laquo;<span class="screen-reader-text">' . __( 'Previous page', 'doc-wp' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'doc-wp' ) . '</span>&raquo;',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'doc-wp' ) . ' </span>',
+					'prev_text' => '&laquo;<span class="screen-reader-text">' . __( 'Previous page', 'bsf-docs' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'bsf-docs' ) . '</span>&raquo;',
+					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bsf-docs' ) . ' </span>',
 				)
 			);
 

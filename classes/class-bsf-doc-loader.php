@@ -174,10 +174,10 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		function register_options_menu() {
 			add_submenu_page(
 				'edit.php?post_type=docs',
-				__( 'Settings', 'doc-wp' ),
-				__( 'Settings', 'doc-wp' ),
+				__( 'Settings', 'bsf-docs' ),
+				__( 'Settings', 'bsf-docs' ),
 				'manage_options',
-				'documentation_wordpress_settings',
+				'bsf_docs_settings',
 				array( $this, 'render_options_page' )
 			);
 		}
@@ -196,7 +196,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 */
 		function php_version_notice() {
 
-			$message = __( 'Your server seems to be running outdated, unsupported and vulnerable version of PHP. You are advised to contact your host provider and upgrade to PHP version 5.6 or greater.', 'doc-wp' );
+			$message = __( 'Your server seems to be running outdated, unsupported and vulnerable version of PHP. You are advised to contact your host provider and upgrade to PHP version 5.6 or greater.', 'bsf-docs' );
 
 			$this->render_admin_notice( $message, 'warning' );
 		}
@@ -208,7 +208,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @author BrainstormForce
 		 */
 		function get_bsf_docs_archive_template( $archive_template ) {
-			 global $post;
 
 			if ( is_post_type_archive( BSF_DOCS_POST_TYPE ) ) {
 				$archive_template = BSF_DOCS_BASE_DIR . 'includes/bsf-archive-template.php';
@@ -223,7 +222,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @author BrainstormForce
 		 */
 		function get_bsf_docs_single_template( $single_template ) {
-			 global $post;
 
 			if ( is_singular( 'docs' ) ) {
 				$single_template = BSF_DOCS_BASE_DIR . 'includes/bsf-single-template.php';
