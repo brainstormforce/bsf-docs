@@ -22,7 +22,6 @@ class Bsf_Docs_Widget extends WP_Widget {
 	 */
 	function __construct() {
 
-
 		add_action( 'widgets_init', array( $this, 'bsf_docs_widgets_area' ) );
 
 		parent::__construct(
@@ -37,7 +36,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 			)
 		);
 	}
-	
+
 	/**
 	 * Creating widget front-end.
 	 *

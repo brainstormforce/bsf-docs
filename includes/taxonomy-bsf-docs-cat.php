@@ -23,7 +23,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 		<div class="bsf-page-header">
 			<?php
-				echo '<h1 class="page-title">' . single_cat_title( '', false ) .'</h1>';
+				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 			?>
 		</div><!-- .page-header -->
