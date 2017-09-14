@@ -71,6 +71,13 @@
     padding-right: 20px;
 }
 
+.docs-tax-templates-enabled,
+.docs-single-templates-enabled,
+.docs-tax-templates-enabled,
+.docs-single-templates-enabled {
+    background: #fff;
+}
+
 .docs-tax-templates-enabled .docs-wraper article {
     position: relative;
     border-bottom: none;
@@ -427,6 +434,26 @@
     margin-bottom: 0;
 }
 
+.docs-tax-templates-enabled #primary, 
+.docs-single-templates-enabled #primary, 
+.docs-tax-templates-enabled #secondary
+.docs-single-templates-enabled #secondary {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+@media (min-width: 769px) {
+    .docs-tax-templates-enabled #primary,
+    .docs-single-templates-enabled #primary {
+      width: 70%;
+    }
+
+    .docs-tax-templates-enabled #secondary,
+    .docs-single-templates-enabled #secondary {
+      width: 30%;
+    }
+}
 .docs-single-templates-enabled .docs-wraper .page-title {
     font-size: 28px;
     line-height: 1.4em;
