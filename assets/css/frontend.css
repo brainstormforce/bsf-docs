@@ -549,8 +549,8 @@ h2.bsf-entry-title > a {
         padding: 50px 0 0 0;
     }
     .docs-single-templates-enabled .docs-single-title > h1 {
-        font-size: 22px;
-        line-height: 1.2em;
+        font-size: 20px;
+        line-height: 1.4em;
         margin-bottom: 15px;
     }
     /* Archive Page */
@@ -562,5 +562,11 @@ h2.bsf-entry-title > a {
     .bsf-entry-title {
         font-size: inherit;
         line-height: inherit;
+    }
+    #bsf-search-result {
+        min-width: auto;
+    }
+    #bsf-search-result a {
+        white-space: inherit;
     }
 }
