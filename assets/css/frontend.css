@@ -71,6 +71,13 @@
     padding-right: 20px;
 }
 
+.docs-tax-templates-enabled,
+.docs-single-templates-enabled,
+.docs-tax-templates-enabled,
+.docs-single-templates-enabled {
+    background: #fff;
+}
+
 .docs-tax-templates-enabled .docs-wraper article {
     position: relative;
     border-bottom: none;
@@ -159,14 +166,22 @@
 }
 
 #bsf_docs_widget-2 li {
+    margin: 0 0 20px !important;
     padding: 0 0 0 25px;
     position: relative;
     list-style: none;
-    line-height: 35px;
+    line-height: 1.7em;
 }
 
-.docs-single-templates-enabled #bsf_docs_widget-2,
-.docs-tax-templates-enabled #bsf_docs_widget-2 {
+#bsf_docs_widget-2 li > a {
+    color: #45454C;
+}
+
+#bsf_docs_widget-2 li > a:hover {
+    color: #2e8ece;
+}
+.docs-single-templates-enabled #secondary #bsf_docs_widget-2,
+.docs-tax-templates-enabled #secondary #bsf_docs_widget-2 {
     padding: 0;
     background: inherit;
 }
@@ -344,6 +359,7 @@
 }
 
 .bsf-page-header > h1 {
+    color: #1a1a1a;
     margin: 0;
 }
 
@@ -361,6 +377,15 @@
      line-height: inherit;
      margin-right: 10px;
  }
+
+h2.bsf-entry-title > a {
+  color: #3a3a3a;
+}
+
+ h2.bsf-entry-title > a:hover {
+    color: #2e8ece;
+}
+
  .bsf-entry-title {
      display: inline-block;
      font-size: 16px;
@@ -389,8 +414,12 @@
 /* Widget CSS */
 
 .widget_bsf_docs_widget > h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 10px 0;
+    padding: 0;
+    line-height: 1.4em;
     margin-bottom: 15px;
-    font-size: 2rem;
 }
 
 
@@ -413,7 +442,7 @@
 
 .docs-single-templates-enabled .docs-wraper #primary.content-area, 
 .docs-tax-templates-enabled .docs-wraper #primary.content-area {
-    margin: 45px 0;
+    margin: 45px 0 !important;
     padding-top: 0;
     padding-right: 30px;
 }
@@ -424,9 +453,29 @@
 
 .docs-single-templates-enabled .ast-container #primary.bsf-options-form-wrap {
     border-right: 1px solid #e6e6e6;
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
 }
 
+.docs-tax-templates-enabled #primary, 
+.docs-single-templates-enabled #primary, 
+.docs-tax-templates-enabled #secondary
+.docs-single-templates-enabled #secondary {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+@media (min-width: 769px) {
+    .docs-tax-templates-enabled #primary,
+    .docs-single-templates-enabled #primary {
+      width: 70%;
+    }
+
+    .docs-tax-templates-enabled #secondary,
+    .docs-single-templates-enabled #secondary {
+      width: 30%;
+    }
+}
 .docs-single-templates-enabled .docs-wraper .page-title {
     font-size: 28px;
     line-height: 1.4em;
@@ -442,6 +491,11 @@
     padding: 0;
 }
 
+.docs-single-templates-enabled .docs-single-title > h1 {
+    font-size: 28px;
+    line-height: 1.4em;
+}
+
 .docs-single-title > p {
     margin: 0;
 }
@@ -454,5 +508,59 @@
     .bsf-categories-wrap .bsf-cat-col {
         float: none;
         width: 100%;
+    }
+    /* Search Style */
+    #bsf-live-search {
+        margin: auto -7px;
+    }
+    .bsf-search-label {
+        display: none;
+    }
+    #bsf-live-search #bsf-searchsubmit {
+        position: absolute;
+        right: 5px;
+        top: 48%;
+        width: auto;
+        height: auto;
+        line-height: 40px;
+        color: inherit;
+        background: transparent;
+        padding: 0 14px;
+        border: none;
+        -moz-border-radius: 99px;
+        -webkit-border-radius: 99px;
+        transform: translateY(-50%);
+        bottom: 0;
+    }
+    #bsf-live-search #bsf-sq {
+        width: 100%;
+        font-size: 14px;
+    }
+    .docs-single-templates-enabled .docs-wraper #primary.content-area, 
+    .docs-tax-templates-enabled .docs-wraper #primary.content-area {
+        padding-right: 0;
+        border: 0;
+    }
+    .docs-single-templates-enabled #secondary.docs-sidebar-area, 
+    .docs-tax-templates-enabled #secondary.docs-sidebar-area {
+        border-left: 0;
+        border-top: 1px solid whitesmoke;
+        margin: 0;
+        padding: 50px 0 0 0;
+    }
+    .docs-single-templates-enabled .docs-single-title > h1 {
+        font-size: 22px;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+    }
+    /* Archive Page */
+    .docs-tax-templates-enabled .docs-archive-wraper, 
+    .docs-single-templates-enabled .docs-archive-wraper {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .bsf-entry-title {
+        font-size: inherit;
+        line-height: inherit;
     }
 }
