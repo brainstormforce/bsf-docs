@@ -17,10 +17,6 @@ A BSF Docs Easily build documentation website with AJAX based live search functi
 2. Upload the included folder to '/wp-content/plugins' directory of your WordPress installation
 3. Activate the plugin via the WordPress Plugins page
 
-## Frequently Asked Questions ##
-
-None yet
-
 ## Changelog ##
 
 ### Version 1.0.0 ###
