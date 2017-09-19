@@ -474,7 +474,7 @@ h2.bsf-entry-title > a {
 
     .docs-tax-templates-enabled #secondary,
     .docs-single-templates-enabled #secondary {
-      width: 30%;
+      float: left;
     }
 }
 .docs-single-templates-enabled .docs-wraper .page-title {
