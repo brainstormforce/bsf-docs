@@ -41,7 +41,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 					</div>
 					<button type="submit" id="bsf-searchsubmit">
 						<span class="docswp-search"></span>
-						<span><?php _e( 'Search', 'bsf-docs' ); ?></span>
+						<span class="bsf-search-label"><?php _e( 'Search', 'bsf-docs' ); ?></span>
 					</button>
 				</form>
 		  </div>

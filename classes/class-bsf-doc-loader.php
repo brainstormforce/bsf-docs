@@ -41,16 +41,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 */
 		private function __construct() {
 
-					// minimum requirement for PHP version.
-			$php = '5.4';
-
-			// If current version is less than minimum requirement, display admin notice.
-			if ( version_compare( PHP_VERSION, $php, '<' ) ) {
-
-				add_action( 'admin_notices', array( $this, 'php_version_notice' ) );
-				return;
-			}
-
 			$this->define_constants();
 			$this->load_files();
 			$this->init_hooks();
@@ -187,18 +177,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 */
 		function render_options_page() {
 			require_once BSF_DOCS_BASE_DIR . 'includes/bsf-options-page.php';
-		}
-
-		/**
-		 * Shows an admin notice for outdated php version.
-		 *
-		 * @author BrainstormForce
-		 */
-		function php_version_notice() {
-
-			$message = __( 'Your server seems to be running outdated, unsupported and vulnerable version of PHP. You are advised to contact your host provider and upgrade to PHP version 5.6 or greater.', 'bsf-docs' );
-
-			$this->render_admin_notice( $message, 'warning' );
 		}
 
 		/**
