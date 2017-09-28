@@ -57,6 +57,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 		$recent_posts = wp_get_recent_posts(
 			array(
 				'post_type' => 'docs',
+				'post_status' => 'publish',
 			)
 		);
 	foreach ( $recent_posts as $recent ) {

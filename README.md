@@ -19,5 +19,6 @@ A BSF Docs Easily build documentation website with AJAX based live search functi
 
 ## Changelog ##
 
+
 ### Version 1.0.0 ###
 * Initial release
