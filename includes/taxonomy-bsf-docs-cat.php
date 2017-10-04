@@ -24,7 +24,7 @@ get_header(); ?>
 		<div class="bsf-page-header">
 			<?php
 				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				echo '<div class="tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
 			?>
 		</div><!-- .page-header -->
 	<?php endif; ?>

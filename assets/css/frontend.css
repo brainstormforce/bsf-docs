@@ -555,6 +555,9 @@ h2.bsf-entry-title > a {
         line-height: 1.4em;
         margin-bottom: 15px;
     }
+    .tax-breadcrumb {
+        margin-top: 5px;
+    }
     /* Archive Page */
     .docs-tax-templates-enabled .docs-archive-wraper, 
     .docs-single-templates-enabled .docs-archive-wraper {
