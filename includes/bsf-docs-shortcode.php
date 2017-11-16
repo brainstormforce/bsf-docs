@@ -83,7 +83,9 @@ function bsf_render_category_list( $atts, $content = null ) {
 	if ( '' != $doc_title ) {
 	?>
 		<h1 class="docs-title"><?php echo esc_attr( $doc_title ); ?></h1>
-	<?php } ?>
+	<?php }
+
+	if ( $taxonomy_objects && ! is_wp_error( $taxonomy_objects ) ) : ?>
 
 	<div class="bsf-categories-wrap clearfix">
 
@@ -91,18 +93,14 @@ function bsf_render_category_list( $atts, $content = null ) {
 		<?php
 		foreach ( $taxonomy_objects as $key => $object ) {
 
-			$cat_link = get_category_link( $object->term_id );
-			$category = get_category( $object->term_id );
-			$count = $category->category_count;
-
-			if ( $count > 0 ) {
+			if ( $object->count ) {
 
 			?>
 			<div class="bsf-cat-col" >
-				<a class="bsf-cat-link" href="<?php echo esc_url( $cat_link ); ?>">
-					<h4><?php echo $object->name; ?></h4>
+				<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
+					<h4><?php echo esc_html( $object->name ); ?></h4>
 					<span class="bsf-cat-count">
-						<?php echo $count . ' ' . __( 'Articles', 'bsf-docs' ); ?> 
+						<?php printf( __( '%1$s Articles', 'bsf-docs' ), $object->count ); ?>
 					</span>
 				</a>
 			</div>
@@ -113,7 +111,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 ?>
 	</div>
 
-	<?php
+	<?php endif;
 
 	return ob_get_clean();
 }
