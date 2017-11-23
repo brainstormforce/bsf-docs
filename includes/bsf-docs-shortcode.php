@@ -83,9 +83,11 @@ function bsf_render_category_list( $atts, $content = null ) {
 	if ( '' != $doc_title ) {
 	?>
 		<h1 class="docs-title"><?php echo esc_attr( $doc_title ); ?></h1>
-	<?php }
+	<?php
+	}
 
-	if ( $taxonomy_objects && ! is_wp_error( $taxonomy_objects ) ) : ?>
+	if ( $taxonomy_objects && ! is_wp_error( $taxonomy_objects ) ) :
+	?>
 
 	<div class="bsf-categories-wrap clearfix">
 
@@ -100,6 +102,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 				<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
 					<h4><?php echo esc_html( $object->name ); ?></h4>
 					<span class="bsf-cat-count">
+						<?php /* translators: %s: article count term */ ?>
 						<?php printf( __( '%1$s Articles', 'bsf-docs' ), $object->count ); ?>
 					</span>
 				</a>
@@ -111,7 +114,8 @@ function bsf_render_category_list( $atts, $content = null ) {
 ?>
 	</div>
 
-	<?php endif;
+	<?php
+	endif;
 
 	return ob_get_clean();
 }

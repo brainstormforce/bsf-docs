@@ -26,9 +26,9 @@ get_header(); ?>
 				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 				the_archive_description( '<div class="bsf-taxonomy-description">', '</div>' );
 
-				if ( function_exists('yoast_breadcrumb') ) {
-					echo '<div class="bsf-tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
-				}
+			if ( function_exists( 'yoast_breadcrumb' ) ) {
+				echo '<div class="bsf-tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
+			}
 			?>
 		</div><!-- .page-header -->
 	<?php endif; ?>
