@@ -24,7 +24,11 @@ get_header(); ?>
 		<div class="bsf-page-header">
 			<?php
 				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
-				echo '<div class="tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
+				the_archive_description( '<div class="bsf-taxonomy-description">', '</div>' );
+
+				if ( function_exists('yoast_breadcrumb') ) {
+					echo '<div class="bsf-tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
+				}
 			?>
 		</div><!-- .page-header -->
 	<?php endif; ?>
