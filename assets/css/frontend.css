@@ -71,10 +71,10 @@
     padding-right: 20px;
 }
 
-.docs-tax-templates-enabled,
-.docs-single-templates-enabled,
-.docs-tax-templates-enabled,
-.docs-single-templates-enabled {
+:not(.search-results).docs-tax-templates-enabled,
+:not(.search-results).docs-single-templates-enabled,
+:not(.search-results).docs-tax-templates-enabled,
+:not(.search-results).docs-single-templates-enabled {
     background: #fff;
 }
 
