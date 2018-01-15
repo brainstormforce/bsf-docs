@@ -105,8 +105,8 @@
     padding: 0;
 }
 
-:not(.search).docs-single-templates-enabled .site-header .ast-container,
-:not(.search).docs-tax-templates-enabled .site-header .ast-container {
+.docs-single-templates-enabled .site-header .ast-container,
+.docs-tax-templates-enabled .site-header .ast-container {
     width: 1040px;
 }
 
