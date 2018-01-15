@@ -71,10 +71,10 @@
     padding-right: 20px;
 }
 
-:not(.search-results).docs-tax-templates-enabled,
-:not(.search-results).docs-single-templates-enabled,
-:not(.search-results).docs-tax-templates-enabled,
-:not(.search-results).docs-single-templates-enabled {
+:not(.search).docs-tax-templates-enabled,
+:not(.search).docs-single-templates-enabled,
+:not(.search).docs-tax-templates-enabled,
+:not(.search).docs-single-templates-enabled {
     background: #fff;
 }
 
@@ -99,19 +99,19 @@
 
 /* Astra Compatability*/
 
-:not(.search-results).docs-single-templates-enabled .site-content > .ast-container,
-:not(.search-results).docs-tax-templates-enabled .site-content > .ast-container {
+:not(.search).docs-single-templates-enabled .site-content > .ast-container,
+:not(.search).docs-tax-templates-enabled .site-content > .ast-container {
     max-width: 100%;
     padding: 0;
 }
 
-:not(.search-results).docs-single-templates-enabled .site-header .ast-container,
-:not(.search-results).docs-tax-templates-enabled .site-header .ast-container {
+:not(.search).docs-single-templates-enabled .site-header .ast-container,
+:not(.search).docs-tax-templates-enabled .site-header .ast-container {
     width: 1040px;
 }
 
-:not(.search-results).docs-single-templates-enabled .site-content,
-:not(.search-results).docs-tax-templates-enabled .site-content {
+:not(.search).docs-single-templates-enabled .site-content,
+:not(.search).docs-tax-templates-enabled .site-content {
     padding: 0;
 }
 
@@ -467,13 +467,13 @@ h2.bsf-entry-title > a {
 }
 
 @media (min-width: 769px) {
-    :not(.search-results).docs-tax-templates-enabled #primary,
-    :not(.search-results).docs-single-templates-enabled #primary {
+    :not(.search).docs-tax-templates-enabled #primary,
+    :not(.search).docs-single-templates-enabled #primary {
       width: 70%;
     }
 
-    :not(.search-results).docs-tax-templates-enabled #secondary,
-    :not(.search-results).docs-single-templates-enabled #secondary {
+    :not(.search).docs-tax-templates-enabled #secondary,
+    :not(.search).docs-single-templates-enabled #secondary {
       float: left;
       width: 30%;
     }
