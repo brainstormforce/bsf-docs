@@ -99,19 +99,19 @@
 
 /* Astra Compatability*/
 
-.docs-single-templates-enabled .site-content > .ast-container,
-.docs-tax-templates-enabled .site-content > .ast-container {
+:not(.search-results).docs-single-templates-enabled .site-content > .ast-container,
+:not(.search-results).docs-tax-templates-enabled .site-content > .ast-container {
     max-width: 100%;
     padding: 0;
 }
 
-.docs-single-templates-enabled .site-header .ast-container,
-.docs-tax-templates-enabled .site-header .ast-container {
+:not(.search-results).docs-single-templates-enabled .site-header .ast-container,
+:not(.search-results).docs-tax-templates-enabled .site-header .ast-container {
     width: 1040px;
 }
 
-.docs-single-templates-enabled .site-content,
-.docs-tax-templates-enabled .site-content {
+:not(.search-results).docs-single-templates-enabled .site-content,
+:not(.search-results).docs-tax-templates-enabled .site-content {
     padding: 0;
 }
 
@@ -467,13 +467,13 @@ h2.bsf-entry-title > a {
 }
 
 @media (min-width: 769px) {
-    .docs-tax-templates-enabled #primary,
-    .docs-single-templates-enabled #primary {
+    :not(.search-results).docs-tax-templates-enabled #primary,
+    :not(.search-results).docs-single-templates-enabled #primary {
       width: 70%;
     }
 
-    .docs-tax-templates-enabled #secondary,
-    .docs-single-templates-enabled #secondary {
+    :not(.search-results).docs-tax-templates-enabled #secondary,
+    :not(.search-results).docs-single-templates-enabled #secondary {
       float: left;
       width: 30%;
     }
