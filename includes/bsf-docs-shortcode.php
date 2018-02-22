@@ -25,7 +25,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 	ob_start();
 	$args = shortcode_atts(
 		array(
-			'placeholder' => __( 'Enter search string', 'bsf-docs' ),
+			'placeholder' => __( 'Search for answers...', 'bsf-docs' ),
 		), $atts
 	);
 
@@ -39,10 +39,6 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 					<div class="spinner live-search-loading bsf-search-loader">
 						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" >
 					</div>
-					<button type="submit" id="bsf-searchsubmit">
-						<span class="docswp-search"></span>
-						<span class="bsf-search-label"><?php _e( 'Search', 'bsf-docs' ); ?></span>
-					</button>
 				</form>
 		  </div>
 		</div>
