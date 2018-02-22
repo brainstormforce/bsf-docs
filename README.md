@@ -19,6 +19,9 @@ A BSF Docs Easily build documentation website with AJAX based live search functi
 
 ## Changelog ##
 
+Version 1.0.1 - 18-Nov-2017
+* Fix: Category undefined issue fixed for WP-4.9 
+* Fix: Translation ready
 
-### Version 1.0.0 ###
+Version 1.0.0
 * Initial release
