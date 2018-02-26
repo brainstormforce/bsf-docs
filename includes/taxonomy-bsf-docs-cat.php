@@ -23,6 +23,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 		<div class="bsf-page-header">
 			<?php
+
 				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
 				the_archive_description( '<div class="bsf-taxonomy-description">', '</div>' );
 
@@ -33,6 +34,41 @@ get_header(); ?>
 		</div><!-- .page-header -->
 	<?php endif; ?>
 
+		<?php if ( have_posts() ) : ?>
+			<?php
+				$current_category = get_queried_object();
+				$current_category_id = $current_category->term_id;
+
+				$termchildren = get_terms('docs_category',array('child_of' => $current_category_id));
+
+				if ( $termchildren && ! is_wp_error( $termchildren ) ) :
+				?>
+
+				<div class="bsf-page-header bsf-categories-wrap clearfix">
+					<?php
+					foreach ( $termchildren as $key => $object ) {
+						?>
+						<div class="bsf-cat-col" >
+							<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
+								<h4><?php echo esc_html( $object->name ); ?></h4>
+								<span class="bsf-cat-count">
+									<?php /* translators: %s: article count term */ ?>
+									<?php printf( __( '%1$s Articles', 'bsf-docs' ), $object->count ); ?>
+								</span>
+							</a>
+						</div>
+
+					<?php
+						// }
+					}
+					?>
+				</div>
+
+				<?php
+				endif;
+			?>
+		<?php endif; ?>
+
 		<?php
 		if ( have_posts() ) :
 		?>
@@ -40,7 +76,6 @@ get_header(); ?>
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
-
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file.
