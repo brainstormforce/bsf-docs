@@ -39,7 +39,7 @@ get_header(); ?>
 				$current_category = get_queried_object();
 				$current_category_id = $current_category->term_id;
 
-				$termchildren = get_terms('docs_category',array('child_of' => $current_category_id));
+				$termchildren = get_terms('docs_category',array('parent' => $current_category_id));
 
 				if ( $termchildren && ! is_wp_error( $termchildren ) ) :
 				?>
@@ -74,20 +74,32 @@ get_header(); ?>
 		?>
 			<?php
 			/* Start the Loop */
+
 			while ( have_posts() ) :
+
 				the_post();
+
+				$categories = get_the_terms( $post->ID, 'docs_category' );
+				$current_category = get_queried_object();
+				$current_category_id = $current_category->term_id;
+
 				/*
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file.
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
+				 */ 
+
+				if( $categories[0]->term_id == $current_category_id ) {
 				?>
 				<article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> post type-docs status-publish format-standard docs_category">
 					<h2 class="bsf-entry-title">
 						<a rel="bookmark" href="<?php echo esc_url( the_permalink() ); ?>"><?php the_title(); ?></a>
 					</h2>
 				</article>
+
+			
 				<?php
+				}
 			endwhile;
 			the_posts_pagination(
 				array(
