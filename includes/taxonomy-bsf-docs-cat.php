@@ -119,10 +119,10 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	<div itemscope="itemscope" id="secondary" class="widget-area sidebar grid-25 tablet-grid-25 grid-parent docs-sidebar-area secondary" role="complementary">
-			<div class="sidebar-main content-area">
-				<?php dynamic_sidebar( 'docs-sidebar-1' ); ?>
-			</div>
+		<div class="sidebar-main content-area">
+			<?php dynamic_sidebar( 'docs-sidebar-1' ); ?>
 		</div>
+	</div>
 </div><!-- .wrap -->
 
 <?php get_footer(); ?>
