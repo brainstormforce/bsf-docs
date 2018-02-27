@@ -32,7 +32,8 @@ get_header(); ?>
 			}
 			?>
 		</div><!-- .page-header -->
-	<?php endif; ?>
+	<?php endif; 
+		?>
 
 		<?php if ( have_posts() ) : ?>
 			<?php
@@ -97,9 +98,9 @@ get_header(); ?>
 
 				<?php
 				endif;
-				// wp_reset_postdata();
 			?>
-		<?php endif; ?>
+		<?php endif; 
+		?>
 
 		<?php
 		if ( have_posts() ) :
@@ -107,19 +108,27 @@ get_header(); ?>
 			<?php
 			/* Start the Loop */
 
-			// $categories = get_the_terms( $post->ID, 'docs_category' );
-			// $current_category = get_queried_object();
-			// $current_category_id = $current_category->term_id;
-			// query_posts( array(
-			// 		'post_type'	=> 'docs',
-			//         'posts_per_page' => 6,
-			//         // 'category_name'  => $current_category->slug,
-			//     ) );
+			$current_category = get_queried_object();
+			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-			while ( have_posts() ) :
+			$query = new WP_Query( array(
+			    'post_type' => 'docs',
+			    'posts_per_page' => '10',
+			    'paged' => $paged,
+			    'tax_query' => array(
+			        array(
+			            'taxonomy' => 'docs_category',
+			            'field' => $current_category->slug,
+			            'terms' => $current_category->term_id,
+			            'include_children' => false,
+			        )
+			    )
+			) );
 
-				the_post();
 
+			while ( $query-> have_posts() ) :
+
+				$query-> the_post();
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -127,7 +136,6 @@ get_header(); ?>
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */ 
 
-				// if( $categories[0]->term_id == $current_category_id ) {
 				?>
 				<article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> post type-docs status-publish format-standard docs_category">
 					<h2 class="bsf-entry-title">
@@ -137,7 +145,6 @@ get_header(); ?>
 
 			
 				<?php
-				// }
 			endwhile;
 
 			the_posts_pagination(
@@ -147,13 +154,12 @@ get_header(); ?>
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bsf-docs' ) . ' </span>',
 				)
 			);
-
+			wp_reset_query();
 		else :
 
 			get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
-		wp_reset_postdata();
 		?>
 
 		</main><!-- #main -->
