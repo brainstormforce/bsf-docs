@@ -111,10 +111,11 @@ get_header(); ?>
 			$current_category = get_queried_object();
 			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-			$query = new WP_Query( array(
+			$args = array(
 			    'post_type' => 'docs',
-			    'posts_per_page' => '10',
-			    'paged' => $paged,
+			    'posts_per_page' => 10,
+		        'post_status' => 'publish',
+		        'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
 			    'tax_query' => array(
 			        array(
 			            'taxonomy' => 'docs_category',
@@ -123,8 +124,11 @@ get_header(); ?>
 			            'include_children' => false,
 			        )
 			    )
-			) );
+			);
 
+			$query = new WP_Query( $args );
+
+			query_posts( $args );
 
 			while ( $query-> have_posts() ) :
 
@@ -154,7 +158,7 @@ get_header(); ?>
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bsf-docs' ) . ' </span>',
 				)
 			);
-			wp_reset_query();
+
 		else :
 
 			get_template_part( 'template-parts/post/content', 'none' );
