@@ -38,22 +38,53 @@ get_header(); ?>
 			<?php
 				$current_category = get_queried_object();
 				$current_category_id = $current_category->term_id;
+				$current_category_slug = $current_category->slug;
+				$slug = '';
 
-				$termchildren = get_terms('docs_category',array('parent' => $current_category_id));
+				$termchildren = get_terms( 'docs_category',
+					array(
+						'parent' => $current_category_id,
+						'pad_counts' => 1,
+						'hide_empty' => false,
+					)
+				);
 
 				if ( $termchildren && ! is_wp_error( $termchildren ) ) :
+					 $termchildren_1 = get_terms( 'docs_category',
+										array(
+											'pad_counts' => 1,
+										)
+									);
+					foreach ( $termchildren_1 as $key => $object ) {
+
+						$slug = $termchildren_1;
+					}
 				?>
 
 				<div class="bsf-page-header bsf-categories-wrap clearfix">
 					<?php
 					foreach ( $termchildren as $key => $object ) {
+
+						for( $i = 1; $i <= count($slug); $i++ ) {
+							
+
+							if( $slug[$i]->slug == $object->slug ) {
+								$count = $slug[$i]->count;
+							}
+						}
+
+						if( $slug[$key]->slug == $object->slug ) {
+							print_r($object->count);
+							
+							$count = $object->count;
+						}
 						?>
 						<div class="bsf-cat-col" >
 							<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
 								<h4><?php echo esc_html( $object->name ); ?></h4>
 								<span class="bsf-cat-count">
 									<?php /* translators: %s: article count term */ ?>
-									<?php printf( __( '%1$s Articles', 'bsf-docs' ), $object->count ); ?>
+									<?php printf( __( '%1$s Articles', 'bsf-docs' ), $count ); ?>
 								</span>
 							</a>
 						</div>

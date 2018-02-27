@@ -68,6 +68,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 	$taxonomy_objects = get_terms(
 		$get_args['category'], array(
 			'hide_empty' => false,
+			'pad_counts' => 1,
 		)
 	);
 
@@ -91,7 +92,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 		<?php		
 
 		foreach ( $taxonomy_objects as $key => $object ) {
-
+			
 			if ( $object->count && $object->parent == '0' ) {
 
 			?>
