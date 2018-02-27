@@ -32,7 +32,7 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 			__( 'BSF Docs Category Widget', 'bsf-docs' ) ,
 			// Widget description.
 			array(
-				'description' => __( 'Widget for category', 'bsf-docs' ),
+				'description' => __( 'A list or dropdown of BSF Docs categories.', 'bsf-docs' ),
 			)
 		);
 	}
