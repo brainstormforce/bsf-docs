@@ -74,7 +74,6 @@ get_header(); ?>
 						}
 
 						if( $slug[$key]->slug == $object->slug ) {
-							print_r($object->count);
 							
 							$count = $object->count;
 						}
