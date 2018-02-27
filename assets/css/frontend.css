@@ -165,7 +165,7 @@
     padding-right: 3px;
 }
 
-#bsf_docs_widget-2 li,
+.widget_bsf_docs_widget li,
 .widget_bsf_docs_cat_widget li {
     padding: 0 0 0 25px;
     position: relative;
@@ -173,7 +173,7 @@
     line-height: 1.7em;
 }
 
-#bsf_docs_widget-2 li {
+.widget_bsf_docs_widget li {
     margin: 0 0 20px !important;
 }
 
@@ -181,24 +181,24 @@
     margin: 20px 0 !important;
 }
 
-#bsf_docs_widget-2 li > a,
+.widget_bsf_docs_widget li > a,
 .widget_bsf_docs_cat_widget li > a {
     color: #45454C;
 }
 
-#bsf_docs_widget-2 li > a:hover,
+.widget_bsf_docs_widget li > a:hover,
 .widget_bsf_docs_cat_widget li > a:hover {
     color: #2e8ece;
 }
-.docs-single-templates-enabled #secondary #bsf_docs_widget-2,
-.docs-tax-templates-enabled #secondary #bsf_docs_widget-2,
+.docs-single-templates-enabled #secondary .widget_bsf_docs_widget,
+.docs-tax-templates-enabled #secondary .widget_bsf_docs_widget,
 .docs-single-templates-enabled #secondary .widget_bsf_docs_cat_widget,
 .docs-tax-templates-enabled #secondary .widget_bsf_docs_cat_widget {
     padding: 0;
     background: inherit;
 }
 
-#bsf_docs_widget-2 li:before,
+.widget_bsf_docs_widget li:before,
 .widget_bsf_docs_cat_widget li:before {
     content: "\e900";
     font-family: 'docswp' !important;
@@ -417,7 +417,8 @@ h2.bsf-entry-title > a {
 
 /* Widget CSS */
 
-.widget_bsf_docs_widget > h2 {
+.widget_bsf_docs_widget > h2,
+.widget_bsf_docs_cat_widget > h2 {
     font-size: 18px;
     font-weight: 500;
     margin: 10px 0;
