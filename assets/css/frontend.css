@@ -177,10 +177,6 @@
     margin: 0 0 20px !important;
 }
 
-.widget_bsf_docs_cat_widget li {
-    margin: 20px 0 !important;
-}
-
 .widget_bsf_docs_widget li > a,
 .widget_bsf_docs_cat_widget li > a {
     color: #45454C;
@@ -199,7 +195,7 @@
 }
 
 .widget_bsf_docs_widget li:before,
-.widget_bsf_docs_cat_widget li:before {
+.widget_bsf_docs_cat_widget .children li:before {
     content: "\e900";
     font-family: 'docswp' !important;
     speak: none;
@@ -472,9 +468,12 @@ h2.bsf-entry-title > a {
 }
 
 @media (min-width: 769px) {
-    :not(.search).docs-tax-templates-enabled #primary,
     :not(.search).docs-single-templates-enabled #primary {
       width: 70%;
+    }
+
+    :not(.search).docs-tax-templates-enabled #primary {
+      width: 100%;
     }
 
     :not(.search).docs-tax-templates-enabled #secondary,

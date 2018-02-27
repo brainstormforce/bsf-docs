@@ -97,6 +97,7 @@ get_header(); ?>
 
 				<?php
 				endif;
+				// wp_reset_postdata();
 			?>
 		<?php endif; ?>
 
@@ -106,13 +107,19 @@ get_header(); ?>
 			<?php
 			/* Start the Loop */
 
+			// $categories = get_the_terms( $post->ID, 'docs_category' );
+			// $current_category = get_queried_object();
+			// $current_category_id = $current_category->term_id;
+			// query_posts( array(
+			// 		'post_type'	=> 'docs',
+			//         'posts_per_page' => 6,
+			//         // 'category_name'  => $current_category->slug,
+			//     ) );
+
 			while ( have_posts() ) :
 
 				the_post();
 
-				$categories = get_the_terms( $post->ID, 'docs_category' );
-				$current_category = get_queried_object();
-				$current_category_id = $current_category->term_id;
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -120,7 +127,7 @@ get_header(); ?>
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */ 
 
-				if( $categories[0]->term_id == $current_category_id ) {
+				// if( $categories[0]->term_id == $current_category_id ) {
 				?>
 				<article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> post type-docs status-publish format-standard docs_category">
 					<h2 class="bsf-entry-title">
@@ -130,8 +137,9 @@ get_header(); ?>
 
 			
 				<?php
-				}
+				// }
 			endwhile;
+
 			the_posts_pagination(
 				array(
 					'prev_text' => '&laquo;<span class="screen-reader-text">' . __( 'Previous page', 'bsf-docs' ) . '</span>',
@@ -145,15 +153,11 @@ get_header(); ?>
 			get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
+		wp_reset_postdata();
 		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<div itemscope="itemscope" id="secondary" class="widget-area sidebar grid-25 tablet-grid-25 grid-parent docs-sidebar-area secondary" role="complementary">
-		<div class="sidebar-main content-area">
-			<?php dynamic_sidebar( 'docs-sidebar-1' ); ?>
-		</div>
-	</div>
 </div><!-- .wrap -->
 
 <?php get_footer(); ?>
