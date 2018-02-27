@@ -65,17 +65,23 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 				'orderby'      => 'name',
 				'show_count'   => $c,
 				'hierarchical' => $h,
+				'taxonomy' => 'docs_category',
 			);
 
 			if ( $d ) {
 				echo sprintf( '<form action="%s" method="get">', esc_url( home_url() ) );
-				$dropdown_id = ( $first_dropdown ) ? 'cat' : "{$this->id_base}-dropdown-{$this->number}";
+				$dropdown_id = ( $first_dropdown ) ? 'docs-category' : "{$this->id_base}-dropdown-{$this->number}";
 				$first_dropdown = false;
 
-				echo '<label class="screen-reader-text" for="' . esc_attr( $dropdown_id ) . '">' . $title . '</label>';
+				$current_category = get_queried_object();
+				$current_category_slug = $current_category->slug;
 
-				$cat_args['show_option_none'] = __( 'Select Category' );
+				echo '<label class="bsf-screen-reader-text" for="' . esc_attr( $dropdown_id ) . '">' . $title . '</label>';
+
+				$cat_args['show_option_none'] = __( 'Select Category' );	
 				$cat_args['id'] = $dropdown_id;
+				$cat_args['value_field'] = 'slug';
+				$cat_args['selected'] = $current_category_slug;
 
 				/**
 				 * Filters the arguments for the Categories widget drop-down.
@@ -88,30 +94,30 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 				 * @param array $cat_args An array of Categories widget drop-down arguments.
 				 * @param array $instance Array of settings for the current widget.
 				 */
-				wp_dropdown_categories( apply_filters( 'widget_categories_dropdown_args', $cat_args, $instance ) );
+				wp_dropdown_categories( apply_filters( ' ', $cat_args, $instance ) );
 
 				echo '</form>';
 				?>
 
-	<script type='text/javascript'>
-	/* <![CDATA[ */
-	(function() {
-		var dropdown = document.getElementById( "<?php echo esc_js( $dropdown_id ); ?>" );
-		function onCatChange() {
-			if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
-				dropdown.parentNode.submit();
-			}
-		}
-		dropdown.onchange = onCatChange;
-	})();
-	/* ]]> */
-	</script>
+			<script type='text/javascript'>
+			/* <![CDATA[ */
+			(function() {
+				var dropdown = document.getElementById( "<?php echo esc_js( $dropdown_id ); ?>" );
+				function onCatChange() {
+					if ( dropdown.options[ dropdown.selectedIndex ].value != '' ) {
+						location.href = "<?php echo home_url(); ?>/docs-category/"+dropdown.options[dropdown.selectedIndex].value;
+					}
+				}
+				dropdown.onchange = onCatChange;
+			})();
+			/* ]]> */
+			</script>
 
-	<?php
-			} else {
-	?>
-			<ul>
-	<?php
+			<?php
+					} else {
+			?>
+					<ul>
+			<?php
 			$cat_args['title_li'] = '';
 
 			/**
