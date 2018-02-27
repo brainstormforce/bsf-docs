@@ -154,14 +154,17 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' ) && is_array( $classes ) ) {
 				// Add clss to body.
 				$current_category = get_queried_object();
-				$current_category_id = $current_category->term_id;
+				if( isset( $current_category->term_id ) ) {
+					
+					$current_category_id = $current_category->term_id;
 
-				$termchildren = get_terms('docs_category',array('parent' => $current_category_id));
+					$termchildren = get_terms('docs_category',array('parent' => $current_category_id));
 
-				if ( $termchildren && ! is_wp_error( $termchildren ) ) :
-				  $cls = array_merge( $classes, array( 'docs-tax-templates-enabled-'.$current_category_id ) );
-				  return $cls;
-				endif;
+					if ( $termchildren && ! is_wp_error( $termchildren ) ) :
+					  $cls = array_merge( $classes, array( 'docs-tax-templates-enabled-'.$current_category_id ) );
+					  return $cls;
+					endif;
+				}
 			}
 			return $classes;
 

@@ -39,7 +39,7 @@ get_header(); ?>
 				$current_category = get_queried_object();
 				$current_category_id = $current_category->term_id;
 				$current_category_slug = $current_category->slug;
-				$slug = '';
+				$count = '';
 
 				$termchildren = get_terms( 'docs_category',
 					array(
@@ -65,11 +65,12 @@ get_header(); ?>
 					<?php
 					foreach ( $termchildren as $key => $object ) {
 
-						for( $i = 1; $i <= count($slug); $i++ ) {
+						for( $i = 0; $i <= count($slug); $i++ ) {
 							
-
-							if( $slug[$i]->slug == $object->slug ) {
-								$count = $slug[$i]->count;
+							if( isset( $slug[$i]->slug ) && isset( $object->slug ) ) {
+								if( $slug[$i]->slug == $object->slug ) {
+									$count = $slug[$i]->count;
+								}
 							}
 						}
 
