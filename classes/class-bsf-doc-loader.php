@@ -135,10 +135,10 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @return $classes
 		 */
 		function bsf_docs_body_tax_class( $classes ) {
-
-			if ( is_tax( 'docs_category' ) && is_array( $classes ) ) {
-				$cls = array_merge( $classes, array( 'docs-tax-child-cat-enabled' ) );
-				return $cls;
+			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' ) && is_array( $classes ) ) {
+				// Add clss to body.
+				  $cls = array_merge( $classes, array( 'docs-tax-templates-enabled' ) );
+				  return $cls;
 			}
 			return $classes;
 		}
@@ -155,13 +155,13 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 				// Add clss to body.
 				$current_category = get_queried_object();
 				if( isset( $current_category->term_id ) ) {
-					
+
 					$current_category_id = $current_category->term_id;
 
 					$termchildren = get_terms('docs_category',array('parent' => $current_category_id));
 
 					if ( $termchildren && ! is_wp_error( $termchildren ) ) :
-					  $cls = array_merge( $classes, array( 'docs-tax-templates-enabled-'.$current_category_id ) );
+					  $cls = array_merge( $classes, array( 'docs-tax-child-cat-enabled' ) );
 					  return $cls;
 					endif;
 				}
