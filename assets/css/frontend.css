@@ -206,6 +206,10 @@
     margin: 0;
 }*/
 
+.widget_bsf_docs_cat_widget ul.children li {
+   padding-left: 20px;
+}
+
 #bsf-search-result {
     position: absolute;
     background: #fff;
