@@ -66,7 +66,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			if ( '1' == $is_cat_template_on || false === $is_cat_template_on ) {
 				add_filter( 'template_include', array( $this, 'category_template' ), 99 );
 				add_filter( 'body_class', array( $this, 'bsf_docs_body_tax_class' ) );
-				add_filter( 'body_class', array( $this, 'bsf_docs_child_categories' ) );
 			}
 
 		}
@@ -142,34 +141,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			}
 			return $classes;
 		}
-
-		/**
-		 * Processes this test, when one of its tokens is encountered.
-		 *
-		 * @param Class-bsf-docs-loader $classes load.
-		 * @return $classes
-		 */
-		function bsf_docs_child_categories( $classes ) {
-
-			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' ) && is_array( $classes ) ) {
-				// Add clss to body.
-				$current_category = get_queried_object();
-				if( isset( $current_category->term_id ) ) {
-
-					$current_category_id = $current_category->term_id;
-
-					$termchildren = get_terms('docs_category',array('parent' => $current_category_id));
-
-					if ( $termchildren && ! is_wp_error( $termchildren ) ) :
-					  $cls = array_merge( $classes, array( 'docs-tax-child-cat-enabled' ) );
-					  return $cls;
-					endif;
-				}
-			}
-			return $classes;
-
-		}
-
 
 		/**
 		 * Register setting option variables.

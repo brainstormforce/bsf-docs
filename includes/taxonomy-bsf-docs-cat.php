@@ -113,7 +113,7 @@ get_header(); ?>
 
 			$args = array(
 			    'post_type' => 'docs',
-			    'posts_per_page' => get_option( 'posts_per_page' ),
+			    'posts_per_page' => -1,
 		        'post_status' => 'publish',
 		        'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
 			    'tax_query' => array(
@@ -150,14 +150,6 @@ get_header(); ?>
 			
 				<?php
 			endwhile;
-
-			the_posts_pagination(
-				array(
-					'prev_text' => '&laquo;<span class="screen-reader-text">' . __( 'Previous page', 'bsf-docs' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'bsf-docs' ) . '</span>&raquo;',
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bsf-docs' ) . ' </span>',
-				)
-			);
 
 		else :
 
