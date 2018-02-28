@@ -113,7 +113,7 @@ get_header(); ?>
 
 			$args = array(
 			    'post_type' => 'docs',
-			    'posts_per_page' => 10,
+			    'posts_per_page' => get_option( 'posts_per_page' ),
 		        'post_status' => 'publish',
 		        'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
 			    'tax_query' => array(
