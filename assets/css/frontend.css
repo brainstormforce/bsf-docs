@@ -408,7 +408,7 @@ h2.bsf-entry-title > a {
 /* Layout Styles*/
 
 .docs-sidebar-area .widget {
-    padding: 0;
+    padding: 0 !important;
 }
 
 .docs-single-templates-enabled #secondary.docs-sidebar-area,
