@@ -63,7 +63,7 @@
 
 .docs-single-templates-enabled .bsf-search-container,
 .docs-tax-templates-enabled .bsf-search-container {
-    max-width: 1040px;
+    max-width: 1240px;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -105,7 +105,7 @@
 
 /*.docs-single-templates-enabled .site-header .ast-container,
 .docs-tax-templates-enabled .site-header .ast-container {
-    width: 1040px;
+    width: 1240px;
 }*/
 
 :not(.search).docs-single-templates-enabled .site-content,
