@@ -251,9 +251,7 @@ ul.bsf-docs-tag li a {
 #bsf-search-result a:hover {
     text-decoration: none;
     background: #F5F5F5;
-    -moz-border-radius: 99px;
-    -webkit-border-radius: 99px;
-    border-radius: 99px;
+    border-radius: 5px;
 }
 
 .bsf-search-loader.spinner {
