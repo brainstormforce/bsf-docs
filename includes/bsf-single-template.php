@@ -35,9 +35,8 @@ get_header();
 					</div>
 				</header><!-- .entry-header -->
 				<div class="entry-content bsf-entry-content">
-					<?php
-					the_content();
-					?>
+					<?php the_post_thumbnail(); ?>
+					<?php the_content(); ?>
 				</div><!-- .entry-content -->
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template.

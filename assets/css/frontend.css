@@ -346,6 +346,9 @@
      line-height: inherit;
      margin-right: 10px;
  }
+.entry-content.bsf-entry-content img.attachment-post-thumbnail {
+    margin-bottom: 2em;
+}
 
 h2.bsf-entry-title > a {
   color: #3a3a3a;
