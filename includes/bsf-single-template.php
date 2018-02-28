@@ -34,7 +34,7 @@ get_header();
 						?>
 					</div>
 				</header><!-- .entry-header -->
-				<div class="bsf-entry-content">
+				<div class="entry-content bsf-entry-content">
 					<?php
 					the_content();
 					?>
