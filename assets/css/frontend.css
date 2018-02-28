@@ -348,7 +348,7 @@
 .docs-tax-templates-enabled .docs-wraper .bsf-page-header {
     border-bottom: 1px solid #e6e6e6;
     margin: 0 0 30px;
-    padding: 0 0 30px;
+    padding: 0 0 0.5em;
     position: relative;
 }
 
@@ -502,7 +502,7 @@ h2.bsf-entry-title > a {
 }
 
 .docs-single-title {
-    padding-bottom: 15px;
+    padding-bottom: 0.5em;
 }
 
 @media (max-width: 768px ) {
