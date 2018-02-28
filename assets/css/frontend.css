@@ -278,13 +278,13 @@ ul.bsf-docs-tag li a {
 
 /* Category list */
 
-.docs-single-templates-enabled .bsf-categories-wrap .bsf-cat-col:nth-child(3n+1) {
+.docs-single-templates-enabled .bsf-categories-wrap .bsf-cat-col:nth-child(4n+1) {
     clear: left;
 }
 
 .bsf-categories-wrap .bsf-cat-col {
     margin: 0 !important;
-    width: 33.33%;
+    width: 25%;
     float: left;
     min-height: 1px;
     position: relative;
