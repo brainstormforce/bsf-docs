@@ -37,7 +37,7 @@ get_header();
 				<div class="entry-content bsf-entry-content">
 					<?php the_post_thumbnail(); ?>
 					<?php the_content(); ?>
-					<?php the_terms( $post->ID, 'docs_tag', '<ul class="bsf-docs-tag"><li>', '</li><li>', '</li></ul>' ); ?>
+					<?php the_terms( $post->ID, 'docs_tag', '<ul class="bsf-docs-tag"><span class="bsf-docs-tag-label">Tagged Under: </span><li>', '</li><li>', '</li></ul>' ); ?>
 				</div><!-- .entry-content -->
 				<?php
 				// If comments are open or we have at least one comment, load up the comment template.

@@ -200,6 +200,11 @@
 }
 
 /* Tag Designs */
+span.bsf-docs-tag-label {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
 ul.bsf-docs-tag {
     margin: 2em 0 !important;
     list-style: none;
