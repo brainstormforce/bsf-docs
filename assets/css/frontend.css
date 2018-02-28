@@ -352,9 +352,10 @@
     position: relative;
 }
 
-.bsf-page-header > h1 {
-    color: #1a1a1a;
-    margin: 0;
+.bsf-page-header > h1,
+.docs-single-title > h1 {
+    margin: 0 0 0.5em;
+    line-height: 1.5;
 }
 
 .docs-single-templates-enabled .docs-single-main,
@@ -491,10 +492,10 @@ h2.bsf-entry-title > a {
     padding: 0;
 }
 
-/*.docs-single-templates-enabled .docs-single-title > h1 {
+.docs-single-templates-enabled .docs-single-title > h1 {
     font-size: 2em;
     line-height: 1.4em;
-}*/
+}
 
 .docs-single-title > p {
     margin: 0;
