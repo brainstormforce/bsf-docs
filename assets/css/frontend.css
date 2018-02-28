@@ -159,6 +159,16 @@
     outline: 0;
 }
 
+#bsf-sq::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #333333;
+    opacity: 1; /* Firefox */
+}
+#bsf-sq:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #333333;
+}
+#bsf-sq::-ms-input-placeholder { /* Microsoft Edge */
+    color: #333333;
+}
 /*#bsf-searchsubmit .docswp-search {
     padding-right: 3px;
 }*/
