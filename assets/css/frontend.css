@@ -355,7 +355,7 @@
 .bsf-page-header > h1,
 .docs-single-title > h1 {
     margin: 0 0 0.5em;
-    line-height: 1.5;
+    line-height: 1.5 !important;
 }
 
 .docs-single-templates-enabled .docs-single-main,
@@ -477,12 +477,6 @@ h2.bsf-entry-title > a {
       width: 30%;
     }
 }
-.docs-single-templates-enabled .docs-wraper .page-title {
-    font-size: 2em;
-    line-height: 1.4em;
-    border-bottom: 1px solid #e6e6e6;
-    padding: 0 0 25px;
-}
 
 /* Breadcrumb style*/
 
@@ -490,11 +484,6 @@ h2.bsf-entry-title > a {
     border-bottom: 1px solid #e6e6e6;
     margin: 0 0 30px;
     padding: 0;
-}
-
-.docs-single-templates-enabled .docs-single-title > h1 {
-    font-size: 2em;
-    line-height: 1.4em;
 }
 
 .docs-single-title > p {
