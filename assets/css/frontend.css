@@ -163,51 +163,29 @@
     padding-right: 3px;
 }*/
 
-/*.widget_bsf_docs_widget li,
+.widget_bsf_docs_widget li,
+.widget_bsf_docs_cat_widget li,
 .widget_bsf_docs_cat_widget .children li {
-    padding: 0 0 0 25px;
+    padding: 0 0 0 1.2em;
     position: relative;
     list-style: none;
-    line-height: 1.7em;
-}*/
-
-/*.widget_bsf_docs_widget li {
-    margin: 0 0 20px !important;
-}*/
-
-/*.widget_bsf_docs_widget li > a,
-.widget_bsf_docs_cat_widget li > a {
-    color: #45454C;
-}
-
-.widget_bsf_docs_widget li > a:hover,
-.widget_bsf_docs_cat_widget li > a:hover {
-    color: #2e8ece;
-}
-.docs-single-templates-enabled #secondary .widget_bsf_docs_widget,
-.docs-tax-templates-enabled #secondary .widget_bsf_docs_widget,
-.docs-single-templates-enabled #secondary .widget_bsf_docs_cat_widget,
-.docs-tax-templates-enabled #secondary .widget_bsf_docs_cat_widget {
-    padding: 0;
-    background: inherit;
 }
 
 .widget_bsf_docs_widget li:before,
+.widget_bsf_docs_cat_widget li:before,
 .widget_bsf_docs_cat_widget .children li:before {
     content: "\e900";
     font-family: 'docswp' !important;
     speak: none;
     position: absolute;
-    font-size: 20px;
-    left: -3px;
+    font-size: 1.2em;
+    line-height: 1.7;
+    left: 0;
+    top: 0;
 }
 
-.widget_bsf_docs_widget ul {
-    margin: 0;
-}*/
-
 .widget_bsf_docs_cat_widget ul.children li {
-   padding-left: 20px;
+   padding-left: 1.2em;
 }
 
 #bsf-search-result {
