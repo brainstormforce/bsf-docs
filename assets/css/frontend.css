@@ -116,7 +116,7 @@
 .docs-tax-templates-enabled .docs-archive-wraper,
 .docs-single-templates-enabled .docs-archive-wraper {
     display: block;
-    /*max-width: 1040px;*/
+    max-width: 1240px;
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -124,7 +124,7 @@
 
 .docs-single-templates-enabled .wrap.docs-wraper,
 .docs-tax-templates-enabled .wrap.docs-wraper {
-    /*max-width: 1040px;*/
+    max-width: 1240px;
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
