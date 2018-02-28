@@ -192,6 +192,27 @@
    padding-left: 1.5em;
 }
 
+/* Tag Designs */
+ul.bsf-docs-tag {
+    margin: 2em 0 !important;
+    list-style: none;
+    display: block;
+}
+ul.bsf-docs-tag li {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    font-size: 0.9em;
+    margin-right: 7px;
+    background: #545454;
+    color: #fff;
+    border-radius: 2px;
+}
+ul.bsf-docs-tag li a {
+    color: #fff;
+}
+
+/* Search Box */
+
 #bsf-search-result {
     position: absolute;
     background: #fff;
