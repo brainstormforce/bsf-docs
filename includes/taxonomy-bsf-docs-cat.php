@@ -62,7 +62,7 @@ get_header(); ?>
 					}
 				?>
 
-				<div class="bsf-page-header bsf-categories-wrap clearfix">
+				<div class="bsf-categories-wrap clearfix">
 					<?php
 					foreach ( $termchildren as $key => $object ) {
 
