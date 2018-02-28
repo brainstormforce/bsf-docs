@@ -182,9 +182,6 @@
 .widget_bsf_docs_cat_widget a {
     color: #333333;
 }
-.widget_bsf_docs_cat_widget > ul > li > a {
-    text-transform: uppercase;
-}
 .widget_bsf_docs_cat_widget ul.children {
     margin: 0.5em 0;
 }
