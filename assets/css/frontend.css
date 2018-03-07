@@ -462,12 +462,9 @@ h2.bsf-entry-title > a {
 }
 
 @media (min-width: 769px) {
+    :not(.search).docs-tax-templates-enabled #primary,
     :not(.search).docs-single-templates-enabled #primary {
       width: 70%;
-    }
-
-    :not(.search).docs-tax-templates-enabled #primary {
-      width: 100%;
     }
 
     :not(.search).docs-tax-templates-enabled #secondary,
