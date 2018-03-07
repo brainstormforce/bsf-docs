@@ -66,6 +66,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			if ( '1' == $is_cat_template_on || false === $is_cat_template_on ) {
 				add_filter( 'template_include', array( $this, 'category_template' ), 99 );
 				add_filter( 'body_class', array( $this, 'bsf_docs_body_tax_class' ) );
+				add_filter( 'body_class', array( $this, 'bsf_docs_body_sidebar_class' ) );
 			}
 
 		}
@@ -138,6 +139,25 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 				// Add clss to body.
 				  $cls = array_merge( $classes, array( 'docs-tax-templates-enabled' ) );
 				  return $cls;
+			}
+			return $classes;
+		}
+
+		/**
+		 * Processes this test, when one of its tokens is encountered.
+		 *
+		 * @param Class-bsf-docs-loader $classes load.
+		 * @return $classes
+		 */
+		function bsf_docs_body_sidebar_class( $classes ) {
+			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' ) || is_singular( 'docs' ) && is_array( $classes ) ) {
+
+				if( is_active_sidebar( 'docs-sidebar-1' ) ) {
+				// Add clss to body.
+				  $cls = array_merge( $classes, array( 'docs-sidebar-active' ) );
+				  return $cls;	
+				}
+
 			}
 			return $classes;
 		}
