@@ -24,7 +24,7 @@ get_header(); ?>
 		<div class="bsf-page-header">
 			<?php
 
-				echo '<h1 class="page-title">' . single_cat_title( '', false ) . '</h1>';
+				echo '<h1 class="entry-title">' . single_cat_title( '', false ) . '</h1>';
 				the_archive_description( '<div class="bsf-taxonomy-description">', '</div>' );
 
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
@@ -62,7 +62,7 @@ get_header(); ?>
 					}
 				?>
 
-				<div class="bsf-page-header bsf-categories-wrap clearfix">
+				<div class="bsf-categories-wrap clearfix">
 					<?php
 					foreach ( $termchildren as $key => $object ) {
 
