@@ -215,12 +215,12 @@ ul.bsf-docs-tag li {
     padding: 0.3em 0.7em;
     font-size: 0.9em;
     margin-right: 7px;
-    background: #0085ba;
-    color: #fff;
+    background: #f5f5f5;
+    color: #636363;
     border-radius: 2px;
 }
 ul.bsf-docs-tag li a {
-    color: #fff;
+    color: #636363;
 }
 
 /* Search Box */
