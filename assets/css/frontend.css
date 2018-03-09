@@ -487,6 +487,12 @@ h2.bsf-entry-title > a {
     float: left;
 }
 
+@media only screen and ( max-width: 480px ) {
+    .post-type-archive-docs .docs-archive-wraper .bsf-categories-wrap .bsf-cat-col {
+        width: 100%;
+    }
+}
+
 @media (min-width: 769px) {
     :not(.search).docs-tax-templates-enabled #primary,
     :not(.search).docs-single-templates-enabled #primary {
@@ -517,6 +523,12 @@ h2.bsf-entry-title > a {
 }
 
 @media (max-width: 768px ) {
+
+    .post-type-archive-docs .bsf-categories-wrap .bsf-cat-col {
+        float: left;
+        width: 50%;
+    }
+
     .bsf-categories-wrap .bsf-cat-col {
         float: none;
         width: 100%;
