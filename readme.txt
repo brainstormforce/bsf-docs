@@ -9,7 +9,7 @@ BSF Docs allows you to create documentation website within minute with ajax sear
 
 == Description ==
 
-A BSF Docs Easily build documentation website with AJAX based live search functionality. This plugin provides shortcodes to display category list & live search input box.
+Build documentation website with live search functionality. This plugin provides shortcodes to display category list & live search input box.
 
 == Installation ==
 
