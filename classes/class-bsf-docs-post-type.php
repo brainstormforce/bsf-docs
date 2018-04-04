@@ -120,6 +120,7 @@ class BSF_Docs_Post_Type {
 			'editor',
 			'excerpt',
 			'thumbnail',
+			'author',
 			'custom-fields',
 		);
 

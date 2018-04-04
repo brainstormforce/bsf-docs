@@ -84,7 +84,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							</td>
 						</tr>
 						<tr valign="top">
-							<th scope="row"><?php _e( 'Enable built-in category page template', 'bsf-docs' ); ?></th>
+							<th scope="row"><?php _e( 'Enable built-in category & tag page template', 'bsf-docs' ); ?></th>
 							<td>
 								<?php
 								$checked = '';
