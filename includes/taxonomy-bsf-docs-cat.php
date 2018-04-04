@@ -32,7 +32,8 @@ get_header(); ?>
 			}
 			?>
 		</div><!-- .page-header -->
-	<?php endif; 
+	<?php
+	endif;
 		?>
 
 		<?php if ( have_posts() ) : ?>
@@ -42,7 +43,8 @@ get_header(); ?>
 				$current_category_slug = $current_category->slug;
 				$count = '';
 
-				$termchildren = get_terms( 'docs_category',
+				$termchildren = get_terms(
+					'docs_category',
 					array(
 						'parent' => $current_category_id,
 						'pad_counts' => 1,
@@ -50,56 +52,57 @@ get_header(); ?>
 					)
 				);
 
-				if ( $termchildren && ! is_wp_error( $termchildren ) ) :
-					 $termchildren_1 = get_terms( 'docs_category',
-										array(
-											'pad_counts' => 1,
-										)
-									);
-					foreach ( $termchildren_1 as $key => $object ) {
+			if ( $termchildren && ! is_wp_error( $termchildren ) ) :
+				 $termchildren_1 = get_terms(
+					 'docs_category',
+					 array(
+						 'pad_counts' => 1,
+					 )
+				 );
+				foreach ( $termchildren_1 as $key => $object ) {
 
-						$slug = $termchildren_1;
-					}
+					$slug = $termchildren_1;
+				}
 				?>
 
 				<div class="bsf-categories-wrap clearfix">
-					<?php
-					foreach ( $termchildren as $key => $object ) {
+				<?php
+				foreach ( $termchildren as $key => $object ) {
 
-						for( $i = 0; $i <= count($slug); $i++ ) {
-							
-							if( isset( $slug[$i]->slug ) && isset( $object->slug ) ) {
-								if( $slug[$i]->slug == $object->slug ) {
-									$count = $slug[$i]->count;
-								}
+					for ( $i = 0; $i <= count( $slug ); $i++ ) {
+
+						if ( isset( $slug[ $i ]->slug ) && isset( $object->slug ) ) {
+							if ( $slug[ $i ]->slug == $object->slug ) {
+								$count = $slug[ $i ]->count;
 							}
 						}
+					}
 
-						if( $slug[$key]->slug == $object->slug ) {
-							
-							$count = $object->count;
-						}
-						?>
-						<div class="bsf-cat-col" >
-							<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
-								<h4><?php echo esc_html( $object->name ); ?></h4>
-								<span class="bsf-cat-count">
-									<?php /* translators: %s: article count term */ ?>
-									<?php printf( __( '%1$s Articles', 'bsf-docs' ), $count ); ?>
-								</span>
-							</a>
+					if ( $slug[ $key ]->slug == $object->slug ) {
+
+						$count = $object->count;
+					}
+					?>
+					<div class="bsf-cat-col" >
+						<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
+							<h4><?php echo esc_html( $object->name ); ?></h4>
+							<span class="bsf-cat-count">
+								<?php /* translators: %s: article count term */ ?>
+								<?php printf( __( '%1$s Articles', 'bsf-docs' ), $count ); ?>
+							</span>
+						</a>
 						</div>
 
 					<?php
-						// }
-					}
-					?>
+				}
+				?>
 				</div>
 
 				<?php
 				endif;
 			?>
-		<?php endif; 
+		<?php
+		endif;
 		?>
 
 		<?php
@@ -109,21 +112,21 @@ get_header(); ?>
 			/* Start the Loop */
 
 			$current_category = get_queried_object();
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
 
 			$args = array(
-			    'post_type' => 'docs',
-			    'posts_per_page' => -1,
-		        'post_status' => 'publish',
-		        'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-			    'tax_query' => array(
-			        array(
-			            'taxonomy' => 'docs_category',
-			            'field' => $current_category->slug,
-			            'terms' => $current_category->term_id,
-			            'include_children' => false,
-			        )
-			    )
+				'post_type' => 'docs',
+				'posts_per_page' => -1,
+				'post_status' => 'publish',
+				'paged' => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1),
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'docs_category',
+						'field' => $current_category->slug,
+						'terms' => $current_category->term_id,
+						'include_children' => false,
+					),
+				),
 			);
 
 			$query = new WP_Query( $args );
@@ -138,7 +141,7 @@ get_header(); ?>
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file.
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */ 
+				 */
 
 				?>
 				<article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> post type-docs status-publish format-standard docs_category">

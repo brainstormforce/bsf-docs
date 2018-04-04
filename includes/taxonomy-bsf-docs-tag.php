@@ -21,9 +21,10 @@ get_header(); ?>
 		<main id="main" class="in-wrap" role="main">
 
 
-		<?php 
+		<?php
 
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) :
+		?>
 		<div class="bsf-page-header">
 			<?php
 
@@ -35,7 +36,8 @@ get_header(); ?>
 			}
 			?>
 		</div><!-- .page-header -->
-	<?php endif; 
+	<?php
+	endif;
 		?>
 
 		<?php
@@ -45,21 +47,21 @@ get_header(); ?>
 			/* Start the Loop */
 
 			$current_tag = get_queried_object();
-			$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+			$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
 
 			$args = array(
-			    'post_type' => 'docs',
-			    'posts_per_page' => -1,
-		        'post_status' => 'publish',
-		        'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-			    'tax_query' => array(
-			        array(
-			            'taxonomy' => 'docs_tag',
-			            'field' => $current_tag->slug,
-			            'terms' => $current_tag->term_id,
-			            'include_children' => false,
-			        )
-			    )
+				'post_type' => 'docs',
+				'posts_per_page' => -1,
+				'post_status' => 'publish',
+				'paged' => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1),
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'docs_tag',
+						'field' => $current_tag->slug,
+						'terms' => $current_tag->term_id,
+						'include_children' => false,
+					),
+				),
 			);
 
 			$query = new WP_Query( $args );
@@ -74,7 +76,7 @@ get_header(); ?>
 				 * Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file.
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */ 
+				 */
 
 				?>
 				<article id="post-<?php the_ID(); ?>" class="post-<?php the_ID(); ?> post type-docs status-publish format-standard docs_category">
