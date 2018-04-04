@@ -89,11 +89,11 @@ function bsf_render_category_list( $atts, $content = null ) {
 	<div class="bsf-categories-wrap clearfix">
 
 		
-		<?php		
+		<?php
 
 		foreach ( $taxonomy_objects as $key => $object ) {
-			
-			if ( $object->count && $object->parent == '0' ) {
+
+			if ( '0' == $object->count && $object->parent ) {
 
 			?>
 			<div class="bsf-cat-col" >

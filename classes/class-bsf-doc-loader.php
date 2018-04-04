@@ -70,8 +70,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 				add_filter( 'body_class', array( $this, 'bsf_docs_body_sidebar_class' ) );
 			}
 
-
-
 		}
 
 		/**
@@ -165,14 +163,13 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @return $classes
 		 */
 		function bsf_docs_body_sidebar_class( $classes ) {
-			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' )|| is_tax( 'docs_tag' ) || is_singular( 'docs' ) && is_array( $classes ) ) {
+			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' ) || is_tax( 'docs_tag' ) || is_singular( 'docs' ) && is_array( $classes ) ) {
 
-				if( is_active_sidebar( 'docs-sidebar-1' ) ) {
-				// Add clss to body.
-				  $cls = array_merge( $classes, array( 'docs-sidebar-active' ) );
-				  return $cls;	
+				if ( is_active_sidebar( 'docs-sidebar-1' ) ) {
+					// Add clss to body.
+					$cls = array_merge( $classes, array( 'docs-sidebar-active' ) );
+					return $cls;
 				}
-
 			}
 			return $classes;
 		}
