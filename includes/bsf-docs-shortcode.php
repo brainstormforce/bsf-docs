@@ -93,7 +93,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 
 		foreach ( $taxonomy_objects as $key => $object ) {
 
-			if ( '0' == $object->count && $object->parent ) {
+			if ( '0' == ( $object->count && $object->parent ) ) {
 
 			?>
 			<div class="bsf-cat-col" >
