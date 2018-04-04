@@ -47,18 +47,18 @@ get_header(); ?>
 			/* Start the Loop */
 
 			$current_tag = get_queried_object();
-			$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
+			$paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 			$args = array(
-				'post_type' => 'docs',
+				'post_type'      => 'docs',
 				'posts_per_page' => -1,
-				'post_status' => 'publish',
-				'paged' => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1),
-				'tax_query' => array(
+				'post_status'    => 'publish',
+				'paged'          => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1 ),
+				'tax_query'      => array(
 					array(
-						'taxonomy' => 'docs_tag',
-						'field' => $current_tag->slug,
-						'terms' => $current_tag->term_id,
+						'taxonomy'         => 'docs_tag',
+						'field'            => $current_tag->slug,
+						'terms'            => $current_tag->term_id,
 						'include_children' => false,
 					),
 				),
@@ -68,9 +68,9 @@ get_header(); ?>
 
 			query_posts( $args );
 
-			while ( $query-> have_posts() ) :
+			while ( $query->have_posts() ) :
 
-				$query-> the_post();
+				$query->the_post();
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -85,7 +85,6 @@ get_header(); ?>
 					</h2>
 				</article>
 
-			
 				<?php
 			endwhile;
 

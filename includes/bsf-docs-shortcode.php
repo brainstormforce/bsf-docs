@@ -40,7 +40,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" >
 					</div>
 				</form>
-		  </div>
+		</div>
 		</div>
 	</div>
 
@@ -88,7 +88,6 @@ function bsf_render_category_list( $atts, $content = null ) {
 
 	<div class="bsf-categories-wrap clearfix">
 
-		
 		<?php
 
 		foreach ( $taxonomy_objects as $key => $object ) {
@@ -123,14 +122,14 @@ function bsf_render_category_list( $atts, $content = null ) {
  */
 function bsf_load_search_results() {
 
-	$query = sanitize_text_field( $_GET['query'] );
+	$query               = sanitize_text_field( $_GET['query'] );
 	$selected_post_types = get_option( 'bsf_search_post_types' );
 	$selected_post_types = ! $selected_post_types ? array( 'post', 'page' ) : $selected_post_types;
 
 		$args = array(
-			'post_type' => $selected_post_types,
+			'post_type'   => $selected_post_types,
 			'post_status' => 'publish',
-			's' => $query,
+			's'           => $query,
 		);
 
 	$search = new WP_Query( $args );
@@ -157,12 +156,12 @@ function bsf_load_search_results() {
 		?>
 
 	<?php else : ?>
-		  <li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
+		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
 	<?php
 	endif;
 
 	?>
-	 </ul> 
+	</ul> 
 	<?php
 
 	wp_reset_postdata();

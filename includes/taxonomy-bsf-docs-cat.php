@@ -38,27 +38,27 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 			<?php
-				$current_category = get_queried_object();
-				$current_category_id = $current_category->term_id;
+				$current_category      = get_queried_object();
+				$current_category_id   = $current_category->term_id;
 				$current_category_slug = $current_category->slug;
-				$count = '';
+				$count                 = '';
 
 				$termchildren = get_terms(
 					'docs_category',
 					array(
-						'parent' => $current_category_id,
+						'parent'     => $current_category_id,
 						'pad_counts' => 1,
 						'hide_empty' => false,
 					)
 				);
 
 			if ( $termchildren && ! is_wp_error( $termchildren ) ) :
-				 $termchildren_1 = get_terms(
-					 'docs_category',
-					 array(
-						 'pad_counts' => 1,
-					 )
-				 );
+				$termchildren_1 = get_terms(
+					'docs_category',
+					array(
+						'pad_counts' => 1,
+					)
+				);
 				foreach ( $termchildren_1 as $key => $object ) {
 
 					$slug = $termchildren_1;
@@ -112,18 +112,18 @@ get_header(); ?>
 			/* Start the Loop */
 
 			$current_category = get_queried_object();
-			$paged = (get_query_var( 'paged' )) ? get_query_var( 'paged' ) : 1;
+			$paged            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 			$args = array(
-				'post_type' => 'docs',
+				'post_type'      => 'docs',
 				'posts_per_page' => -1,
-				'post_status' => 'publish',
-				'paged' => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1),
-				'tax_query' => array(
+				'post_status'    => 'publish',
+				'paged'          => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1 ),
+				'tax_query'      => array(
 					array(
-						'taxonomy' => 'docs_category',
-						'field' => $current_category->slug,
-						'terms' => $current_category->term_id,
+						'taxonomy'         => 'docs_category',
+						'field'            => $current_category->slug,
+						'terms'            => $current_category->term_id,
 						'include_children' => false,
 					),
 				),
@@ -133,9 +133,9 @@ get_header(); ?>
 
 			query_posts( $args );
 
-			while ( $query-> have_posts() ) :
+			while ( $query->have_posts() ) :
 
-				$query-> the_post();
+				$query->the_post();
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -150,7 +150,6 @@ get_header(); ?>
 					</h2>
 				</article>
 
-			
 				<?php
 			endwhile;
 

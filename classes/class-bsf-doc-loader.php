@@ -44,7 +44,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			$this->define_constants();
 			$this->load_files();
 			$this->init_hooks();
-			add_action( 'init',  array( $this, 'bsf_callback_init' ) );
+			add_action( 'init', array( $this, 'bsf_callback_init' ) );
 
 			do_action( 'bsf_docs_loaded' );
 		}
@@ -56,7 +56,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		function bsf_callback_init() {
 
 			$is_single_template_on = get_option( 'bsf_override_single_template' );
-			$is_cat_template_on = get_option( 'bsf_override_category_template' );
+			$is_cat_template_on    = get_option( 'bsf_override_category_template' );
 
 			if ( '1' == $is_single_template_on || false === $is_single_template_on ) {
 				add_filter( 'single_template', array( $this, 'get_bsf_docs_single_template' ), 99 );
@@ -135,8 +135,8 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		function bsf_docs_body_single_class( $classes ) {
 
 			if ( is_post_type_archive( 'docs' ) || is_singular( 'docs' ) && is_array( $classes ) ) {
-					 $cls = array_merge( $classes, array( 'docs-single-templates-enabled' ) );
-				  return $cls;
+					$cls = array_merge( $classes, array( 'docs-single-templates-enabled' ) );
+				return $cls;
 			}
 			return $classes;
 		}
@@ -150,8 +150,8 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		function bsf_docs_body_tax_class( $classes ) {
 			if ( is_post_type_archive( 'docs' ) || is_tax( 'docs_category' ) || is_tax( 'docs_tag' ) && is_array( $classes ) ) {
 				// Add clss to body.
-				  $cls = array_merge( $classes, array( 'docs-tax-templates-enabled' ) );
-				  return $cls;
+				$cls = array_merge( $classes, array( 'docs-tax-templates-enabled' ) );
+				return $cls;
 			}
 			return $classes;
 		}
@@ -221,7 +221,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			if ( is_post_type_archive( BSF_DOCS_POST_TYPE ) ) {
 				$archive_template = BSF_DOCS_BASE_DIR . 'includes/bsf-archive-template.php';
 			}
-			 return $archive_template;
+			return $archive_template;
 		}
 
 		/**
@@ -235,7 +235,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			if ( is_singular( 'docs' ) ) {
 				$single_template = BSF_DOCS_BASE_DIR . 'includes/bsf-single-template.php';
 			}
-			 return $single_template;
+			return $single_template;
 		}
 
 		/**
@@ -275,7 +275,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			define( 'BSF_DOCS_DIR_NAME', plugin_basename( $file ) );
 			define( 'BSF_DOCS_BASE_FILE', trailingslashit( $file ) . BSF_DOCS_DIR_NAME . '.php' );
 			define( 'BSF_DOCS_BASE_DIR', plugin_dir_path( BSF_DOCS_BASE_FILE ) );
-			define( 'BSF_DOCS_BASE_URL', plugins_url( '/',  BSF_DOCS_BASE_FILE ) );
+			define( 'BSF_DOCS_BASE_URL', plugins_url( '/', BSF_DOCS_BASE_FILE ) );
 			define( 'BSF_DOCS_POST_TYPE', 'docs' );
 		}
 
@@ -305,13 +305,13 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 
 			if ( '1' == $is_live_search || false === $is_live_search ) {
 
-				wp_enqueue_script( 'bsf-live-search', BSF_DOCS_BASE_URL . 'assets/js/jquery.livesearch.js', array( 'jquery' ), BSF_DOCS_VERSION , true );
-				wp_enqueue_script( 'bsf-searchbox-script', BSF_DOCS_BASE_URL . 'assets/js/searchbox-script.js', array( 'bsf-live-search' ), BSF_DOCS_VERSION , true );
+				wp_enqueue_script( 'bsf-live-search', BSF_DOCS_BASE_URL . 'assets/js/jquery.livesearch.js', array( 'jquery' ), BSF_DOCS_VERSION, true );
+				wp_enqueue_script( 'bsf-searchbox-script', BSF_DOCS_BASE_URL . 'assets/js/searchbox-script.js', array( 'bsf-live-search' ), BSF_DOCS_VERSION, true );
 
 				wp_localize_script(
 					'bsf-searchbox-script', 'bsf_ajax_url',
 					array(
-						'url'         => admin_url( 'admin-ajax.php' ),
+						'url' => admin_url( 'admin-ajax.php' ),
 					)
 				);
 			}

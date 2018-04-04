@@ -16,7 +16,6 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 		<form method="post" action="options.php"> 
 				<h2 class="title"><?php _e( 'Live Search', 'bsf-docs' ); ?></h2>
 				<p><?php _e( "Settings to control the live search functionality & it's search area.", 'bsf-docs' ); ?></p>
-				
 					<?php settings_fields( 'bsf-docs-settings-group' ); ?>
 					<?php do_settings_sections( 'bsf-docs-settings-group' ); ?>
 
@@ -25,9 +24,9 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							<th scope="row"><?php _e( 'Enable Live Search', 'bsf-docs' ); ?></th>
 							<td>
 								<?php
-								$checked = '';
+								$checked        = '';
 								$bsf_ls_enabled = get_option( 'bsf_ls_enabled' );
-								$checked = ( false === $bsf_ls_enabled ) ? " checked='checked' " : ( ( 1 == $bsf_ls_enabled ) ? " checked='checked' " : '' );
+								$checked        = ( false === $bsf_ls_enabled ) ? " checked='checked' " : ( ( 1 == $bsf_ls_enabled ) ? " checked='checked' " : '' );
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_ls_enabled" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>
@@ -45,8 +44,8 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 
 									$post_types = get_post_types(
 										array(
-											'public'    => true,
-											'show_ui'    => true,
+											'public'  => true,
+											'show_ui' => true,
 										), 'objects'
 									);
 
@@ -56,17 +55,15 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 
 									foreach ( $post_types as $key => $post_type ) {
 									?>
-										
 										<input type="checkbox" 
 										<?php
 										if ( in_array( $key, $selected_post_types ) ) {
 											echo "checked='checked' "; }
 ?>
- name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
+name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
 										<label>
 											<?php echo ucfirst( $post_type->label ); ?>
 										</label><br>
-									
 									<?php } ?>
 								</fieldset>
 							</td>
@@ -76,9 +73,9 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							<th scope="row"><?php _e( 'Enable built-in single page template', 'bsf-docs' ); ?></th>
 							<td>
 								<?php
-								$checked = '';
+								$checked                      = '';
 								$bsf_override_single_template = get_option( 'bsf_override_single_template' );
-								$checked = ( false === $bsf_override_single_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_single_template ) ? " checked='checked' " : '' );
+								$checked                      = ( false === $bsf_override_single_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_single_template ) ? " checked='checked' " : '' );
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_override_single_template" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>
@@ -87,9 +84,9 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							<th scope="row"><?php _e( 'Enable built-in category & tag page template', 'bsf-docs' ); ?></th>
 							<td>
 								<?php
-								$checked = '';
+								$checked                        = '';
 								$bsf_override_category_template = get_option( 'bsf_override_category_template' );
-								$checked = ( false === $bsf_override_category_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_category_template ) ? " checked='checked' " : '' );
+								$checked                        = ( false === $bsf_override_category_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_category_template ) ? " checked='checked' " : '' );
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_override_category_template" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>
@@ -98,9 +95,9 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 							<th scope="row"><?php _e( "Turn Off Doc's Comments", 'bsf-docs' ); ?></th>
 							<td>
 								<?php
-								$checked = '';
+								$checked                 = '';
 								$bsf_search_has_comments = get_option( 'bsf_search_has_comments' );
-								$checked = ( false === $bsf_search_has_comments ) ? " checked='checked' " : ( ( 1 == $bsf_search_has_comments ) ? " checked='checked' " : '' );
+								$checked                 = ( false === $bsf_search_has_comments ) ? " checked='checked' " : ( ( 1 == $bsf_search_has_comments ) ? " checked='checked' " : '' );
 
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_search_has_comments" value="1" <?php echo checked( 1, $checked, false ); ?> />
@@ -115,7 +112,6 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 
 
 					</table>
-				
 						<?php submit_button(); ?>
 		</form>
 	</div>
@@ -126,20 +122,20 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 
 		<div class="bsf-shortcode-container">
 			<table class="form-table">
-				 <tr valign="top">
-					 <th scope="row"><?php _e( 'Display Live Search Box', 'bsf-docs' ); ?></th>
+				<tr valign="top">
+					<th scope="row"><?php _e( 'Display Live Search Box', 'bsf-docs' ); ?></th>
 					<td>
-						   <div class="bsf-shortcode-container wp-ui-text-highlight">
-							   [doc_wp_live_search placeholder="Have a question?"]
-						   </div>  
+						<div class="bsf-shortcode-container wp-ui-text-highlight">
+							[doc_wp_live_search placeholder="Have a question?"]
+						</div>  
 					</td>
 				</tr>
 				<tr valign="top">
-					 <th scope="row"><?php _e( "Display Doc's Category List", 'bsf-docs' ); ?></th>
+					<th scope="row"><?php _e( "Display Doc's Category List", 'bsf-docs' ); ?></th>
 					<td>
-						   <div class="bsf-shortcode-container wp-ui-text-highlight">
-							   [doc_wp_category_list]
-						   </div>  
+						<div class="bsf-shortcode-container wp-ui-text-highlight">
+							[doc_wp_category_list]
+						</div>  
 					</td>
 				</tr>
 			</table>

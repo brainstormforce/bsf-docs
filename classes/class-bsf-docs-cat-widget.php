@@ -29,7 +29,7 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 			// Base ID of your widget.
 			'bsf_docs_cat_widget',
 			// Widget name will appear in UI.
-			__( 'BSF Docs Category Widget', 'bsf-docs' ) ,
+			__( 'BSF Docs Category Widget', 'bsf-docs' ),
 			// Widget description.
 			array(
 				'description' => __( 'A list or dropdown of BSF Docs categories.', 'bsf-docs' ),
@@ -65,23 +65,23 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 			'orderby'      => 'name',
 			'show_count'   => $c,
 			'hierarchical' => $h,
-			'taxonomy' => 'docs_category',
+			'taxonomy'     => 'docs_category',
 		);
 
 		if ( $d ) {
 			echo sprintf( '<form action="%s" method="get">', esc_url( home_url() ) );
-			$dropdown_id = ( $first_dropdown ) ? 'docs-category' : "{$this->id_base}-dropdown-{$this->number}";
+			$dropdown_id    = ( $first_dropdown ) ? 'docs-category' : "{$this->id_base}-dropdown-{$this->number}";
 			$first_dropdown = false;
 
-			$current_category = get_queried_object();
+			$current_category      = get_queried_object();
 			$current_category_slug = $current_category->slug;
 
 			echo '<label class="bsf-screen-reader-text" for="' . esc_attr( $dropdown_id ) . '">' . $title . '</label>';
 
 			$cat_args['show_option_none'] = __( 'Select Category' );
-			$cat_args['id'] = $dropdown_id;
-			$cat_args['value_field'] = 'slug';
-			$cat_args['selected'] = $current_category_slug;
+			$cat_args['id']               = $dropdown_id;
+			$cat_args['value_field']      = 'slug';
+			$cat_args['selected']         = $current_category_slug;
 
 			/**
 				 * Filters the arguments for the Categories widget drop-down.
@@ -145,15 +145,15 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 	 */
 	public function form( $instance ) {
 		// Defaults.
-		$instance = wp_parse_args(
+		$instance     = wp_parse_args(
 			(array) $instance, array(
 				'title' => '',
 			)
 		);
-		$title = sanitize_text_field( $instance['title'] );
-		$count = isset( $instance['count'] ) ? (bool) $instance['count'] : false;
+		$title        = sanitize_text_field( $instance['title'] );
+		$count        = isset( $instance['count'] ) ? (bool) $instance['count'] : false;
 		$hierarchical = isset( $instance['hierarchical'] ) ? (bool) $instance['hierarchical'] : false;
-		$dropdown = isset( $instance['dropdown'] ) ? (bool) $instance['dropdown'] : false;
+		$dropdown     = isset( $instance['dropdown'] ) ? (bool) $instance['dropdown'] : false;
 		?>
 		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
@@ -176,11 +176,11 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 	 * @param int $old_instance Returns the old instance.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$instance['title'] = sanitize_text_field( $new_instance['title'] );
-		$instance['count'] = ! empty( $new_instance['count'] ) ? 1 : 0;
+		$instance                 = $old_instance;
+		$instance['title']        = sanitize_text_field( $new_instance['title'] );
+		$instance['count']        = ! empty( $new_instance['count'] ) ? 1 : 0;
 		$instance['hierarchical'] = ! empty( $new_instance['hierarchical'] ) ? 1 : 0;
-		$instance['dropdown'] = ! empty( $new_instance['dropdown'] ) ? 1 : 0;
+		$instance['dropdown']     = ! empty( $new_instance['dropdown'] ) ? 1 : 0;
 
 		return $instance;
 	}
