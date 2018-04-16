@@ -121,6 +121,7 @@ class BSF_Docs_Post_Type {
 			'excerpt',
 			'thumbnail',
 			'author',
+			'revisions',
 			'custom-fields',
 		);
 
