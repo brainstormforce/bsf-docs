@@ -29,7 +29,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 			// Base ID of your widget.
 			'bsf_docs_widget',
 			// Widget name will appear in UI.
-			__( 'BSF Docs Widget', 'bsf-docs' ) ,
+			__( 'BSF Docs Widget', 'bsf-docs' ),
 			// Widget description.
 			array(
 				'description' => __( 'Widget for recent Docs', 'bsf-docs' ),
@@ -56,7 +56,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 	<?php
 		$recent_posts = wp_get_recent_posts(
 			array(
-				'post_type' => 'docs',
+				'post_type'   => 'docs',
 				'post_status' => 'publish',
 			)
 		);
@@ -65,7 +65,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 	}
 
 ?>
-   </ul>
+</ul>
 	<?php
 		echo $args['after_widget'];
 	}
@@ -84,7 +84,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 
 		// Widget admin form.
 	?>
-   <p>
+<p>
 	<label for="
 	<?php
 		echo $this->get_field_id( 'title' );
@@ -106,8 +106,8 @@ class Bsf_Docs_Widget extends WP_Widget {
 	 * @param int $old_instance Returns the old instance.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = array();
-		$instance['title'] = ( ! empty( $new_instance['title'] )) ? strip_tags( $new_instance['title'] ) : '';
+		$instance          = array();
+		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 		return $instance;
 	}
 
@@ -131,13 +131,13 @@ class Bsf_Docs_Widget extends WP_Widget {
 		register_widget( 'bsf_docs_widget' );
 		register_sidebar(
 			array(
-				'name' => __( 'Docs Sidebar', 'bsf-docs' ),
-				'id' => 'docs-sidebar-1',
-				'description' => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'bsf-docs' ),
+				'name'          => __( 'Docs Sidebar', 'bsf-docs' ),
+				'id'            => 'docs-sidebar-1',
+				'description'   => __( 'Widgets in this area will be shown on all docs single posts and cateory.', 'bsf-docs' ),
 				'before_widget' => '<div id="%1$s" class="widget %2$s">',
-				'after_widget' => '</div>',
-				'before_title' => '<h2 class="docs-widget-title">',
-				'after_title' => '</h2>',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h2 class="widget-title docs-widget-title">',
+				'after_title'   => '</h2>',
 			)
 		);
 	}

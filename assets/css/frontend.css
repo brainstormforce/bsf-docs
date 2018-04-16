@@ -22,22 +22,20 @@
 }
 
 [class^="docswp-"], [class*=" docswp-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'docswp' !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
-    width: 16px;
-    height: 16px;
-    font-size: 16px;
-    line-height: 16px;
+    width: 1em;
+    height: 1em;
+    font-size: 1em;
+    line-height: 1em;
     vertical-align: middle;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -65,16 +63,16 @@
 
 .docs-single-templates-enabled .bsf-search-container,
 .docs-tax-templates-enabled .bsf-search-container {
-    max-width: 1040px;
+    max-width: 1240px;
     margin: 0 auto;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.docs-tax-templates-enabled,
-.docs-single-templates-enabled,
-.docs-tax-templates-enabled,
-.docs-single-templates-enabled {
+:not(.search).docs-tax-templates-enabled,
+:not(.search).docs-single-templates-enabled,
+:not(.search).docs-tax-templates-enabled,
+:not(.search).docs-single-templates-enabled {
     background: #fff;
 }
 
@@ -91,7 +89,7 @@
     font-family: 'docswp' !important;
     speak: none;
     position: absolute;
-    font-size: 20px;
+    font-size: 1.2em;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
@@ -99,26 +97,26 @@
 
 /* Astra Compatability*/
 
-.docs-single-templates-enabled .site-content > .ast-container,
-.docs-tax-templates-enabled .site-content > .ast-container {
+:not(.search).docs-single-templates-enabled .site-content > .ast-container,
+:not(.search).docs-tax-templates-enabled .site-content > .ast-container {
     max-width: 100%;
     padding: 0;
 }
 
-.docs-single-templates-enabled .site-header .ast-container,
+/*.docs-single-templates-enabled .site-header .ast-container,
 .docs-tax-templates-enabled .site-header .ast-container {
-    width: 1040px;
-}
+    width: 1240px;
+}*/
 
-.docs-single-templates-enabled .site-content,
-.docs-tax-templates-enabled .site-content {
+:not(.search).docs-single-templates-enabled .site-content,
+:not(.search).docs-tax-templates-enabled .site-content {
     padding: 0;
 }
 
 .docs-tax-templates-enabled .docs-archive-wraper,
 .docs-single-templates-enabled .docs-archive-wraper {
     display: block;
-    max-width: 1040px;
+    max-width: 1240px;
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -126,7 +124,7 @@
 
 .docs-single-templates-enabled .wrap.docs-wraper,
 .docs-tax-templates-enabled .wrap.docs-wraper {
-    max-width: 1040px;
+    max-width: 1240px;
     margin: auto;
     padding-left: 20px;
     padding-right: 20px;
@@ -143,17 +141,17 @@
     background: #fff;
     border: 1px solid #d1d1d1;
     position: relative;
-    -moz-border-radius: 99px;
-    -webkit-border-radius: 99px;
-    border-radius: 99px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
 }
 
 #bsf-live-search #bsf-sq {
-    float: left;
-    width: 80%;
+    /*float: left;*/
+    width: 100%;
     background: none;
     color: #595959;
-    font-size: 16px;
+    font-size: 1em;
     padding: 20px 25px;
     border: none;
     box-shadow: none;
@@ -161,66 +159,77 @@
     outline: 0;
 }
 
-#bsf-searchsubmit .docswp-search {
-    padding-right: 3px;
+#bsf-sq::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #333333;
+    opacity: 1; /* Firefox */
 }
+#bsf-sq:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #333333;
+}
+#bsf-sq::-ms-input-placeholder { /* Microsoft Edge */
+    color: #333333;
+}
+/*#bsf-searchsubmit .docswp-search {
+    padding-right: 3px;
+}*/
 
-#bsf_docs_widget-2 li {
-    margin: 0 0 20px !important;
-    padding: 0 0 0 25px;
+.widget_bsf_docs_cat_widget .children li {
+    padding: 0 0 0 1.5em;
     position: relative;
     list-style: none;
-    line-height: 1.7em;
 }
 
-#bsf_docs_widget-2 li > a {
-    color: #45454C;
-}
-
-#bsf_docs_widget-2 li > a:hover {
-    color: #2e8ece;
-}
-.docs-single-templates-enabled #secondary #bsf_docs_widget-2,
-.docs-tax-templates-enabled #secondary #bsf_docs_widget-2 {
-    padding: 0;
-    background: inherit;
-}
-
-.widget_bsf_docs_widget ul {
-    margin: 0;
-}
-
-#bsf_docs_widget-2 li:before {
+.widget_bsf_docs_cat_widget .children li:before {
     content: "\e900";
     font-family: 'docswp' !important;
     speak: none;
     position: absolute;
-    font-size: 20px;
-    left: -3px;
+    font-size: 1.2em;
+    line-height: 1.7;
+    left: 0.2em;
+    top: 0;
+}
+.widget_bsf_docs_cat_widget a {
+    color: #333333;
+}
+.widget_bsf_docs_cat_widget ul.children {
+    margin: 0.5em 0;
+}
+.widget_bsf_docs_cat_widget ul.children li {
+   padding-left: 1.5em;
 }
 
-#bsf-live-search #bsf-searchsubmit {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    width: 148px;
-    height: 45px;
-    color: #fff;
-    padding: 10px 18px;
-    text-transform: uppercase;
-    border: none;
-    -moz-border-radius: 99px;
-    -webkit-border-radius: 99px;
-    border-radius: 99px;
-    transform: translateY(-50%);
-    bottom: 0;
+/* Tag Designs */
+span.bsf-docs-tag-label {
+    display: block;
+    margin-bottom: 1em;
+    font-weight: bold;
 }
+ul.bsf-docs-tag {
+    margin: 2em 0 !important;
+    list-style: none;
+    display: block;
+}
+ul.bsf-docs-tag li {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    font-size: 0.9em;
+    margin-right: 7px;
+    background: #f5f5f5;
+    color: #636363;
+    border-radius: 2px;
+}
+ul.bsf-docs-tag li a {
+    color: #636363;
+}
+
+/* Search Box */
 
 #bsf-search-result {
     position: absolute;
     background: #fff;
     list-style: none;
-    font-size: 13px;
+    font-size: 0.9em;
     top: 20px;
     left: 5px;
     margin: 0;
@@ -257,9 +266,7 @@
 #bsf-search-result a:hover {
     text-decoration: none;
     background: #F5F5F5;
-    -moz-border-radius: 99px;
-    -webkit-border-radius: 99px;
-    border-radius: 99px;
+    border-radius: 5px;
 }
 
 .bsf-search-loader.spinner {
@@ -270,7 +277,7 @@
     transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -webkit-transform: translateY(-50%);
-    right: 140px;
+    right: 25px;
     width: 25px;
     height: 21px;
     margin: 0;
@@ -286,7 +293,7 @@
 
 /* Category list */
 
-.bsf-categories-wrap .bsf-cat-col:nth-child(3n+1) {
+.docs-single-templates-enabled .bsf-categories-wrap .bsf-cat-col:nth-child(4n+1) {
     clear: left;
 }
 
@@ -296,6 +303,10 @@
     float: left;
     min-height: 1px;
     position: relative;
+}
+
+.post-type-archive-docs .bsf-categories-wrap .bsf-cat-col {
+    width: 25%;
 }
 
 .bsf-categories-wrap .bsf-cat-col {
@@ -314,7 +325,7 @@
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     transform: translateY(0);
-    -webkittransition: all 150ms linear;
+    -webkit-transition: all 150ms linear;
     -moz-transition: all 150ms linear;
     transition: all 150ms linear;
     text-decoration: none;
@@ -328,7 +339,7 @@
 
 .bsf-categories-wrap h4:first-child {
     color: #000;
-    font-size: 17px;
+    font-size: 1em;
     margin: 0 0 5px;
     letter-spacing: normal;
     font-weight: normal;
@@ -337,7 +348,7 @@
 
 .bsf-categories-wrap .bsf-cat-count{
     color: #808285;
-    font-size: 13px;
+    font-size: 0.9em;
     margin: 0;
 }
 
@@ -354,13 +365,14 @@
 .docs-tax-templates-enabled .docs-wraper .bsf-page-header {
     border-bottom: 1px solid #e6e6e6;
     margin: 0 0 30px;
-    padding: 0 0 30px;
+    padding: 0 0 0.5em;
     position: relative;
 }
 
-.bsf-page-header > h1 {
-    color: #1a1a1a;
-    margin: 0;
+.bsf-page-header > h1,
+.docs-single-title > h1 {
+    margin: 0 0 0.5em;
+    line-height: 1.5 !important;
 }
 
 .docs-single-templates-enabled .docs-single-main,
@@ -377,6 +389,9 @@
      line-height: inherit;
      margin-right: 10px;
  }
+.entry-content.bsf-entry-content img.attachment-post-thumbnail {
+    margin-bottom: 2em;
+}
 
 h2.bsf-entry-title > a {
   color: #3a3a3a;
@@ -388,7 +403,7 @@ h2.bsf-entry-title > a {
 
  .bsf-entry-title {
      display: inline-block;
-     font-size: 16px;
+     font-size: 1em;
      font-weight: 400;
      margin: 0;
  }
@@ -402,30 +417,31 @@ h2.bsf-entry-title > a {
  .bsf-main-wrap .bsf-entry-title a:visited {
      color: #45454C;
  }
- #bsf-searchsubmit .dashicons-search {
+/* #bsf-searchsubmit .dashicons-search {
      padding: 5px 0;
      font-size: 18px;
      line-height: 19px;
      height: 18px;
      width: 18px;
  }
-
+*/
 
 /* Widget CSS */
 
-.widget_bsf_docs_widget > h2 {
+/*.widget_bsf_docs_widget > h2,
+.widget_bsf_docs_cat_widget > h2 {
     font-size: 18px;
     font-weight: 500;
     margin: 10px 0;
     padding: 0;
     line-height: 1.4em;
     margin-bottom: 15px;
-}
+}*/
 
 
-.widget_bsf_docs_widget li {
+/*.widget_bsf_docs_widget li {
     position: relative;
-}
+}*/
 
 .docswp-keyboard_arrow_right {
     padding-right: 7px;
@@ -433,13 +449,18 @@ h2.bsf-entry-title > a {
 
 /* Layout Styles*/
 
+.docs-sidebar-area .widget {
+    padding: 0 !important;
+}
+
 .docs-single-templates-enabled #secondary.docs-sidebar-area,
 .docs-tax-templates-enabled #secondary.docs-sidebar-area {
     border-left: 1px solid #e6e6e6;
     left: -1px;
     margin: 0;
-    padding: 40px 0 40px 30px;
+    padding: 45px 0 40px 30px;
 }
+
 
 .docs-single-templates-enabled .docs-wraper #primary.content-area, 
 .docs-tax-templates-enabled .docs-wraper #primary.content-area {
@@ -466,23 +487,23 @@ h2.bsf-entry-title > a {
     float: left;
 }
 
+@media only screen and ( max-width: 480px ) {
+    .post-type-archive-docs .docs-archive-wraper .bsf-categories-wrap .bsf-cat-col {
+        width: 100%;
+    }
+}
+
 @media (min-width: 769px) {
-    .docs-tax-templates-enabled #primary,
-    .docs-single-templates-enabled #primary {
+    :not(.search).docs-tax-templates-enabled #primary,
+    :not(.search).docs-single-templates-enabled #primary {
       width: 70%;
     }
 
-    .docs-tax-templates-enabled #secondary,
-    .docs-single-templates-enabled #secondary {
+    :not(.search).docs-tax-templates-enabled #secondary,
+    :not(.search).docs-single-templates-enabled #secondary {
       float: left;
       width: 30%;
     }
-}
-.docs-single-templates-enabled .docs-wraper .page-title {
-    font-size: 28px;
-    line-height: 1.4em;
-    border-bottom: 1px solid #e6e6e6;
-    padding: 0 0 25px;
 }
 
 /* Breadcrumb style*/
@@ -493,20 +514,21 @@ h2.bsf-entry-title > a {
     padding: 0;
 }
 
-.docs-single-templates-enabled .docs-single-title > h1 {
-    font-size: 28px;
-    line-height: 1.4em;
-}
-
 .docs-single-title > p {
     margin: 0;
 }
 
 .docs-single-title {
-    padding-bottom: 30px;
+    padding-bottom: 0.5em;
 }
 
 @media (max-width: 768px ) {
+
+    .post-type-archive-docs .bsf-categories-wrap .bsf-cat-col {
+        float: left;
+        width: 50%;
+    }
+
     .bsf-categories-wrap .bsf-cat-col {
         float: none;
         width: 100%;
@@ -518,7 +540,7 @@ h2.bsf-entry-title > a {
     .bsf-search-label {
         display: none;
     }
-    #bsf-live-search #bsf-searchsubmit {
+   /* #bsf-live-search #bsf-searchsubmit {
         position: absolute;
         right: 5px;
         top: 48%;
@@ -533,11 +555,11 @@ h2.bsf-entry-title > a {
         -webkit-border-radius: 99px;
         transform: translateY(-50%);
         bottom: 0;
-    }
-    #bsf-live-search #bsf-sq {
+    }*/
+    /*#bsf-live-search #bsf-sq {
         width: 100%;
         font-size: 14px;
-    }
+    }*/
     .docs-single-templates-enabled .docs-wraper #primary.content-area, 
     .docs-tax-templates-enabled .docs-wraper #primary.content-area {
         padding-right: 0;
@@ -550,10 +572,13 @@ h2.bsf-entry-title > a {
         margin: 0;
         padding: 50px 0 0 0;
     }
-    .docs-single-templates-enabled .docs-single-title > h1 {
+    /*.docs-single-templates-enabled .docs-single-title > h1 {
         font-size: 20px;
         line-height: 1.4em;
         margin-bottom: 15px;
+    }*/
+    .tax-breadcrumb {
+        margin-top: 5px;
     }
     /* Archive Page */
     .docs-tax-templates-enabled .docs-archive-wraper, 
@@ -570,5 +595,9 @@ h2.bsf-entry-title > a {
     }
     #bsf-search-result a {
         white-space: inherit;
+    }
+    .docs-single-templates-enabled .site-header .ast-container, 
+    .docs-tax-templates-enabled .site-header .ast-container {
+        width: 100%;
     }
 }

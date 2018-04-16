@@ -43,9 +43,9 @@ class BSF_Docs_Post_Type {
 			'docs_category',
 			apply_filters( 'docs_category', array( BSF_DOCS_POST_TYPE ) ),
 			array(
-				'hierarchical'          => true,
-				'label'                 => __( 'Categories', 'bsf-docs' ),
-				'labels' => array(
+				'hierarchical' => true,
+				'label'        => __( 'Categories', 'bsf-docs' ),
+				'labels'       => array(
 					'name'              => __( 'Docs categories', 'bsf-docs' ),
 					'singular_name'     => __( 'Category', 'bsf-docs' ),
 					'menu_name'         => _x( 'Categories', 'Admin menu name', 'bsf-docs' ),
@@ -59,9 +59,9 @@ class BSF_Docs_Post_Type {
 					'new_item_name'     => __( 'New category name', 'bsf-docs' ),
 					'not_found'         => __( 'No categories found', 'bsf-docs' ),
 				),
-				'show_ui'               => true,
-				'query_var'             => true,
-				'rewrite'          => array(
+				'show_ui'      => true,
+				'query_var'    => true,
+				'rewrite'      => array(
 					'slug'         => 'docs-category',
 					'with_front'   => false,
 					'hierarchical' => true,
@@ -74,9 +74,9 @@ class BSF_Docs_Post_Type {
 			apply_filters( 'bsf_taxonomy_objects_docs_tag', array( BSF_DOCS_POST_TYPE ) ),
 			apply_filters(
 				'bsf_taxonomy_args_docs_tag', array(
-					'hierarchical'          => false,
-					'label'                 => __( 'Docs tags', 'bsf-docs' ),
-					'labels'                => array(
+					'hierarchical' => false,
+					'label'        => __( 'Docs tags', 'bsf-docs' ),
+					'labels'       => array(
 						'name'                       => __( 'Docs tags', 'bsf-docs' ),
 						'singular_name'              => __( 'Tag', 'bsf-docs' ),
 						'menu_name'                  => _x( 'Tags', 'Admin menu name', 'bsf-docs' ),
@@ -92,9 +92,9 @@ class BSF_Docs_Post_Type {
 						'choose_from_most_used'      => __( 'Choose from the most used tags', 'bsf-docs' ),
 						'not_found'                  => __( 'No tags found', 'bsf-docs' ),
 					),
-					'show_ui'     => true,
-					'query_var'   => true,
-					'rewrite'     => array(
+					'show_ui'      => true,
+					'query_var'    => true,
+					'rewrite'      => array(
 						'slug'       => 'docs-tag',
 						'with_front' => false,
 					),
@@ -120,6 +120,8 @@ class BSF_Docs_Post_Type {
 			'editor',
 			'excerpt',
 			'thumbnail',
+			'author',
+			'revisions',
 			'custom-fields',
 		);
 
@@ -136,26 +138,26 @@ class BSF_Docs_Post_Type {
 				'bsf_register_post_type_docs',
 				array(
 					'labels'              => array(
-							'name'                  => __( 'Docs', 'bsf-docs' ),
-							'singular_name'         => __( 'Doc', 'bsf-docs' ),
-							'menu_name'             => _x( 'Docs', 'Admin menu name', 'bsf-docs' ),
-							'add_new'               => __( 'Add Doc', 'bsf-docs' ),
-							'add_new_item'          => __( 'Add New Doc', 'bsf-docs' ),
-							'edit'                  => __( 'Edit', 'bsf-docs' ),
-							'edit_item'             => __( 'Edit Doc', 'bsf-docs' ),
-							'new_item'              => __( 'New Doc', 'bsf-docs' ),
-							'view'                  => __( 'View Doc', 'bsf-docs' ),
-							'view_item'             => __( 'View Doc', 'bsf-docs' ),
-							'search_items'          => __( 'Search Docs', 'bsf-docs' ),
-							'not_found'             => __( 'No Docs found', 'bsf-docs' ),
-							'not_found_in_trash'    => __( 'No Docs found in trash', 'bsf-docs' ),
-							'parent'                => __( 'Parent Doc', 'bsf-docs' ),
-							'featured_image'        => __( 'Docs image', 'bsf-docs' ),
-							'set_featured_image'    => __( 'Set Docs image', 'bsf-docs' ),
-							'remove_featured_image' => __( 'Remove Docs image', 'bsf-docs' ),
-							'use_featured_image'    => __( 'Use as Docs image', 'bsf-docs' ),
-							'items_list'            => __( 'Docs list', 'bsf-docs' ),
-						),
+						'name'                  => __( 'Docs', 'bsf-docs' ),
+						'singular_name'         => __( 'Doc', 'bsf-docs' ),
+						'menu_name'             => _x( 'Docs', 'Admin menu name', 'bsf-docs' ),
+						'add_new'               => __( 'Add Doc', 'bsf-docs' ),
+						'add_new_item'          => __( 'Add New Doc', 'bsf-docs' ),
+						'edit'                  => __( 'Edit', 'bsf-docs' ),
+						'edit_item'             => __( 'Edit Doc', 'bsf-docs' ),
+						'new_item'              => __( 'New Doc', 'bsf-docs' ),
+						'view'                  => __( 'View Doc', 'bsf-docs' ),
+						'view_item'             => __( 'View Doc', 'bsf-docs' ),
+						'search_items'          => __( 'Search Docs', 'bsf-docs' ),
+						'not_found'             => __( 'No Docs found', 'bsf-docs' ),
+						'not_found_in_trash'    => __( 'No Docs found in trash', 'bsf-docs' ),
+						'parent'                => __( 'Parent Doc', 'bsf-docs' ),
+						'featured_image'        => __( 'Docs image', 'bsf-docs' ),
+						'set_featured_image'    => __( 'Set Docs image', 'bsf-docs' ),
+						'remove_featured_image' => __( 'Remove Docs image', 'bsf-docs' ),
+						'use_featured_image'    => __( 'Use as Docs image', 'bsf-docs' ),
+						'items_list'            => __( 'Docs list', 'bsf-docs' ),
+					),
 					'description'         => __( 'This is where you can add new docs to your site.', 'bsf-docs' ),
 					'public'              => true,
 					'show_ui'             => true,

@@ -25,7 +25,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 	ob_start();
 	$args = shortcode_atts(
 		array(
-			'placeholder' => __( 'Enter search string', 'bsf-docs' ),
+			'placeholder' => __( 'Search for answers...', 'bsf-docs' ),
 		), $atts
 	);
 
@@ -39,12 +39,8 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 					<div class="spinner live-search-loading bsf-search-loader">
 						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" >
 					</div>
-					<button type="submit" id="bsf-searchsubmit">
-						<span class="docswp-search"></span>
-						<span class="bsf-search-label"><?php _e( 'Search', 'bsf-docs' ); ?></span>
-					</button>
 				</form>
-		  </div>
+		</div>
 		</div>
 	</div>
 
@@ -72,6 +68,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 	$taxonomy_objects = get_terms(
 		$get_args['category'], array(
 			'hide_empty' => false,
+			'pad_counts' => 1,
 		)
 	);
 
@@ -83,26 +80,27 @@ function bsf_render_category_list( $atts, $content = null ) {
 	if ( '' != $doc_title ) {
 	?>
 		<h1 class="docs-title"><?php echo esc_attr( $doc_title ); ?></h1>
-	<?php } ?>
+	<?php
+	}
+
+	if ( $taxonomy_objects && ! is_wp_error( $taxonomy_objects ) ) :
+	?>
 
 	<div class="bsf-categories-wrap clearfix">
 
-		
 		<?php
+
 		foreach ( $taxonomy_objects as $key => $object ) {
 
-			$cat_link = get_category_link( $object->term_id );
-			$category = get_category( $object->term_id );
-			$count = $category->category_count;
-
-			if ( $count > 0 ) {
+			if ( '0' == ( $object->count && $object->parent ) ) {
 
 			?>
 			<div class="bsf-cat-col" >
-				<a class="bsf-cat-link" href="<?php echo esc_url( $cat_link ); ?>">
-					<h4><?php echo $object->name; ?></h4>
+				<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
+					<h4><?php echo esc_html( $object->name ); ?></h4>
 					<span class="bsf-cat-count">
-						<?php echo $count . ' ' . __( 'Articles', 'bsf-docs' ); ?> 
+						<?php /* translators: %s: article count term */ ?>
+						<?php printf( __( '%1$s Articles', 'bsf-docs' ), $object->count ); ?>
 					</span>
 				</a>
 			</div>
@@ -114,6 +112,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 	</div>
 
 	<?php
+	endif;
 
 	return ob_get_clean();
 }
@@ -123,14 +122,14 @@ function bsf_render_category_list( $atts, $content = null ) {
  */
 function bsf_load_search_results() {
 
-	$query = sanitize_text_field( $_GET['query'] );
+	$query               = sanitize_text_field( $_GET['query'] );
 	$selected_post_types = get_option( 'bsf_search_post_types' );
 	$selected_post_types = ! $selected_post_types ? array( 'post', 'page' ) : $selected_post_types;
 
 		$args = array(
-			'post_type' => $selected_post_types,
+			'post_type'   => $selected_post_types,
 			'post_status' => 'publish',
-			's' => $query,
+			's'           => $query,
 		);
 
 	$search = new WP_Query( $args );
@@ -157,12 +156,12 @@ function bsf_load_search_results() {
 		?>
 
 	<?php else : ?>
-		  <li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
+		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
 	<?php
 	endif;
 
 	?>
-	 </ul> 
+	</ul> 
 	<?php
 
 	wp_reset_postdata();

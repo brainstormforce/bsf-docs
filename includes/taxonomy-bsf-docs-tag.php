@@ -20,11 +20,15 @@ get_header(); ?>
 	<div id="primary" class="content-area grid-parent mobile-grid-100 grid-75 tablet-grid-75">
 		<main id="main" class="in-wrap" role="main">
 
-		<?php if ( have_posts() ) : ?>
+
+		<?php
+
+		if ( have_posts() ) :
+		?>
 		<div class="bsf-page-header">
 			<?php
 
-				echo '<h1 class="entry-title">' . single_cat_title( '', false ) . '</h1>';
+				echo '<h1 class="entry-title">' . single_tag_title( '', false ) . '</h1>';
 				the_archive_description( '<div class="bsf-taxonomy-description">', '</div>' );
 
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
@@ -36,83 +40,14 @@ get_header(); ?>
 	endif;
 		?>
 
-		<?php if ( have_posts() ) : ?>
-			<?php
-				$current_category      = get_queried_object();
-				$current_category_id   = $current_category->term_id;
-				$current_category_slug = $current_category->slug;
-				$count                 = '';
-
-				$termchildren = get_terms(
-					'docs_category',
-					array(
-						'parent'     => $current_category_id,
-						'pad_counts' => 1,
-						'hide_empty' => false,
-					)
-				);
-
-			if ( $termchildren && ! is_wp_error( $termchildren ) ) :
-				$termchildren_1 = get_terms(
-					'docs_category',
-					array(
-						'pad_counts' => 1,
-					)
-				);
-				foreach ( $termchildren_1 as $key => $object ) {
-
-					$slug = $termchildren_1;
-				}
-				?>
-
-				<div class="bsf-categories-wrap clearfix">
-				<?php
-				foreach ( $termchildren as $key => $object ) {
-
-					for ( $i = 0; $i <= count( $slug ); $i++ ) {
-
-						if ( isset( $slug[ $i ]->slug ) && isset( $object->slug ) ) {
-							if ( $slug[ $i ]->slug == $object->slug ) {
-								$count = $slug[ $i ]->count;
-							}
-						}
-					}
-
-					if ( $slug[ $key ]->slug == $object->slug ) {
-
-						$count = $object->count;
-					}
-					?>
-					<div class="bsf-cat-col" >
-						<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
-							<h4><?php echo esc_html( $object->name ); ?></h4>
-							<span class="bsf-cat-count">
-								<?php /* translators: %s: article count term */ ?>
-								<?php printf( __( '%1$s Articles', 'bsf-docs' ), $count ); ?>
-							</span>
-						</a>
-						</div>
-
-					<?php
-				}
-				?>
-				</div>
-
-				<?php
-				endif;
-			?>
-		<?php
-		endif;
-		?>
-
 		<?php
 		if ( have_posts() ) :
 		?>
 			<?php
 			/* Start the Loop */
 
-			$current_category = get_queried_object();
-			$paged            = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+			$current_tag = get_queried_object();
+			$paged       = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
 			$args = array(
 				'post_type'      => 'docs',
@@ -121,9 +56,9 @@ get_header(); ?>
 				'paged'          => ( get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1 ),
 				'tax_query'      => array(
 					array(
-						'taxonomy'         => 'docs_category',
-						'field'            => $current_category->slug,
-						'terms'            => $current_category->term_id,
+						'taxonomy'         => 'docs_tag',
+						'field'            => $current_tag->slug,
+						'terms'            => $current_tag->term_id,
 						'include_children' => false,
 					),
 				),
