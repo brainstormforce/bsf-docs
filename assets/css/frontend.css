@@ -417,31 +417,6 @@ h2.bsf-entry-title > a {
  .bsf-main-wrap .bsf-entry-title a:visited {
      color: #45454C;
  }
-/* #bsf-searchsubmit .dashicons-search {
-     padding: 5px 0;
-     font-size: 18px;
-     line-height: 19px;
-     height: 18px;
-     width: 18px;
- }
-*/
-
-/* Widget CSS */
-
-/*.widget_bsf_docs_widget > h2,
-.widget_bsf_docs_cat_widget > h2 {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 10px 0;
-    padding: 0;
-    line-height: 1.4em;
-    margin-bottom: 15px;
-}*/
-
-
-/*.widget_bsf_docs_widget li {
-    position: relative;
-}*/
 
 .docswp-keyboard_arrow_right {
     padding-right: 7px;
@@ -540,26 +515,6 @@ h2.bsf-entry-title > a {
     .bsf-search-label {
         display: none;
     }
-   /* #bsf-live-search #bsf-searchsubmit {
-        position: absolute;
-        right: 5px;
-        top: 48%;
-        width: auto;
-        height: auto;
-        line-height: 40px;
-        color: inherit;
-        background: transparent;
-        padding: 0 14px;
-        border: none;
-        -moz-border-radius: 99px;
-        -webkit-border-radius: 99px;
-        transform: translateY(-50%);
-        bottom: 0;
-    }*/
-    /*#bsf-live-search #bsf-sq {
-        width: 100%;
-        font-size: 14px;
-    }*/
     .docs-single-templates-enabled .docs-wraper #primary.content-area, 
     .docs-tax-templates-enabled .docs-wraper #primary.content-area {
         padding-right: 0;
@@ -570,13 +525,8 @@ h2.bsf-entry-title > a {
         border-left: 0;
         border-top: 1px solid whitesmoke;
         margin: 0;
-        padding: 50px 0 0 0;
+        padding: 50px 0;
     }
-    /*.docs-single-templates-enabled .docs-single-title > h1 {
-        font-size: 20px;
-        line-height: 1.4em;
-        margin-bottom: 15px;
-    }*/
     .tax-breadcrumb {
         margin-top: 5px;
     }
