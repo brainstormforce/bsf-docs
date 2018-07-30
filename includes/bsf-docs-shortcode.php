@@ -129,11 +129,12 @@ function bsf_load_search_results() {
 		$args = array(
 			'post_type'   => $selected_post_types,
 			'post_status' => 'publish',
+			'posts_per_page' => 15,
 			's'           => $query,
 		);
 
 	$search = new WP_Query( $args );
-
+	
 		ob_start();
 
 	?>
@@ -156,7 +157,7 @@ function bsf_load_search_results() {
 		?>
 
 	<?php else : ?>
-		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
+		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'bsf-docs' ); ?></li>
 	<?php
 	endif;
 
