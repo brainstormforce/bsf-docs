@@ -103,11 +103,6 @@
     padding: 0;
 }
 
-/*.docs-single-templates-enabled .site-header .ast-container,
-.docs-tax-templates-enabled .site-header .ast-container {
-    width: 1240px;
-}*/
-
 :not(.search).docs-single-templates-enabled .site-content,
 :not(.search).docs-tax-templates-enabled .site-content {
     padding: 0;
@@ -169,10 +164,6 @@
 #bsf-sq::-ms-input-placeholder { /* Microsoft Edge */
     color: #333333;
 }
-/*#bsf-searchsubmit .docswp-search {
-    padding-right: 3px;
-}*/
-
 .widget_bsf_docs_cat_widget .children li {
     padding: 0 0 0 1.5em;
     position: relative;
@@ -369,12 +360,6 @@ ul.bsf-docs-tag li a {
     position: relative;
 }
 
-.bsf-page-header > h1,
-.docs-single-title > h1 {
-    margin: 0 0 0.5em;
-    line-height: 1.5 !important;
-}
-
 .docs-single-templates-enabled .docs-single-main,
 .docs-tax-templates-enabled .bsf-main-wrap {
     position: relative;
@@ -439,20 +424,17 @@ h2.bsf-entry-title > a {
 
 .docs-single-templates-enabled .docs-wraper #primary.content-area, 
 .docs-tax-templates-enabled .docs-wraper #primary.content-area {
-    margin: 45px 0 !important;
-    padding-top: 0;
+    border-right: 1px solid #e6e6e6;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 0;
+    margin-bottom: 0;
     padding-right: 30px;
 }
 
 .docs-single-templates-enabled #primary.bsf-options-form-wrap {
     padding: 40px 40px 50px 0;
 }
-
-.docs-single-templates-enabled .ast-container #primary.bsf-options-form-wrap {
-    border-right: 1px solid #e6e6e6;
-    margin-bottom: 0 !important;
-}
-
 .docs-tax-templates-enabled #primary, 
 .docs-single-templates-enabled #primary, 
 .docs-tax-templates-enabled #secondary
