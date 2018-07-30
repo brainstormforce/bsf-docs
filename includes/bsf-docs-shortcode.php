@@ -127,14 +127,14 @@ function bsf_load_search_results() {
 	$selected_post_types = ! $selected_post_types ? array( 'post', 'page' ) : $selected_post_types;
 
 		$args = array(
-			'post_type'   => $selected_post_types,
-			'post_status' => 'publish',
+			'post_type'      => $selected_post_types,
+			'post_status'    => 'publish',
 			'posts_per_page' => 15,
-			's'           => $query,
+			's'              => $query,
 		);
 
 	$search = new WP_Query( $args );
-	
+
 		ob_start();
 
 	?>
