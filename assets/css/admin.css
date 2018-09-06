@@ -40,3 +40,27 @@
 .bsf-options-form-wrap .form-table th {
     width: 260px;
 }
+/* Category Order*/
+.childrenlink{
+    float: right;
+    font-size: 12px;
+}
+
+.bsf-lineitem {
+    background-color: #ddd;
+    color: #000;
+    margin-bottom: 5px;
+    padding: .5em 1em;
+    width: 200px;
+    font-size: 13px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    cursor: move;
+}
+
+.bsf-lineitem h4{
+    font-weight: bold;
+    margin: 0;
+}

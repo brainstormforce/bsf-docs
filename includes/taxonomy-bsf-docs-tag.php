@@ -20,7 +20,6 @@ get_header(); ?>
 	<div id="primary" class="content-area grid-parent mobile-grid-100 grid-75 tablet-grid-75">
 		<main id="main" class="in-wrap" role="main">
 
-
 		<?php
 
 		if ( have_posts() ) :
