@@ -3,7 +3,6 @@
     display: table;
     content: "";
 }
-
 .clearfix:after {
     clear: both;
 }
@@ -41,26 +40,33 @@
     width: 260px;
 }
 /* Category Order*/
-.childrenlink{
-    float: right;
-    font-size: 12px;
+ul#bsf-to-sortable {
+    list-style-type: none;
+    margin: 20px 0 0;
+    padding: 0;
+    width: 100%;
 }
 
-.bsf-lineitem {
-    background-color: #ddd;
-    color: #000;
-    margin-bottom: 5px;
-    padding: .5em 1em;
-    width: 200px;
-    font-size: 13px;
-    -moz-border-radius: 3px;
-    -khtml-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+#bsf-to-sortable li:nth-child(2n+1) > .item {
+        background-color: #fff !important;
+
+}
+
+#bsf-to-sortable li > .item {
+    padding: 2px 0px;
+    margin: 4px 0px;
+    border: 1px solid #DDDDDD;
     cursor: move;
+    -moz-border-radius: 6px;
+    background-color: #f9f9f9;
 }
 
-.bsf-lineitem h4{
-    font-weight: bold;
-    margin: 0;
+#bsf-to-sortable li span {
+    display: block;
+    padding: 10px 10px;
+    color: #555;
+    font-size: 13px;
+}
+#order-terms ul.children {
+    margin-left: 25px;
 }
