@@ -478,9 +478,28 @@ h2.bsf-entry-title > a {
 .docs-single-title {
     padding-bottom: 0.5em;
 }
+/* Auto Anchor */
+.bsf-automatic-anchors {
+    color: #333;
+}
+.bsf-automatic-anchors .dashicons.dashicons-paperclip {
+    font-size: 15px;
+    vertical-align: middle;
+}
+.bsf-automatic-anchors {
+    margin-left: -30px;
+}
+.bsf-automatic-anchors > i {
+    visibility: hidden;
+}
+.bsf-automatic-anchors:hover > i.dashicons {
+    visibility:visible;
+}
 
 @media (max-width: 768px ) {
-
+    .bsf-automatic-anchors {
+        margin-left: 0px;
+    }
     .post-type-archive-docs .bsf-categories-wrap .bsf-cat-col {
         float: left;
         width: 50%;
@@ -491,9 +510,6 @@ h2.bsf-entry-title > a {
         width: 100%;
     }
     /* Search Style */
-    #bsf-live-search {
-        margin: auto -7px;
-    }
     .bsf-search-label {
         display: none;
     }

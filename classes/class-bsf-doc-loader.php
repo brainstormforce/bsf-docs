@@ -184,6 +184,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			register_setting( 'bsf-docs-settings-group', 'bsf_search_has_comments' );
 			register_setting( 'bsf-docs-settings-group', 'bsf_override_single_template' );
 			register_setting( 'bsf-docs-settings-group', 'bsf_override_category_template' );
+			register_setting( 'bsf-docs-settings-group', 'bsf_add_anchor_to_heading' );
 			register_setting( 'bsf-docs-settings-group', 'bsf_doc_title' );
 		}
 
@@ -320,6 +321,11 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 						)
 					);
 				}
+			}
+			$is_auto_anchor_on =  get_option( 'bsf_add_anchor_to_heading' ); 
+			if ( '1' == $is_auto_anchor_on || false === $is_auto_anchor_on ) {
+				wp_register_script( 'docs-automatic-anchors', BSF_DOCS_BASE_URL . 'assets/js/automatic-docs-anchors.compiled.js', array(), filemtime( BSF_DOCS_BASE_DIR . 'assets/js/automatic-docs-anchors.compiled.js' ), true );
+				wp_enqueue_script( 'docs-automatic-anchors' );
 			}
 		}
 

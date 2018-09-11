@@ -29,7 +29,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 			// Base ID of your widget.
 			'bsf_docs_widget',
 			// Widget name will appear in UI.
-			__( 'BSF Docs Widget', 'bsf-docs' ),
+			__( 'BSF Recent Docs', 'bsf-docs' ),
 			// Widget description.
 			array(
 				'description' => __( 'Widget for recent Docs', 'bsf-docs' ),
