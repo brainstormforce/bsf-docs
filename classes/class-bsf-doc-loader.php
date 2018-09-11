@@ -312,7 +312,6 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 
 					wp_enqueue_script( 'bsf-live-search', BSF_DOCS_BASE_URL . 'assets/js/jquery.livesearch.js', array( 'jquery' ), BSF_DOCS_VERSION, true );
 					wp_enqueue_script( 'bsf-searchbox-script', BSF_DOCS_BASE_URL . 'assets/js/searchbox-script.js', array( 'bsf-live-search' ), BSF_DOCS_VERSION, true );
-					
 
 					wp_localize_script(
 						'bsf-searchbox-script', 'bsf_ajax_url',

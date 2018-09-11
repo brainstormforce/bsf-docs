@@ -69,7 +69,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 		$get_args['category'], array(
 			'hide_empty' => false,
 			'pad_counts' => 1,
-						'orderby'     => 'term_order',
+			'orderby'    => 'term_order',
 		)
 	);
 

@@ -46,7 +46,7 @@ get_header(); ?>
 				$termchildren = get_terms(
 					'docs_category',
 					array(
-						'orderby'     => 'term_order',
+						'orderby'    => 'term_order',
 						'parent'     => $current_category_id,
 						'pad_counts' => 1,
 						'hide_empty' => false,
@@ -57,7 +57,7 @@ get_header(); ?>
 				$termchildren_1 = get_terms(
 					'docs_category',
 					array(
-						'orderby'     => 'term_order',
+						'orderby'    => 'term_order',
 						'pad_counts' => 1,
 					)
 				);
