@@ -9,10 +9,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-
-
-
-
 /**
  * Creating the widget.
  */

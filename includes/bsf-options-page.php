@@ -95,9 +95,9 @@ name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
 							<th scope="row"><?php _e( 'Enable single page heading anchor link', 'bsf-docs' ); ?></th>
 							<td>
 								<?php
-								$checked                        = '';
+								$checked                   = '';
 								$bsf_add_anchor_to_heading = get_option( 'bsf_add_anchor_to_heading' );
-								$checked                        = ( false === $bsf_add_anchor_to_heading ) ? " checked='checked' " : ( ( 1 == $bsf_add_anchor_to_heading ) ? " checked='checked' " : '' );
+								$checked                   = ( false === $bsf_add_anchor_to_heading ) ? " checked='checked' " : ( ( 1 == $bsf_add_anchor_to_heading ) ? " checked='checked' " : '' );
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_add_anchor_to_heading" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>

@@ -7,49 +7,60 @@
 
 defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 
+/**
+ * Category order INIT
+ */
 function bsf_docs_category_order_init() {
+
+	/**
+	 * Category order menu
+	 */
 	function bsf_docs_category_order_menu() {
 		if ( function_exists( 'add_submenu_page' ) ) {
 			add_submenu_page( 'edit.php?post_type=docs', 'Category Order', 'Category Order', 4, 'bsf_docs_category_order_options', 'bsf_docs_category_order_options' );
 		}
-        wp_enqueue_script( 'bsf-docs-backend', BSF_DOCS_BASE_URL . 'assets/js/backend.js', array( 'jquery', 'jquery-ui-sortable' ), false, false );
-        wp_localize_script( 'bsf-docs-backend', 'BSFDocs', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+		wp_enqueue_script( 'bsf-docs-backend', BSF_DOCS_BASE_URL . 'assets/js/backend.js', array( 'jquery', 'jquery-ui-sortable' ), false, false );
+		wp_localize_script( 'bsf-docs-backend', 'BSFDocs', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 	}
 	add_action( 'admin_menu', 'bsf_docs_category_order_menu' );
 
+	/**
+	 * Order option script
+	 */
 	function bsf_docs_category_order_options() {
 		wp_enqueue_script( 'jquery' );
-		BSFTOPluginInterface();
+		bsf_to_plugin_interface();
 
 	}
 
 }
 
-function BSFTOPluginInterface() {
-		   global $wpdb, $wp_locale;
+/**
+ * Taxonomy Inter
+ */
+function bsf_to_plugin_interface() {
 
-		   $taxonomy       = isset( $_GET['taxonomy'] ) ? sanitize_key( $_GET['taxonomy'] ) : '';
-		   $post_type      = isset( $_GET['post_type'] ) ? sanitize_key( $_GET['post_type'] ) : '';
-		   $post_type_data = get_post_type_object( $post_type );
+	global $wpdb, $wp_locale;
+	$taxonomy       = isset( $_GET['taxonomy'] ) ? sanitize_key( $_GET['taxonomy'] ) : '';
+	$post_type      = isset( $_GET['post_type'] ) ? sanitize_key( $_GET['post_type'] ) : '';
+	$post_type_data = get_post_type_object( $post_type );
 
 	if ( ! taxonomy_exists( $taxonomy ) ) {
 		$taxonomy = '';
 	}
 
 			?>
-			<div class="wrap">
-			   <div class="icon32" id="icon-edit"><br></div>
-			   <h2><?php _e( 'Docs Category Order', 'bsf-docs' ); ?></h2>
-			   <p><?php _e( 'Drag each item into the order you prefer, and click the update button.', 'bsf-docs' ); ?></p>
-				
-			   <div id="ajax-response"></div>
-				
-			   <noscript>
-				   <div class="error message">
-					   <p><?php _e( "This plugin can't work without javascript, because it's use drag and drop and AJAX.", 'bsf-docs' ); ?></p>
-				   </div>
-			   </noscript>
+		<div class="wrap">
+			<div class="icon32" id="icon-edit"><br></div>
+			<h2><?php _e( 'Docs Category Order', 'bsf-docs' ); ?></h2>
+			<p><?php _e( 'Drag each item into the order you prefer, and click the update button.', 'bsf-docs' ); ?></p>
+			<div id="ajax-response"></div>
+			<noscript>
+	   			<div class="error message">
+		   			<p><?php _e( "This plugin can't work without javascript, because it's use drag and drop and AJAX.", 'bsf-docs' ); ?></p>
+				</div>
+			</noscript>
 
 			   <div class="clear"></div>
 				
@@ -172,7 +183,11 @@ function BSFTOPluginInterface() {
 
 }
 
-
+/**
+ * Taxonomy List
+ *
+ * @param $taxonomy
+ */
 function BSFlistTerms( $taxonomy ) {
 
 			// Query pages.
@@ -193,6 +208,15 @@ function BSFlistTerms( $taxonomy ) {
 
 }
 
+/**
+ * Taxonomy List
+ *
+ * @param $taxonomy_terms
+ *
+ * @param $depth Child taxonomy
+ *
+ * @param r  
+ */
 function BSFTOwalkTree( $taxonomy_terms, $depth, $r ) {
 		$walker = new BSF_TO_Terms_Walker;
 		$args   = array( $taxonomy_terms, $depth, $r );
@@ -202,12 +226,10 @@ function BSFTOwalkTree( $taxonomy_terms, $depth, $r ) {
 
 class BSF_TO_Terms_Walker extends Walker {
 
-
 		   var $db_fields = array(
 			   'parent' => 'parent',
 			   'id'     => 'term_id',
 		   );
-
 
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 			extract( $args, EXTR_SKIP );
@@ -216,14 +238,12 @@ class BSF_TO_Terms_Walker extends Walker {
 			$output .= "\n$indent<ul class='children sortable'>\n";
 	}
 
-
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
 			extract( $args, EXTR_SKIP );
 
 			$indent  = str_repeat( "\t", $depth );
 			$output .= "$indent</ul>\n";
 	}
-
 
 	function start_el( &$output, $term, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		if ( $depth ) {
@@ -236,7 +256,6 @@ class BSF_TO_Terms_Walker extends Walker {
 			$taxonomy = get_taxonomy( $term->term_taxonomy_id );
 			$output  .= $indent . '<li class="term_type_li" id="item_' . $term->term_id . '"><div class="item"><span>' . apply_filters( 'to/term_title', $term->name, $term ) . ' </span></div>';
 	}
-
 
 	function end_el( &$output, $object, $depth = 0, $args = array() ) {
 			$output .= "</li>\n";
@@ -273,18 +292,19 @@ function BSF_get_terms_orderby( $orderby, $args ) {
 		return $orderby;
 }
 
-	add_action( 'wp_ajax_update-taxonomy-order', 'BSFsaveAjaxOrder' );
-function BSFsaveAjaxOrder() {
+add_action( 'wp_ajax_update-taxonomy-order', 'bsf_save_ajax_order' );
+
+/**
+ * Admin Ajax loader.
+ */
+function bsf_save_ajax_order() {
 		global $wpdb;
 
-		// if  ( ! wp_verify_nonce( $_POST['nonce'], 'update-taxonomy-order' ) )
-		// die();
 		$data              = stripslashes( $_POST['order'] );
 		$unserialised_data = json_decode( $data, true );
 
 	if ( is_array( $unserialised_data ) ) {
 		foreach ( $unserialised_data as $key => $values ) {
-				// $key_parent = str_replace("item_", "", $key);
 				$items = explode( '&', $values );
 				unset( $item );
 			foreach ( $items as $item_key => $item_ ) {
@@ -299,7 +319,7 @@ function BSFsaveAjaxOrder() {
 		}
 	}
 
-		do_action( 'tto/update-order' );
+		do_action( 'tto_update_order' );
 
 		die();
 }
