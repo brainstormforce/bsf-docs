@@ -49,7 +49,7 @@ get_header(); ?>
 						'orderby'    => 'term_order',
 						'parent'     => $current_category_id,
 						'pad_counts' => 1,
-						'hide_empty' => false,
+						'hide_empty' => true,
 					)
 				);
 

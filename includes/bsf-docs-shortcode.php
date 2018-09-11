@@ -67,7 +67,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 
 	$taxonomy_objects = get_terms(
 		$get_args['category'], array(
-			'hide_empty' => false,
+			'hide_empty' => true,
 			'pad_counts' => 1,
 			'orderby'    => 'term_order',
 		)

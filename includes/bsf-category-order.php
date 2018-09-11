@@ -12,14 +12,11 @@ function bsf_docs_category_order_init() {
 		if ( function_exists( 'add_submenu_page' ) ) {
 			add_submenu_page( 'edit.php?post_type=docs', 'Category Order', 'Category Order', 4, 'bsf_docs_category_order_options', 'bsf_docs_category_order_options' );
 		}
-	}
-	add_action( 'admin_menu', 'bsf_docs_category_order_menu' );
-	add_action( 'admin_menu', 'bsf_docs_enqueue_scripts' );
-	function bsf_docs_enqueue_scripts() {
-		wp_enqueue_script( 'bsf-docs-backend', BSF_DOCS_BASE_URL . 'assets/js/backend.js', array( 'jquery', 'jquery-ui-sortable' ), false, false );
-		wp_localize_script( 'bsf-docs-backend', 'BSFDocs', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+        wp_enqueue_script( 'bsf-docs-backend', BSF_DOCS_BASE_URL . 'assets/js/backend.js', array( 'jquery', 'jquery-ui-sortable' ), false, false );
+        wp_localize_script( 'bsf-docs-backend', 'BSFDocs', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 	}
+	add_action( 'admin_menu', 'bsf_docs_category_order_menu' );
 
 	function bsf_docs_category_order_options() {
 		wp_enqueue_script( 'jquery' );
@@ -154,7 +151,7 @@ function BSFTOPluginInterface() {
 					<div id="post-body">                    
 							<ul class="sortable" id="bsf-to-sortable">
 								<?php
-								   listTerms( $taxonomy );
+								   BSFlistTerms( $taxonomy );
 								?>
 							</ul>
 							<div class="clear"></div>
@@ -176,7 +173,7 @@ function BSFTOPluginInterface() {
 }
 
 
-function listTerms( $taxonomy ) {
+function BSFlistTerms( $taxonomy ) {
 
 			// Query pages.
 			$args           = array(
@@ -189,21 +186,21 @@ function listTerms( $taxonomy ) {
 
 			$output = '';
 	if ( count( $taxonomy_terms ) > 0 ) {
-			$output = TOwalkTree( $taxonomy_terms, $args['depth'], $args );
+			$output = BSFTOwalkTree( $taxonomy_terms, $args['depth'], $args );
 	}
 
 			echo $output;
 
 }
 
-function TOwalkTree( $taxonomy_terms, $depth, $r ) {
-		$walker = new TO_Terms_Walker;
+function BSFTOwalkTree( $taxonomy_terms, $depth, $r ) {
+		$walker = new BSF_TO_Terms_Walker;
 		$args   = array( $taxonomy_terms, $depth, $r );
 		return call_user_func_array( array( &$walker, 'walk' ), $args );
 }
 
 
-class TO_Terms_Walker extends Walker {
+class BSF_TO_Terms_Walker extends Walker {
 
 
 		   var $db_fields = array(
