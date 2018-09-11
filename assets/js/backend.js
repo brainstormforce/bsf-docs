@@ -55,7 +55,7 @@
                                 var serialize_data = JSON.stringify( convArrToObj(mySortable));
                                 console.log( BSFDocs.ajaxurl );                                               
                                 jQuery.post( BSFDocs.ajaxurl, { action:'update-taxonomy-order', order: serialize_data }, function() {
-                                    jQuery("#ajax-response").html('<div class="message updated fade"><p>Items Order Updated</p></div>');
+                                    jQuery("#ajax-response").html('<div class="message updated fade"><p>Category Items Order Updated</p></div>');
                                     jQuery("#ajax-response div").delay(3000).hide("slow");
                                 });
                             });

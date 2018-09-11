@@ -44,11 +44,15 @@ ul#bsf-to-sortable {
     list-style-type: none;
     margin: 20px 0 0;
     padding: 0;
-    width: 100%;
+    width: 400px;
 }
 
 #bsf-to-sortable li:nth-child(2n+1) > .item {
-        background-color: #fff !important;
+    background: #fafafa;
+    color: #23282d;
+    border: 1px solid #ddd;
+    word-wrap: break-word;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
 
 }
 
@@ -69,4 +73,14 @@ ul#bsf-to-sortable {
 }
 #order-terms ul.children {
     margin-left: 25px;
+}
+#bsf-to-sortable li.placeholder {
+    border: dashed 2px #ccc;
+    height:35px; 
+    background-color: #FFF;
+}
+#bsf-to-sortable li .item > span {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
 }

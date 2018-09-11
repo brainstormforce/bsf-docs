@@ -44,8 +44,7 @@ function bsf_docs_category_order_init(){
             <div class="wrap">
                 <div class="icon32" id="icon-edit"><br></div>
                 <h2><?php _e( "Docs Category Order", 'bsf-docs' ) ?></h2>
-
-                <?php // tto_info_box() ?>
+                <p><?php _e( "Drag each item into the order you prefer, and click the update button.", 'bsf-docs' ) ?></p>
                 
                 <div id="ajax-response"></div>
                 
