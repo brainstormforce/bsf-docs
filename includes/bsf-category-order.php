@@ -57,8 +57,8 @@ function bsf_to_plugin_interface() {
 			<p><?php _e( 'Drag each item into the order you prefer, and click the update button.', 'bsf-docs' ); ?></p>
 			<div id="ajax-response"></div>
 			<noscript>
-	   			<div class="error message">
-		   			<p><?php _e( "This plugin can't work without javascript, because it's use drag and drop and AJAX.", 'bsf-docs' ); ?></p>
+				   <div class="error message">
+					   <p><?php _e( "This plugin can't work without javascript, because it's use drag and drop and AJAX.", 'bsf-docs' ); ?></p>
 				</div>
 			</noscript>
 
@@ -88,7 +88,7 @@ function bsf_to_plugin_interface() {
 						echo '<input type="hidden" name="post_type" value="' . esc_attr( $post_type ) . '" />';
 					}
 
-					// output all available taxonomies for this post type
+					// output all available taxonomies for this post type.
 					$post_type_taxonomies = get_object_taxonomies( $post_type );
 
 					foreach ( $post_type_taxonomies as $key => $taxonomy_name ) {
@@ -98,7 +98,7 @@ function bsf_to_plugin_interface() {
 						}
 					}
 
-					// use the first taxonomy if emtpy taxonomy
+					// use the first taxonomy if emtpy taxonomy.
 					if ( $taxonomy == '' || ! taxonomy_exists( $taxonomy ) ) {
 							reset( $post_type_taxonomies );
 							$taxonomy = current( $post_type_taxonomies );
@@ -201,7 +201,7 @@ function BSFlistTerms( $taxonomy ) {
 
 			$output = '';
 	if ( count( $taxonomy_terms ) > 0 ) {
-			$output = BSFTOwalkTree( $taxonomy_terms, $args['depth'], $args );
+			$output = bsf_to_walktree( $taxonomy_terms, $args['depth'], $args );
 	}
 
 			echo $output;
@@ -211,19 +211,19 @@ function BSFlistTerms( $taxonomy ) {
 /**
  * Taxonomy List
  *
- * @param $taxonomy_terms
- *
- * @param $depth Child taxonomy
- *
- * @param r  
+ * @param int $taxonomy_terms
+ * @param int $depth Child taxonomy
+ * @param int $r
  */
-function BSFTOwalkTree( $taxonomy_terms, $depth, $r ) {
+function bsf_to_walktree( $taxonomy_terms, $depth, $r ) {
 		$walker = new BSF_TO_Terms_Walker;
 		$args   = array( $taxonomy_terms, $depth, $r );
 		return call_user_func_array( array( &$walker, 'walk' ), $args );
 }
 
-
+/**
+ * Term sortable
+ */
 class BSF_TO_Terms_Walker extends Walker {
 
 		   var $db_fields = array(
@@ -231,13 +231,28 @@ class BSF_TO_Terms_Walker extends Walker {
 			   'id'     => 'term_id',
 		   );
 
+	/**
+	 * Start of ul
+	 *
+	 * @param int $output Category List.
+	 * @param int $depth children.
+	 * @param int $args Sortable arguments.
+	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
+			/* Childern depth*/
 			extract( $args, EXTR_SKIP );
 
 			$indent  = str_repeat( "\t", $depth );
 			$output .= "\n$indent<ul class='children sortable'>\n";
 	}
 
+	/**
+	 * End of ul
+	 *
+	 * @param int $output Category List.
+	 * @param int $depth children.
+	 * @param int $args Sortable arguments.
+	 */
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
 			extract( $args, EXTR_SKIP );
 
@@ -245,6 +260,15 @@ class BSF_TO_Terms_Walker extends Walker {
 			$output .= "$indent</ul>\n";
 	}
 
+	/**
+	 * Start of term LI
+	 *
+	 * @param int    $args Sortable arguments.
+	 * @param int    $output Category List.
+	 * @param int    $term Get terms id.
+	 * @param int    $depth String repeat.
+	 * @param object $current_object_id.
+	 */
 	function start_el( &$output, $term, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		if ( $depth ) {
 			$indent = str_repeat( "\t", $depth );
@@ -252,11 +276,18 @@ class BSF_TO_Terms_Walker extends Walker {
 			$indent = '';
 		}
 
-			// extract($args, EXTR_SKIP);
 			$taxonomy = get_taxonomy( $term->term_taxonomy_id );
-			$output  .= $indent . '<li class="term_type_li" id="item_' . $term->term_id . '"><div class="item"><span>' . apply_filters( 'to/term_title', $term->name, $term ) . ' </span></div>';
+			$output  .= $indent . '<li class="term_type_li" id="item_' . $term->term_id . '"><div class="item"><span>' . apply_filters( 'to_term_title', $term->name, $term ) . ' </span></div>';
 	}
 
+	/**
+	 * End of term LI
+	 *
+	 * @param int    $output Category List.
+	 * @param object $object
+	 * @param int    $depth
+	 * @param int    $args
+	 */
 	function end_el( &$output, $object, $depth = 0, $args = array() ) {
 			$output .= "</li>\n";
 	}
@@ -264,12 +295,17 @@ class BSF_TO_Terms_Walker extends Walker {
 }
 
 
-function BSF_applyorderfilter( $orderby, $args ) {
-	if ( apply_filters( 'to/get_terms_orderby/ignore', false, $orderby, $args ) ) {
+/**
+ * Update order in db.
+ *
+ * @param int $orderby update db query.
+ * @param int $args arguments for query.
+ */
+function bsf_applyorderfilter( $orderby, $args ) {
+	if ( apply_filters( 'to_get_terms_orderby_ignore', false, $orderby, $args ) ) {
 		return $orderby;
 	}
 
-		// if autosort, then force the menu_order
 	if ( ( ! isset( $args['ignore_term_order'] ) || ( isset( $args['ignore_term_order'] ) && $args['ignore_term_order'] !== true ) ) ) {
 			return 't.term_order';
 	}
@@ -277,11 +313,14 @@ function BSF_applyorderfilter( $orderby, $args ) {
 		return $orderby;
 }
 
-	add_filter( 'get_terms_orderby', 'BSF_applyorderfilter', 10, 2 );
-
-	add_filter( 'get_terms_orderby', 'BSF_get_terms_orderby', 1, 2 );
-function BSF_get_terms_orderby( $orderby, $args ) {
-	if ( apply_filters( 'to/get_terms_orderby/ignore', false, $orderby, $args ) ) {
+/**
+ * Get terms order.
+ *
+ * @param int $orderby update db query.
+ * @param int $args arguments for query.
+ */
+function bsf_get_terms_orderby( $orderby, $args ) {
+	if ( apply_filters( 'to_get_terms_orderby_ignore', false, $orderby, $args ) ) {
 		return $orderby;
 	}
 
@@ -292,6 +331,8 @@ function BSF_get_terms_orderby( $orderby, $args ) {
 		return $orderby;
 }
 
+add_filter( 'get_terms_orderby', 'bsf_applyorderfilter', 10, 2 );
+add_filter( 'get_terms_orderby', 'bsf_get_terms_orderby', 1, 2 );
 add_action( 'wp_ajax_update-taxonomy-order', 'bsf_save_ajax_order' );
 
 /**
