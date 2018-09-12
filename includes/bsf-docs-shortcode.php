@@ -125,7 +125,7 @@ function bsf_load_search_results() {
 
 	$query               = sanitize_text_field( $_GET['query'] );
 	$selected_post_types = get_option( 'bsf_search_post_types' );
-	$selected_post_types = ! $selected_post_types ? array( 'post', 'page' ) : $selected_post_types;
+	$selected_post_types = ! $selected_post_types ? array( 'docs' ) : $selected_post_types;
 
 		$args = array(
 			'post_type'      => $selected_post_types,
