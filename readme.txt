@@ -53,6 +53,29 @@ The following shortcodes are available:
 
 [doc_wp_live_search placeholder="Have a question?"] Renders a dynamic search form.
 
+== Frequently Asked Questions ==
+
+== I’m getting a 404 error after visiting docs. ==
+Please go to Settings > Permalinks and resave your permalink structure.
+
+== How to change category orders? ==
+You can change category orders simply by drag and drop from the category orders setting option. Docs->Category Orders
+
+== How to show breadcrumb for my documentation? ==
+BSF Docs fully support Yoast SEO breadcrumbs, So you can just need to enable breadcrumb from the Yoast SEO settings -> Search Appearance -> Breadcrumbs settings.
+
+== How to display docs menu on my website? ==
+BSF Docs plugin add *docs* custom post type on your website, So if you would like to add a menu on your site simple add Custom Links from WordPress menus and put a custom link like wwww.yourdomain.com/docs
+
+== How to add a sidebar for single docs? ==
+BSF Docs will automatically add a right sidebar for your single docs page, If you don't like the sidebar to your docs page then you can simply disable plugin single template file from the plugin settings menu. If you unchecked this option single docs post will display from active theme single templates.
+
+== How to enable comments for my docs? ==
+You can enable comments for your documentation post just like a normal WordPress blog post, But make sure to enabled Turn Off Doc's Comments option setting from the BSF docs plugin. 
+
+== Can import/export Docs Knowledgebase data? ==
+Yes! You can import/export data using the built-in WordPress function via Tools. It may not import any images in use (although it will import the file paths) so you will need to copy across any images from your old site to the new site uploads folder via FTP. If images still appear broken or missing then you might need to run a search and replace tool to correct the image file paths for your new site.
+
 == Installation ==
 
 * Unzip the downloaded zip file
