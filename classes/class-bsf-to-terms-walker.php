@@ -1,13 +1,27 @@
 <?php
 /**
- * Term sortable
+ * Get terms walker
+ *
+ * @package Documentation/Order
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Creating the sortable order.
  */
 class BSF_TO_Terms_Walker extends Walker {
 
-		   var $db_fields = array(
-			   'parent' => 'parent',
-			   'id'     => 'term_id',
-		   );
+	/** Base ID of Terms.
+	 *
+	 * @var Array of terms.
+	 **/
+	var $db_fields = array(
+		'parent' => 'parent',
+		'id'     => 'term_id',
+	);
 
 	/**
 	 * Start of ul
@@ -17,8 +31,7 @@ class BSF_TO_Terms_Walker extends Walker {
 	 * @param int $args Sortable arguments.
 	 */
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
-			/* Childern depth*/
-			extract( $args, EXTR_SKIP );
+			/* Children depth. */
 
 			$indent  = str_repeat( "\t", $depth );
 			$output .= "\n$indent<ul class='children sortable'>\n";
@@ -32,7 +45,7 @@ class BSF_TO_Terms_Walker extends Walker {
 	 * @param int $args Sortable arguments.
 	 */
 	function end_lvl( &$output, $depth = 0, $args = array() ) {
-			extract( $args, EXTR_SKIP );
+			/* Children depth. */
 
 			$indent  = str_repeat( "\t", $depth );
 			$output .= "$indent</ul>\n";
@@ -41,11 +54,11 @@ class BSF_TO_Terms_Walker extends Walker {
 	/**
 	 * Start of term LI
 	 *
-	 * @param int    $args Sortable arguments.
-	 * @param int    $output Category List.
-	 * @param int    $term Get terms id.
-	 * @param int    $depth String repeat.
-	 * @param object $current_object_id.
+	 * @param int $output Object list.
+	 * @param int $term Get terms id.
+	 * @param int $depth Child category.
+	 * @param int $args number of arguments.
+	 * @param int $current_object_id Current object id.
 	 */
 	function start_el( &$output, $term, $depth = 0, $args = array(), $current_object_id = 0 ) {
 		if ( $depth ) {
@@ -61,14 +74,13 @@ class BSF_TO_Terms_Walker extends Walker {
 	/**
 	 * End of term LI
 	 *
-	 * @param int    $output Category List.
-	 * @param object $object
-	 * @param int    $depth
-	 * @param int    $args
+	 * @param int $output Category List.
+	 * @param int $object Object list.
+	 * @param int $depth Child category.
+	 * @param int $args number of arguments.
 	 */
 	function end_el( &$output, $object, $depth = 0, $args = array() ) {
 			$output .= "</li>\n";
 	}
 
 }
-

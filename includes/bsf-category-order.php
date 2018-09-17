@@ -55,16 +55,15 @@ function bsf_to_plugin_interface() {
 			<h2><?php _e( 'Docs Category Order', 'bsf-docs' ); ?></h2>
 			<div id="ajax-response"></div>
 			<noscript>
-				   <div class="error message">
-					   <p><?php _e( "This plugin can't work without javascript, because it's use drag and drop and AJAX.", 'bsf-docs' ); ?></p>
+				<div class="error message">
+					<p><?php _e( "This plugin can't work without javascript, because it's use drag and drop and AJAX.", 'bsf-docs' ); ?></p>
 				</div>
 			</noscript>
 
-			   <div class="clear"></div>
-				
+			<div class="clear"></div>
 				<?php
 
-				   $current_section_parent_file = '';
+				$current_section_parent_file = '';
 				switch ( $post_type ) {
 
 					case 'attachment':
@@ -77,9 +76,8 @@ function bsf_to_plugin_interface() {
 				}
 
 				?>
-				
 				<form action="<?php echo $current_section_parent_file; ?>" method="get" id="to_form">
-				   <input type="hidden" name="page" value="to-interface-<?php echo esc_attr( $post_type ); ?>" />
+				<input type="hidden" name="page" value="to-interface-<?php echo esc_attr( $post_type ); ?>" />
 					<?php
 
 					if ( ! in_array( $post_type, array( 'post', 'attachment' ) ) ) {
@@ -91,13 +89,13 @@ function bsf_to_plugin_interface() {
 
 					foreach ( $post_type_taxonomies as $key => $taxonomy_name ) {
 							$taxonomy_info = get_taxonomy( $taxonomy_name );
-						if ( $taxonomy_info->hierarchical !== true ) {
+						if ( true !== $taxonomy_info->hierarchical ) {
 							unset( $post_type_taxonomies[ $key ] );
 						}
 					}
 
 					// use the first taxonomy if emtpy taxonomy.
-					if ( $taxonomy == '' || ! taxonomy_exists( $taxonomy ) ) {
+					if ( '' == $taxonomy || ! taxonomy_exists( $taxonomy ) ) {
 							reset( $post_type_taxonomies );
 							$taxonomy = current( $post_type_taxonomies );
 					}
@@ -105,7 +103,6 @@ function bsf_to_plugin_interface() {
 					if ( count( $post_type_taxonomies ) > 1 ) {
 
 							?>
-							
 							<h2 class="subtitle"><?php echo ucfirst( $post_type_data->labels->name ); ?> <?php _e( 'Taxonomies', 'bsf-docs' ); ?></h2>
 							<table cellspacing="0" class="wp-list-taxonomy">
 								<thead>
@@ -121,7 +118,7 @@ function bsf_to_plugin_interface() {
 								foreach ( $post_type_taxonomies as $post_type_taxonomy ) {
 										$taxonomy_info = get_taxonomy( $post_type_taxonomy );
 
-										$alternate = $alternate === true ? false : true;
+										$alternate = true ? false : true === $alternate;
 
 										$args           = array(
 											'hide_empty' => 0,
@@ -132,7 +129,7 @@ function bsf_to_plugin_interface() {
 										?>
 											<tr valign="top" class="
 											<?php
-											if ( $alternate === true ) {
+											if ( true === $alternate ) {
 												echo 'alternate ';}
 ?>
 " id="taxonomy-<?php echo esc_attr( $taxonomy ); ?>">
@@ -141,11 +138,10 @@ function bsf_to_plugin_interface() {
 																																									if ( $post_type_taxonomy == $taxonomy ) {
 																																										echo 'checked="checked"';}
 ?>
- name="taxonomy">&nbsp;</th>
+name="taxonomy">&nbsp;</th>
 													<td class="categories column-categories"><b><?php echo $taxonomy_info->label; ?></b> (<?php echo  $taxonomy_info->labels->singular_name; ?>)</td>
 													<td class="categories column-categories"><?php echo count( $taxonomy_terms ); ?></td>
-											</tr>
-											
+											</tr>										
 											<?php
 								}
 								?>
@@ -160,22 +156,18 @@ function bsf_to_plugin_interface() {
 					<div id="post-body">                    
 							<ul class="sortable" id="bsf-to-sortable">
 								<?php
-								   BSFlistTerms( $taxonomy );
+								bsf_list_terms( $taxonomy );
 								?>
 							</ul>
 							<div class="clear"></div>
 					</div>
-					
 					<div class="alignleft actions">
 						<p class="submit">
 							<a href="javascript:;" class="save-order button-primary"><?php _e( 'Update', 'bsf-docs' ); ?></a>
 						</p>
 					</div>
-					
 				</div> 
-
 				</form>
-				
 			</div>
 			<?php
 
@@ -184,9 +176,9 @@ function bsf_to_plugin_interface() {
 /**
  * Taxonomy List
  *
- * @param $taxonomy
+ * @param array $taxonomy Taxonomy order.
  */
-function BSFlistTerms( $taxonomy ) {
+function bsf_list_terms( $taxonomy ) {
 
 			// Query pages.
 			$args           = array(
@@ -209,9 +201,9 @@ function BSFlistTerms( $taxonomy ) {
 /**
  * Taxonomy List
  *
- * @param int $taxonomy_terms
- * @param int $depth Child taxonomy
- * @param int $r
+ * @param int $taxonomy_terms Get terms.
+ * @param int $depth Child taxonomy.
+ * @param int $r Reorder list.
  */
 function bsf_to_walktree( $taxonomy_terms, $depth, $r ) {
 		$walker = new BSF_TO_Terms_Walker;
@@ -230,7 +222,7 @@ function bsf_applyorderfilter( $orderby, $args ) {
 		return $orderby;
 	}
 
-	if ( ( ! isset( $args['ignore_term_order'] ) || ( isset( $args['ignore_term_order'] ) && $args['ignore_term_order'] !== true ) ) ) {
+	if ( true !== ( ! isset( $args['ignore_term_order'] ) || ( isset( $args['ignore_term_order'] ) && $args['ignore_term_order'] ) ) ) {
 			return 't.term_order';
 	}
 
@@ -248,10 +240,9 @@ function bsf_get_terms_orderby( $orderby, $args ) {
 		return $orderby;
 	}
 
-	if ( isset( $args['orderby'] ) && $args['orderby'] == 'term_order' && $orderby != 'term_order' ) {
+	if ( 'term_order' == isset( $args['orderby'] ) && $args['orderby'] && 'term_order' != $orderby ) {
 		return 't.term_order';
 	}
-
 		return $orderby;
 }
 
