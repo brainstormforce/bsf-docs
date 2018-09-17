@@ -52,9 +52,7 @@ function bsf_to_plugin_interface() {
 
 			?>
 		<div class="wrap">
-			<div class="icon32" id="icon-edit"><br></div>
 			<h2><?php _e( 'Docs Category Order', 'bsf-docs' ); ?></h2>
-			<p><?php _e( 'Drag each item into the order you prefer, and click the update button.', 'bsf-docs' ); ?></p>
 			<div id="ajax-response"></div>
 			<noscript>
 				   <div class="error message">
