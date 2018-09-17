@@ -293,6 +293,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			require_once BSF_DOCS_BASE_DIR . 'includes/bsf-category-order.php';
 			require_once BSF_DOCS_BASE_DIR . 'classes/class-bsf-docs-widget.php';
 			require_once BSF_DOCS_BASE_DIR . 'classes/class-bsf-docs-cat-widget.php';
+			require_once BSF_DOCS_BASE_DIR . 'classes/class-bsf-to-terms-walker.php';
 		}
 
 		/**
