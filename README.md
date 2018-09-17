@@ -35,17 +35,17 @@ BSF Docs allows you to create documentation website within a minute with ajax se
 
 The plugin provides 2 widgets that are used to display docs categories on the sidebar with various styles.
 
-##### BSF Resent Docs: #####
+#### BSF Resent Docs: ####
 
-Use to display recent document categories.
+* Use to display recent document categories.
 
-##### BSF Docs Category Widget: #####
+#### BSF Docs Category Widget: ####
 
 BSF Docs Category Widget provides below-listed options.
 
- 1. Display as drop-down
- 2. Show post counts
- 3. Show hierarchy
+* Display as drop-down
+* Show post counts
+* Show hierarchy
 
 #### SHORTCODES ####
 
