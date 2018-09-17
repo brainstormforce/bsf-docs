@@ -8,37 +8,39 @@ Stable tag: 1.0.1
 
 == Description ==
 
-BSF Docs allows you to create documentation website within minute with ajax search. Organize your product documentation in your site, beautifully!
+BSF Docs allows you to create documentation website within a minute with ajax search. Organize your product documentation in your site, beautifully!
 
 == Documentation With a User-Friendly Structure For Your Visitors ==
 
-* The main “Docs Page” will list all the categories. Clicking on a category will take you to the docs only for that category or sub category.
+* The main “Docs Page” will list all the categories. Clicking on a category will take you to the docs only for that category.
 
-* A single docs post will have a predefined template with dedicated sidebar. If you would like to use your active theme single template file then simple update option Enable built-in single page template from the settings page.
+* For a single doc will have a predefined template with dedicated sidebar.
 
-* BSF Docs works on Multisite WordPress installations, as well as regular WordPress sites.
-
+* BSF Docs works on MultiSite WordPress installations, as well as regular WordPress sites.
 
 == Features ==
 
-* Beautifully boxed sections styles
+* Beautifully designed boxed categories styles
 * Shortcode to add the search bar anywhere in your website
-* Shortcode for display doc's category list 	
+* Shortcode for display doc's category list     
 * Drag and drop reorder docs categories 
 * Well designed page templates
 * A dedicated sidebar for single docs
 * BSF Recent docs widget
-* BSF Category widget ( Category Hierarchy, Count, Dorpdown option )
+* BSF Category widget ( Category Hierarchy, Count, Dropdown option )
 * Support YOAST SEO breadcrumb 
 * Docs H2-H5 ScrollView anchor link option
 
 == WIDGETS ==
 
-The plugin provides 2 widgets that are used to display docs category on sidebar:
+The plugin provides 2 widgets that are used to display docs categories on the sidebar with various styles.
 
-BSF Resent Docs : Use to display recent document categories.
+=== BSF Resent Docs: ===
 
-BSF Docs Category Widget:
+Use to display recent document categories.
+
+=== BSF Docs Category Widget: ===
+
  * Display as drop-down
  * Show post counts
  * Show hierarchy
@@ -50,7 +52,6 @@ The following shortcodes are available:
 [documentation_documents] Lists documents category.
 
 [doc_wp_live_search placeholder="Have a question?"] Renders a dynamic search form.
-
 
 == Installation ==
 
