@@ -100,57 +100,7 @@ function bsf_to_plugin_interface() {
 							$taxonomy = current( $post_type_taxonomies );
 					}
 
-					if ( count( $post_type_taxonomies ) > 1 ) {
-
-							?>
-							<h2 class="subtitle"><?php echo ucfirst( $post_type_data->labels->name ); ?> <?php _e( 'Taxonomies', 'bsf-docs' ); ?></h2>
-							<table cellspacing="0" class="wp-list-taxonomy">
-								<thead>
-								<tr>
-									<th style="" class="column-cb check-column" id="cb" scope="col">&nbsp;</th><th style="" class="" id="author" scope="col"><?php _e( 'Taxonomy Title', 'bsf-docs' ); ?></th><th style="" class="manage-column" id="categories" scope="col"><?php _e( 'Total Posts', 'bsf-docs' ); ?></th>    </tr>
-								</thead>
-
-   
-								<tbody id="the-list">
-								<?php
-
-									$alternate = false;
-								foreach ( $post_type_taxonomies as $post_type_taxonomy ) {
-										$taxonomy_info = get_taxonomy( $post_type_taxonomy );
-
-										$alternate = true ? false : true === $alternate;
-
-										$args           = array(
-											'hide_empty' => 0,
-											'taxonomy'   => $post_type_taxonomy,
-										);
-										$taxonomy_terms = get_terms( $args );
-
-										?>
-											<tr valign="top" class="
-											<?php
-											if ( true === $alternate ) {
-												echo 'alternate ';}
-?>
-" id="taxonomy-<?php echo esc_attr( $taxonomy ); ?>">
-													<th class="check-column" scope="row"><input type="radio" onclick="to_change_taxonomy(this)" value="<?php echo $post_type_taxonomy; ?>" 
-																																									<?php
-																																									if ( $post_type_taxonomy == $taxonomy ) {
-																																										echo 'checked="checked"';}
-?>
-name="taxonomy">&nbsp;</th>
-													<td class="categories column-categories"><b><?php echo $taxonomy_info->label; ?></b> (<?php echo  $taxonomy_info->labels->singular_name; ?>)</td>
-													<td class="categories column-categories"><?php echo count( $taxonomy_terms ); ?></td>
-											</tr>										
-											<?php
-								}
-								?>
-								</tbody>
-							</table>
-							<br />
-							<?php
-					}
-							?>
+					?>
 
 				<div id="order-terms">
 					<div id="post-body">                    
