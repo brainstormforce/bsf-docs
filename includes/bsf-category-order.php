@@ -17,7 +17,7 @@ function bsf_docs_category_order_init() {
 	 */
 	function bsf_docs_category_order_menu() {
 		if ( function_exists( 'add_submenu_page' ) ) {
-			add_submenu_page( 'edit.php?post_type=docs', 'Category Orders', 'Category Orders', 4, 'bsf_docs_category_order_options', 'bsf_docs_category_order_options' );
+			add_submenu_page( 'edit.php?post_type=docs', 'Category Orders', 'Category Orders', 'administrator', 'bsf_docs_category_order_options', 'bsf_docs_category_order_options' );
 		}
 		wp_enqueue_script( 'bsf-docs-backend', BSF_DOCS_BASE_URL . 'assets/js/backend.js', array( 'jquery', 'jquery-ui-sortable' ), false, false );
 		wp_localize_script( 'bsf-docs-backend', 'BSFDocs', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
