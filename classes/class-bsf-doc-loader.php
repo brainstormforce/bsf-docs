@@ -123,20 +123,18 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			BSF_Docs_post_Type::register_taxonomies();
 			flush_rewrite_rules();
 
-			/* Adding `term_order` in DB for sorting purpose*/
-            global $wpdb;
-            
-            //check if the menu_order column exists;
-            $query = "SHOW COLUMNS FROM $wpdb->terms 
-                        LIKE 'term_order'";
-            $result = $wpdb->query($query);
-            
-            if ($result == 0)
-                {
-                    $query = "ALTER TABLE $wpdb->terms ADD `term_order` INT( 4 ) NULL DEFAULT '0'";
-                    $result = $wpdb->query($query); 
-                }
+			// Adding term_order in DB for sorting purpose.
+			global $wpdb;
 
+			// Check if the menu_order column exists.
+			$query  = "SHOW COLUMNS FROM $wpdb->terms 
+                        LIKE 'term_order'";
+			$result = $wpdb->query( $query );
+
+			if ( 0 == $result ) {
+					$query  = "ALTER TABLE $wpdb->terms ADD `term_order` INT( 4 ) NULL DEFAULT '0'";
+					$result = $wpdb->query( $query );
+			}
 
 		}
 

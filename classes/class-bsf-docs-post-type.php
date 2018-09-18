@@ -140,7 +140,7 @@ class BSF_Docs_Post_Type {
 				'bsf_register_post_type_docs',
 				array(
 					'labels'              => array(
-						'name'                  => __( 'Docs', 'bsf-docs' ),
+						'name'                  => __( 'All Docs', 'bsf-docs' ),
 						'singular_name'         => __( 'Doc', 'bsf-docs' ),
 						'menu_name'             => _x( 'Docs', 'Admin menu name', 'bsf-docs' ),
 						'add_new'               => __( 'Add Doc', 'bsf-docs' ),
