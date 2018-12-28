@@ -61,6 +61,7 @@ class BSF_Docs_Post_Type {
 				),
 				'show_ui'      => true,
 				'query_var'    => true,
+				'show_in_rest' => true,
 				'rewrite'      => array(
 					'slug'         => 'docs-category',
 					'with_front'   => false,
@@ -94,6 +95,7 @@ class BSF_Docs_Post_Type {
 					),
 					'show_ui'      => true,
 					'query_var'    => true,
+					'show_in_rest' => true,
 					'rewrite'      => array(
 						'slug'       => 'docs-tag',
 						'with_front' => false,
