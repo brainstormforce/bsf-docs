@@ -20,7 +20,7 @@ Build documentation website with live search functionality. This plugin provides
 ## Changelog ##
 
 ### Version 1.0.2 ###
-- Fix: Taxanomies not displayed in the Block Editor.
+- Fix: Taxonomies not displayed in the Block Editor.
 
 ### Version 1.0.1 ###
 - Fix: Category undefined issue fixed for WP-4.9 
