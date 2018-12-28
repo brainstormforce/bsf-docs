@@ -32,7 +32,7 @@ get_header(); ?>
 			}
 			?>
 		</div><!-- .page-header -->
-	<?php
+			<?php
 	endif;
 		?>
 
@@ -101,13 +101,13 @@ get_header(); ?>
 				<?php
 				endif;
 			?>
-		<?php
+			<?php
 		endif;
 		?>
 
 		<?php
 		if ( have_posts() ) :
-		?>
+			?>
 			<?php
 			/* Start the Loop */
 

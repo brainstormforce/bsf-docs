@@ -26,7 +26,8 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 	$args = shortcode_atts(
 		array(
 			'placeholder' => __( 'Search for answers...', 'bsf-docs' ),
-		), $atts
+		),
+		$atts
 	);
 
 	?>
@@ -62,11 +63,13 @@ function bsf_render_category_list( $atts, $content = null ) {
 	$get_args = shortcode_atts(
 		array(
 			'category' => 'docs_category',
-		), $atts
+		),
+		$atts
 	);
 
 	$taxonomy_objects = get_terms(
-		$get_args['category'], array(
+		$get_args['category'],
+		array(
 			'hide_empty' => false,
 			'pad_counts' => 1,
 		)
@@ -78,13 +81,13 @@ function bsf_render_category_list( $atts, $content = null ) {
 	$doc_title = get_option( 'bsf_doc_title' );
 
 	if ( '' != $doc_title ) {
-	?>
+		?>
 		<h1 class="docs-title"><?php echo esc_attr( $doc_title ); ?></h1>
-	<?php
+		<?php
 	}
 
 	if ( $taxonomy_objects && ! is_wp_error( $taxonomy_objects ) ) :
-	?>
+		?>
 
 	<div class="bsf-categories-wrap clearfix">
 
@@ -94,7 +97,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 
 			if ( '0' == ( $object->count && $object->parent ) ) {
 
-			?>
+				?>
 			<div class="bsf-cat-col" >
 				<a class="bsf-cat-link" href="<?php echo esc_url( get_term_link( $object->slug, $object->taxonomy ) ); ?>">
 					<h4><?php echo esc_html( $object->name ); ?></h4>
@@ -105,13 +108,13 @@ function bsf_render_category_list( $atts, $content = null ) {
 				</a>
 			</div>
 
-		<?php
+				<?php
 			}
 		}
-?>
+		?>
 	</div>
 
-	<?php
+		<?php
 	endif;
 
 	return ob_get_clean();
@@ -157,7 +160,7 @@ function bsf_load_search_results() {
 
 	<?php else : ?>
 		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
-	<?php
+		<?php
 	endif;
 
 	?>

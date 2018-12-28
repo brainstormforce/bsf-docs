@@ -130,9 +130,9 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 			 * @param array $instance Array of settings for the current widget.
 			 */
 			wp_list_categories( apply_filters( 'widget_categories_args', $cat_args, $instance ) );
-	?>
+			?>
 </ul>
-	<?php
+			<?php
 		}
 
 				echo $args['after_widget'];
@@ -146,7 +146,8 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 	public function form( $instance ) {
 		// Defaults.
 		$instance     = wp_parse_args(
-			(array) $instance, array(
+			(array) $instance,
+			array(
 				'title' => '',
 			)
 		);

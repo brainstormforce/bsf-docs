@@ -46,7 +46,8 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 										array(
 											'public'  => true,
 											'show_ui' => true,
-										), 'objects'
+										),
+										'objects'
 									);
 
 									unset( $post_types['attachment'] );
@@ -54,12 +55,12 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 									unset( $post_types['fl-theme-layout'] );
 
 									foreach ( $post_types as $key => $post_type ) {
-									?>
+										?>
 										<input type="checkbox" 
 										<?php
 										if ( in_array( $key, $selected_post_types ) ) {
 											echo "checked='checked' "; }
-?>
+										?>
 name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
 										<label>
 											<?php echo ucfirst( $post_type->label ); ?>

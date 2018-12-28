@@ -51,22 +51,22 @@ class Bsf_Docs_Widget extends WP_Widget {
 		if ( ! empty( $title ) ) {
 			echo $args['before_title'] . $title . $args['after_title'];
 		}
-?> 
+		?> 
 	<ul> 
-	<?php
+		<?php
 		$recent_posts = wp_get_recent_posts(
 			array(
 				'post_type'   => 'docs',
 				'post_status' => 'publish',
 			)
 		);
-	foreach ( $recent_posts as $recent ) {
-		echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="Look ' . esc_attr( $recent['post_title'] ) . '" >' . $recent['post_title'] . '</a> </li> ';
-	}
+		foreach ( $recent_posts as $recent ) {
+			echo '<li><a href="' . get_permalink( $recent['ID'] ) . '" title="Look ' . esc_attr( $recent['post_title'] ) . '" >' . $recent['post_title'] . '</a> </li> ';
+		}
 
-?>
+		?>
 </ul>
-	<?php
+		<?php
 		echo $args['after_widget'];
 	}
 
@@ -83,20 +83,20 @@ class Bsf_Docs_Widget extends WP_Widget {
 		}
 
 		// Widget admin form.
-	?>
+		?>
 <p>
 	<label for="
-	<?php
+		<?php
 		echo $this->get_field_id( 'title' );
-	?>
+		?>
 	">
-	<?php
+		<?php
 		_e( 'Title:' );
-	?>
+		?>
 	</label> 
 	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value=" <?php echo esc_attr( $title ); ?> "/>
 	</p>
-	<?php
+		<?php
 	}
 
 	/**

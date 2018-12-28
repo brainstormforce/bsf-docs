@@ -24,7 +24,7 @@ get_header(); ?>
 		<?php
 
 		if ( have_posts() ) :
-		?>
+			?>
 		<div class="bsf-page-header">
 			<?php
 
@@ -36,13 +36,13 @@ get_header(); ?>
 			}
 			?>
 		</div><!-- .page-header -->
-	<?php
+			<?php
 	endif;
 		?>
 
 		<?php
 		if ( have_posts() ) :
-		?>
+			?>
 			<?php
 			/* Start the Loop */
 
