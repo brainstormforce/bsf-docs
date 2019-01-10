@@ -30,7 +30,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 		$atts
 	);
 
-	$selected_post_types = get_option('bsf_search_post_types', array( 'docs' ));
+	$selected_post_types = get_option( 'bsf_search_post_types', array( 'docs' ) );
 
 	?>
 
@@ -40,11 +40,10 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 				<form role="search" method="get" id="bsf-searchform" class="clearfix" action="<?php echo home_url(); ?>">
 
 				<?php
-					foreach ($selected_post_types as $key => $post_type) {
-						echo '<input type="hidden" name="post_type[]" value="'. esc_attr($post_type) .'">';
-					}
+				foreach ( $selected_post_types as $key => $post_type ) {
+					echo '<input type="hidden" name="post_type[]" value="' . esc_attr( $post_type ) . '">';
+				}
 				?>
-					
 					<input type="text" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '')  {this.value = '';}" value="" name="s" id="bsf-sq" autocapitalize="off" autocorrect="off" autocomplete="off">
 					<div class="spinner live-search-loading bsf-search-loader">
 						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" >
