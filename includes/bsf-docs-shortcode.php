@@ -30,12 +30,21 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 		$atts
 	);
 
+	$selected_post_types = get_option('bsf_search_post_types', array( 'docs' ));
+
 	?>
 
 	<div id="bsf-live-search">
 		<div class="bsf-search-container">
 			<div id="bsf-search-wrap">
 				<form role="search" method="get" id="bsf-searchform" class="clearfix" action="<?php echo home_url(); ?>">
+
+				<?php
+					foreach ($selected_post_types as $key => $post_type) {
+						echo '<input type="hidden" name="post_type[]" value="'. esc_attr($post_type) .'">';
+					}
+				?>
+					
 					<input type="text" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '')  {this.value = '';}" value="" name="s" id="bsf-sq" autocapitalize="off" autocorrect="off" autocomplete="off">
 					<div class="spinner live-search-loading bsf-search-loader">
 						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" >
@@ -129,15 +138,15 @@ function bsf_load_search_results() {
 	$selected_post_types = get_option( 'bsf_search_post_types' );
 	$selected_post_types = ! $selected_post_types ? array( 'post', 'page' ) : $selected_post_types;
 
-		$args = array(
-			'post_type'   => $selected_post_types,
-			'post_status' => 'publish',
-			's'           => $query,
-		);
+	$args = array(
+		'post_type'   => $selected_post_types,
+		'post_status' => 'publish',
+		's'           => $query,
+	);
 
 	$search = new WP_Query( $args );
 
-		ob_start();
+	ob_start();
 
 	?>
 
