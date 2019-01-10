@@ -79,7 +79,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
-			$title = __( 'Recent Docs', 'bsf_docs_widget_domain' );
+			$title = __( 'Recent Docs', 'bsf-docs' );
 		}
 
 		// Widget admin form.
@@ -91,7 +91,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 		?>
 	">
 		<?php
-		_e( 'Title:' );
+		_e( 'Title:', 'bsf-docs' );
 		?>
 	</label> 
 	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value=" <?php echo esc_attr( $title ); ?> "/>

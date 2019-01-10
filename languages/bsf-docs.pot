@@ -1,0 +1,356 @@
+# Copyright (C) 2019 Brainstorm Force
+# This file is distributed under the same license as the BSF Docs package.
+msgid ""
+msgstr ""
+"Project-Id-Version: BSF Docs 1.0.3\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bsf-docs\n"
+"POT-Creation-Date: 2019-01-10 06:21:56+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: classes/class-bsf-doc-loader.php:198 classes/class-bsf-doc-loader.php:199
+msgid "Settings"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:32
+msgid "BSF Docs Category Widget"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:35
+msgid "A list or dropdown of BSF Docs categories."
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:49
+#: classes/class-bsf-docs-post-type.php:47
+msgid "Categories"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:81
+msgid "Select Category"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:159
+#: classes/class-bsf-docs-widget.php:94
+msgid "Title:"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:163
+msgid "Display as dropdown"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:166
+msgid "Show post counts"
+msgstr ""
+
+#: classes/class-bsf-docs-cat-widget.php:169
+msgid "Show hierarchy"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:49
+msgid "Docs categories"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:50
+msgid "Category"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:52
+msgid "Search categories"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:53
+msgid "All categories"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:54
+msgid "Parent category"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:55
+msgid "Parent category:"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:56
+msgid "Edit category"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:57
+msgid "Update category"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:58
+msgid "Add new category"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:59
+msgid "New category name"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:60
+msgid "No categories found"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:80
+#: classes/class-bsf-docs-post-type.php:82
+msgid "Docs tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:83
+msgid "Tag"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:85
+msgid "Search tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:86
+msgid "All tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:87
+msgid "Edit tag"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:88
+msgid "Update tag"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:89
+msgid "Add new tag"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:90
+msgid "New tag name"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:91
+msgid "Popular tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:92
+msgid "Separate tags with commas"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:93
+msgid "Add or remove tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:94
+msgid "Choose from the most used tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:95
+msgid "No tags found"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:144
+msgid "Docs"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:145
+msgid "Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:147
+msgid "Add Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:148
+msgid "Add New Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:149
+msgid "Edit"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:150
+msgid "Edit Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:151
+msgid "New Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:152
+#: classes/class-bsf-docs-post-type.php:153
+msgid "View Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:154
+msgid "Search Docs"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:155
+msgid "No Docs found"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:156
+msgid "No Docs found in trash"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:157
+msgid "Parent Doc"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:158
+msgid "Docs image"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:159
+msgid "Set Docs image"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:160
+msgid "Remove Docs image"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:161
+msgid "Use as Docs image"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:162
+msgid "Docs list"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:164
+msgid "This is where you can add new docs to your site."
+msgstr ""
+
+#: classes/class-bsf-docs-widget.php:32
+msgid "BSF Docs Widget"
+msgstr ""
+
+#: classes/class-bsf-docs-widget.php:35
+msgid "Widget for recent Docs"
+msgstr ""
+
+#: classes/class-bsf-docs-widget.php:82
+msgid "Recent Docs"
+msgstr ""
+
+#: classes/class-bsf-docs-widget.php:134
+msgid "Docs Sidebar"
+msgstr ""
+
+#: classes/class-bsf-docs-widget.php:136
+msgid "Widgets in this area will be shown on all docs single posts and cateory."
+msgstr ""
+
+#: includes/bsf-docs-shortcode.php:28
+msgid "Search for answers..."
+msgstr ""
+
+#: includes/bsf-docs-shortcode.php:114 includes/taxonomy-bsf-docs-cat.php:91
+#. translators: %s: article count term
+msgid "%1$s Articles"
+msgstr ""
+
+#: includes/bsf-docs-shortcode.php:170
+msgid "Sorry, no docs were found."
+msgstr ""
+
+#: includes/bsf-options-page.php:15
+msgid "Docs Settings"
+msgstr ""
+
+#: includes/bsf-options-page.php:17
+msgid "Live Search"
+msgstr ""
+
+#: includes/bsf-options-page.php:18
+msgid "Settings to control the live search functionality & it's search area."
+msgstr ""
+
+#: includes/bsf-options-page.php:24
+msgid "Enable Live Search"
+msgstr ""
+
+#: includes/bsf-options-page.php:36
+msgid "Search Within Post Types"
+msgstr ""
+
+#: includes/bsf-options-page.php:74
+msgid "Enable built-in single page template"
+msgstr ""
+
+#: includes/bsf-options-page.php:85
+msgid "Enable built-in category & tag page template"
+msgstr ""
+
+#: includes/bsf-options-page.php:96
+msgid "Turn Off Doc's Comments"
+msgstr ""
+
+#: includes/bsf-options-page.php:108
+msgid "Doc Archive Page Title"
+msgstr ""
+
+#: includes/bsf-options-page.php:121
+msgid "Shortcodes"
+msgstr ""
+
+#: includes/bsf-options-page.php:122
+msgid "Copy below shortcode and paste it into your post, page, or text widget."
+msgstr ""
+
+#: includes/bsf-options-page.php:127
+msgid "Display Live Search Box"
+msgstr ""
+
+#: includes/bsf-options-page.php:135
+msgid "Display Doc's Category List"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "BSF Docs"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://brainstormforce.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Easily build documentation website with AJAX based live search "
+"functionality. This plugin provides shortcodes to display category list & "
+"live search input box."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Brainstorm Force"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.brainstormforce.com"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:51
+msgctxt "Admin menu name"
+msgid "Categories"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:84
+msgctxt "Admin menu name"
+msgid "Tags"
+msgstr ""
+
+#: classes/class-bsf-docs-post-type.php:146
+msgctxt "Admin menu name"
+msgid "Docs"
+msgstr ""

@@ -167,7 +167,7 @@ function bsf_load_search_results() {
 		?>
 
 	<?php else : ?>
-		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'framework' ); ?></li>
+		<li class="nothing-here"><?php _e( 'Sorry, no docs were found.', 'bsf-docs' ); ?></li>
 		<?php
 	endif;
 
