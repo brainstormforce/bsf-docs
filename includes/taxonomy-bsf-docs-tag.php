@@ -14,6 +14,7 @@ get_header(); ?>
 <?php
 	// display live search box.
 	echo do_shortcode( '[doc_wp_live_search]' );
+	
 ?>
 <div class="wrap docs-wraper">
 

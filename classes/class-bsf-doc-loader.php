@@ -299,14 +299,14 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @since 1.0
 		 */
 		function enqueue_front_scripts() {
-			wp_enqueue_style( 'bsf-frontend-style', BSF_DOCS_BASE_URL . 'assets/css/frontend.css' );
+			wp_register_style( 'bsf-frontend-style', BSF_DOCS_BASE_URL . 'assets/css/frontend.css' );
 
 			$is_live_search = get_option( 'bsf_ls_enabled' );
 
 			if ( '1' == $is_live_search || false === $is_live_search ) {
-
-				wp_enqueue_script( 'bsf-live-search', BSF_DOCS_BASE_URL . 'assets/js/jquery.livesearch.js', array( 'jquery' ), BSF_DOCS_VERSION, true );
-				wp_enqueue_script( 'bsf-searchbox-script', BSF_DOCS_BASE_URL . 'assets/js/searchbox-script.js', array( 'bsf-live-search' ), BSF_DOCS_VERSION, true );
+				
+				wp_register_script( 'bsf-live-search', BSF_DOCS_BASE_URL . 'assets/js/jquery.livesearch.js', array( 'jquery' ), BSF_DOCS_VERSION, true );
+				wp_register_script( 'bsf-searchbox-script', BSF_DOCS_BASE_URL . 'assets/js/searchbox-script.js', array( 'bsf-live-search' ), BSF_DOCS_VERSION, true );
 
 				wp_localize_script(
 					'bsf-searchbox-script',
@@ -324,7 +324,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * @since 1.0
 		 */
 		function enqueue_admin_scripts() {
-			wp_enqueue_style( 'bsf-options-style', BSF_DOCS_BASE_URL . 'assets/css/admin.css' );
+			wp_register_style( 'bsf-options-style', BSF_DOCS_BASE_URL . 'assets/css/admin.css' );
 		}
 	}
 

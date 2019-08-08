@@ -6,6 +6,8 @@
  */
 
 defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
+wp_enqueue_style('bsf-options-style');
+
 
 ?>
 

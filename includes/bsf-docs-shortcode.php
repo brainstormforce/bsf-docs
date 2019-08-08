@@ -21,7 +21,9 @@ add_action( 'wp_ajax_nopriv_bsf_load_search_results', 'bsf_load_search_results' 
  * @param int $content Get content to search from.
  */
 function bsf_doc_render_search_box( $atts, $content = null ) {
-
+	wp_enqueue_style('bsf-frontend-style');
+	wp_enqueue_script('bsf-live-search');
+	wp_enqueue_script('bsf-searchbox-script');
 	ob_start();
 	$args = shortcode_atts(
 		array(
@@ -65,6 +67,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
  * @param int $content Get content to category.
  */
 function bsf_render_category_list( $atts, $content = null ) {
+	wp_enqueue_style('bsf-frontend-style');
 
 	ob_start();
 
