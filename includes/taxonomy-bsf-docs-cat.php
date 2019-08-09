@@ -14,7 +14,7 @@ get_header(); ?>
 <?php
 	// display live search box.
 	echo do_shortcode( '[doc_wp_live_search]' );
-	
+
 ?>
 <div class="wrap docs-wraper">
 
@@ -73,13 +73,13 @@ get_header(); ?>
 					for ( $i = 0; $i <= count( $slug ); $i++ ) {
 
 						if ( isset( $slug[ $i ]->slug ) && isset( $object->slug ) ) {
-							if ( $slug[ $i ]->slug == $object->slug ) {
+							if ( $slug[ $i ]->slug == $object->slug ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 								$count = $slug[ $i ]->count;
 							}
 						}
 					}
 
-					if ( $slug[ $key ]->slug == $object->slug ) {
+					if ( $slug[ $key ]->slug == $object->slug ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 						$count = $object->count;
 					}
@@ -154,12 +154,12 @@ get_header(); ?>
 				<?php
 			endwhile;
 
-		else :
+			else :
 
-			get_template_part( 'template-parts/post/content', 'none' );
+				get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
-		?>
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

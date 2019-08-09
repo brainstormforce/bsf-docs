@@ -58,12 +58,13 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 			$is_single_template_on = get_option( 'bsf_override_single_template' );
 			$is_cat_template_on    = get_option( 'bsf_override_category_template' );
 
-			if ( '1' == $is_single_template_on || false === $is_single_template_on ) {
+			if ( '1' == $is_single_template_on || false === $is_single_template_on ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+
 				add_filter( 'single_template', array( $this, 'get_bsf_docs_single_template' ), 99 );
 				add_filter( 'body_class', array( $this, 'bsf_docs_body_single_class' ) );
 			}
 
-			if ( '1' == $is_cat_template_on || false === $is_cat_template_on ) {
+			if ( '1' == $is_cat_template_on || false === $is_cat_template_on ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 				add_filter( 'template_include', array( $this, 'category_template' ), 99 );
 				add_filter( 'template_include', array( $this, 'tag_template' ), 99 );
 				add_filter( 'body_class', array( $this, 'bsf_docs_body_tax_class' ) );
@@ -303,8 +304,8 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 
 			$is_live_search = get_option( 'bsf_ls_enabled' );
 
-			if ( '1' == $is_live_search || false === $is_live_search ) {
-				
+			if ( '1' == $is_live_search || false === $is_live_search ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+
 				wp_register_script( 'bsf-live-search', BSF_DOCS_BASE_URL . 'assets/js/jquery.livesearch.js', array( 'jquery' ), BSF_DOCS_VERSION, true );
 				wp_register_script( 'bsf-searchbox-script', BSF_DOCS_BASE_URL . 'assets/js/searchbox-script.js', array( 'bsf-live-search' ), BSF_DOCS_VERSION, true );
 

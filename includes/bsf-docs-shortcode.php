@@ -21,9 +21,9 @@ add_action( 'wp_ajax_nopriv_bsf_load_search_results', 'bsf_load_search_results' 
  * @param int $content Get content to search from.
  */
 function bsf_doc_render_search_box( $atts, $content = null ) {
-	wp_enqueue_style('bsf-frontend-style');
-	wp_enqueue_script('bsf-live-search');
-	wp_enqueue_script('bsf-searchbox-script');
+	wp_enqueue_style( 'bsf-frontend-style' );
+	wp_enqueue_script( 'bsf-live-search' );
+	wp_enqueue_script( 'bsf-searchbox-script' );
 	ob_start();
 	$args = shortcode_atts(
 		array(
@@ -67,7 +67,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
  * @param int $content Get content to category.
  */
 function bsf_render_category_list( $atts, $content = null ) {
-	wp_enqueue_style('bsf-frontend-style');
+	wp_enqueue_style( 'bsf-frontend-style' );
 
 	ob_start();
 
@@ -91,7 +91,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 	<?php
 	$doc_title = get_option( 'bsf_doc_title' );
 
-	if ( '' != $doc_title ) {
+	if ( '' != $doc_title ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 		?>
 		<h1 class="docs-title"><?php echo esc_attr( $doc_title ); ?></h1>
 		<?php
@@ -106,7 +106,7 @@ function bsf_render_category_list( $atts, $content = null ) {
 
 		foreach ( $taxonomy_objects as $key => $object ) {
 
-			if ( '0' == ( $object->count && $object->parent ) ) {
+			if ( '0' == ( $object->count && $object->parent ) ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 				?>
 			<div class="bsf-cat-col" >
