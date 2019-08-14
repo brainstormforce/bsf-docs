@@ -31,6 +31,8 @@ get_header(); ?>
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
 				echo '<div class="bsf-tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
 			}
+			/* Hook for external integration */
+			do_action( 'bsf_docs_after_cat_term_title' );
 			?>
 		</div><!-- .page-header -->
 			<?php
