@@ -46,7 +46,7 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 	public function widget( $args, $instance ) {
 		static $first_dropdown = true;
 
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Categories' );
+		$title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Categories', 'bsf-docs' );
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
@@ -78,7 +78,7 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 
 			echo '<label class="bsf-screen-reader-text" for="' . esc_attr( $dropdown_id ) . '">' . $title . '</label>';
 
-			$cat_args['show_option_none'] = __( 'Select Category' );
+			$cat_args['show_option_none'] = __( 'Select Category', 'bsf-docs' );
 			$cat_args['id']               = $dropdown_id;
 			$cat_args['value_field']      = 'slug';
 			$cat_args['selected']         = $current_category_slug;
@@ -130,9 +130,9 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 			 * @param array $instance Array of settings for the current widget.
 			 */
 			wp_list_categories( apply_filters( 'widget_categories_args', $cat_args, $instance ) );
-	?>
+			?>
 </ul>
-	<?php
+			<?php
 		}
 
 				echo $args['after_widget'];
@@ -146,7 +146,8 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 	public function form( $instance ) {
 		// Defaults.
 		$instance     = wp_parse_args(
-			(array) $instance, array(
+			(array) $instance,
+			array(
 				'title' => '',
 			)
 		);
@@ -155,17 +156,17 @@ class Bsf_Docs_Cat_Widget extends WP_Widget {
 		$hierarchical = isset( $instance['hierarchical'] ) ? (bool) $instance['hierarchical'] : false;
 		$dropdown     = isset( $instance['dropdown'] ) ? (bool) $instance['dropdown'] : false;
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:' ); ?></label>
+		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'bsf-docs' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" /></p>
 
 		<p><input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'dropdown' ); ?>" name="<?php echo $this->get_field_name( 'dropdown' ); ?>"<?php checked( $dropdown ); ?> />
-		<label for="<?php echo $this->get_field_id( 'dropdown' ); ?>"><?php _e( 'Display as dropdown' ); ?></label><br />
+		<label for="<?php echo $this->get_field_id( 'dropdown' ); ?>"><?php _e( 'Display as dropdown', 'bsf-docs' ); ?></label><br />
 
 		<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>"<?php checked( $count ); ?> />
-		<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Show post counts' ); ?></label><br />
+		<label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php _e( 'Show post counts', 'bsf-docs' ); ?></label><br />
 
 		<input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id( 'hierarchical' ); ?>" name="<?php echo $this->get_field_name( 'hierarchical' ); ?>"<?php checked( $hierarchical ); ?> />
-		<label for="<?php echo $this->get_field_id( 'hierarchical' ); ?>"><?php _e( 'Show hierarchy' ); ?></label></p>
+		<label for="<?php echo $this->get_field_id( 'hierarchical' ); ?>"><?php _e( 'Show hierarchy', 'bsf-docs' ); ?></label></p>
 		<?php
 	}
 

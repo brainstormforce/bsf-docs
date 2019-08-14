@@ -34,7 +34,7 @@ get_header(); ?>
 			do_action( 'bsf_docs_after_cat_term_title' );
 			?>
 		</div><!-- .page-header -->
-	<?php
+			<?php
 	endif;
 		?>
 
@@ -103,13 +103,13 @@ get_header(); ?>
 				<?php
 				endif;
 			?>
-		<?php
+			<?php
 		endif;
 		?>
 
 		<?php
 		if ( have_posts() ) :
-		?>
+			?>
 			<?php
 			/* Start the Loop */
 

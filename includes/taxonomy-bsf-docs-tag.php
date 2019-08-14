@@ -24,7 +24,7 @@ get_header(); ?>
 		<?php
 
 		if ( have_posts() ) :
-		?>
+			?>
 		<div class="bsf-page-header">
 			<?php
 
@@ -38,13 +38,13 @@ get_header(); ?>
 			do_action( 'bsf_docs_after_tag_term_title' );
 			?>
 		</div><!-- .page-header -->
-	<?php
+			<?php
 	endif;
 		?>
 
 		<?php
 		if ( have_posts() ) :
-		?>
+			?>
 			<?php
 			/* Start the Loop */
 

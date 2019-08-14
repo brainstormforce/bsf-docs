@@ -4,8 +4,7 @@
  * Plugin URI: http://brainstormforce.com/
  * Author: Brainstorm Force
  * Author URI: https://www.brainstormforce.com
- * Contributors: brainstormforce, Anil
- * Version: 1.0.1
+ * Version: 1.0.3
  * Description: Easily build documentation website with AJAX based live search functionality. This plugin provides shortcodes to display category list & live search input box.
  * Text Domain: bsf-docs
  *

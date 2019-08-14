@@ -61,6 +61,7 @@ class BSF_Docs_Post_Type {
 				),
 				'show_ui'      => true,
 				'query_var'    => true,
+				'show_in_rest' => true,
 				'rewrite'      => array(
 					'slug'         => 'docs-category',
 					'with_front'   => false,
@@ -73,7 +74,8 @@ class BSF_Docs_Post_Type {
 			'docs_tag',
 			apply_filters( 'bsf_taxonomy_objects_docs_tag', array( BSF_DOCS_POST_TYPE ) ),
 			apply_filters(
-				'bsf_taxonomy_args_docs_tag', array(
+				'bsf_taxonomy_args_docs_tag',
+				array(
 					'hierarchical' => false,
 					'label'        => __( 'Docs tags', 'bsf-docs' ),
 					'labels'       => array(
@@ -94,6 +96,7 @@ class BSF_Docs_Post_Type {
 					),
 					'show_ui'      => true,
 					'query_var'    => true,
+					'show_in_rest' => true,
 					'rewrite'      => array(
 						'slug'       => 'docs-tag',
 						'with_front' => false,

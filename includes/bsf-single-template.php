@@ -21,7 +21,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 
-			?>
+				?>
 				<header class="entry-header">
 					<div class="docs-single-title">
 						<?php
