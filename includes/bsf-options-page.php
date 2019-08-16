@@ -6,6 +6,8 @@
  */
 
 defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
+wp_enqueue_style( 'bsf-options-style' );
+
 
 ?>
 
@@ -26,7 +28,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 								<?php
 								$checked        = '';
 								$bsf_ls_enabled = get_option( 'bsf_ls_enabled' );
-								$checked        = ( false === $bsf_ls_enabled ) ? " checked='checked' " : ( ( 1 == $bsf_ls_enabled ) ? " checked='checked' " : '' );
+								$checked        = ( false === $bsf_ls_enabled ) ? " checked='checked' " : ( ( 1 == $bsf_ls_enabled ) ? " checked='checked' " : '' );// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_ls_enabled" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>
@@ -58,7 +60,7 @@ defined( 'ABSPATH' ) || die( 'No direct script access allowed!' );
 										?>
 										<input type="checkbox" 
 										<?php
-										if ( in_array( $key, $selected_post_types ) ) {
+										if ( in_array( $key, $selected_post_types ) ) {// phpcs:ignore WordPress.PHP.StrictInArray.MissingTrueStrict
 											echo "checked='checked' "; }
 										?>
 name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
@@ -76,7 +78,7 @@ name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
 								<?php
 								$checked                      = '';
 								$bsf_override_single_template = get_option( 'bsf_override_single_template' );
-								$checked                      = ( false === $bsf_override_single_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_single_template ) ? " checked='checked' " : '' );
+								$checked                      = ( false === $bsf_override_single_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_single_template ) ? " checked='checked' " : '' );// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_override_single_template" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>
@@ -87,7 +89,7 @@ name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
 								<?php
 								$checked                        = '';
 								$bsf_override_category_template = get_option( 'bsf_override_category_template' );
-								$checked                        = ( false === $bsf_override_category_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_category_template ) ? " checked='checked' " : '' );
+								$checked                        = ( false === $bsf_override_category_template ) ? " checked='checked' " : ( ( 1 == $bsf_override_category_template ) ? " checked='checked' " : '' );// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_override_category_template" value="1" <?php echo checked( 1, $checked, false ); ?> />
 							</td>
@@ -98,7 +100,7 @@ name="bsf_search_post_types[]" value="<?php echo esc_attr( $key ); ?>" />
 								<?php
 								$checked                 = '';
 								$bsf_search_has_comments = get_option( 'bsf_search_has_comments' );
-								$checked                 = ( false === $bsf_search_has_comments ) ? " checked='checked' " : ( ( 1 == $bsf_search_has_comments ) ? " checked='checked' " : '' );
+								$checked                 = ( false === $bsf_search_has_comments ) ? " checked='checked' " : ( ( 1 == $bsf_search_has_comments ) ? " checked='checked' " : '' );// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
 
 								?>
 								<input type="checkbox" <?php echo $checked; ?> name="bsf_search_has_comments" value="1" <?php echo checked( 1, $checked, false ); ?> />

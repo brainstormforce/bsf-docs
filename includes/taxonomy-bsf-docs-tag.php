@@ -14,6 +14,7 @@ get_header(); ?>
 <?php
 	// display live search box.
 	echo do_shortcode( '[doc_wp_live_search]' );
+
 ?>
 <div class="wrap docs-wraper">
 
@@ -90,12 +91,12 @@ get_header(); ?>
 				<?php
 			endwhile;
 
-		else :
+			else :
 
-			get_template_part( 'template-parts/post/content', 'none' );
+				get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
-		?>
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
