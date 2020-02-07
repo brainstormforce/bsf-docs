@@ -19,6 +19,9 @@ Build documentation website with live search functionality. This plugin provides
 
 ## Changelog ##
 
+### Version 1.0.4 ### 
+- Improvement: Load scripts only on pages where shortcode is used.
+
 ### Version 1.0.3 ###
 - Improvement: Search only on the selected post types when enter is clicked in the search box.
 
