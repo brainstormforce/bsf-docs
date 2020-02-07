@@ -14,7 +14,6 @@ get_header(); ?>
 <?php
 	// display live search box.
 	echo do_shortcode( '[doc_wp_live_search]' );
-
 ?>
 <div class="wrap docs-wraper">
 
@@ -31,8 +30,6 @@ get_header(); ?>
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
 				echo '<div class="bsf-tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
 			}
-			/* Hook for external integration */
-			do_action( 'bsf_docs_after_cat_term_title' );
 			?>
 		</div><!-- .page-header -->
 			<?php
@@ -75,13 +72,13 @@ get_header(); ?>
 					for ( $i = 0; $i <= count( $slug ); $i++ ) {
 
 						if ( isset( $slug[ $i ]->slug ) && isset( $object->slug ) ) {
-							if ( $slug[ $i ]->slug == $object->slug ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+							if ( $slug[ $i ]->slug == $object->slug ) {
 								$count = $slug[ $i ]->count;
 							}
 						}
 					}
 
-					if ( $slug[ $key ]->slug == $object->slug ) {// phpcs:ignore WordPress.PHP.StrictComparisons.LooseComparison
+					if ( $slug[ $key ]->slug == $object->slug ) {
 
 						$count = $object->count;
 					}
@@ -156,12 +153,12 @@ get_header(); ?>
 				<?php
 			endwhile;
 
-			else :
+		else :
 
-				get_template_part( 'template-parts/post/content', 'none' );
+			get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
-			?>
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

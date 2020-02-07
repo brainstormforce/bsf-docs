@@ -14,7 +14,6 @@ get_header(); ?>
 <?php
 	// display live search box.
 	echo do_shortcode( '[doc_wp_live_search]' );
-
 ?>
 <div class="wrap docs-wraper">
 
@@ -35,8 +34,6 @@ get_header(); ?>
 			if ( function_exists( 'yoast_breadcrumb' ) ) {
 				echo '<div class="bsf-tax-breadcrumb">' . do_shortcode( '[wpseo_breadcrumb]' ) . '</div>';
 			}
-			/* Hook for external integration */
-			do_action( 'bsf_docs_after_tag_term_title' );
 			?>
 		</div><!-- .page-header -->
 			<?php
@@ -91,12 +88,12 @@ get_header(); ?>
 				<?php
 			endwhile;
 
-			else :
+		else :
 
-				get_template_part( 'template-parts/post/content', 'none' );
+			get_template_part( 'template-parts/post/content', 'none' );
 
 		endif;
-			?>
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

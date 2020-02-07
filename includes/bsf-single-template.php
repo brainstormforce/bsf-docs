@@ -31,8 +31,6 @@ get_header();
 								yoast_breadcrumb( '<p id="breadcrumbs">', '</p>' );
 							}
 						}
-						/* Hook for external integration */
-						do_action( 'bsf_docs_after_single_title' );
 						?>
 					</div>
 				</header><!-- .entry-header -->

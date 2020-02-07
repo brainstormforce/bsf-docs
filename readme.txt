@@ -2,7 +2,7 @@
 Contributors: brainstormforce
 Tags: docs, wpdocs, documentation, wpdocs, documentation
 Requires at least: 3.0  
-Tested up to: 5.3.2
+Tested up to: 5.0
 Stable tag: 1.0.3
 
 BSF Docs allows you to create documentation website within minute with ajax search.
