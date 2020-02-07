@@ -29,3 +29,5 @@ node_modules
 *.tar.gz
 *.zip
 package-lock.json
+.github
+.wordpress-org
