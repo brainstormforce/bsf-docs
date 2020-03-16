@@ -48,7 +48,7 @@ function bsf_doc_render_search_box( $atts, $content = null ) {
 				?>
 					<input type="text" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>" onfocus="if (this.value == '') {this.value = '';}" onblur="if (this.value == '')  {this.value = '';}" value="" name="s" id="bsf-sq" autocapitalize="off" autocorrect="off" autocomplete="off">
 					<div class="spinner live-search-loading bsf-search-loader">
-						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" >
+						<img src="<?php echo esc_url( admin_url( 'images/spinner-2x.gif' ) ); ?>" alt="spinner-gif" >
 					</div>
 				</form>
 		</div>
