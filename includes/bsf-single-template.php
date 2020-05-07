@@ -50,6 +50,7 @@ get_header();
 			endwhile; // End of the loop.
 			?>
 		</main><!-- #main -->
+		<?php do_action( 'bsf_docs_single_template_primary_bottom' ); ?>
 	</div><!-- #primary -->
 	<div itemscope="itemscope" id="secondary" class="widget-area sidebar grid-25 tablet-grid-25 grid-parent docs-sidebar-area secondary" role="complementary">
 			<div class="sidebar-main content-area">

@@ -5,7 +5,7 @@
   "author": "Brainstorm Force",
   "devDependencies": {
     "grunt": "^1.1.0",
-    "grunt-wp-i18n": "~1.0.3",
+    "grunt-wp-i18n": "^1.0.3",
     "grunt-wp-readme-to-markdown": "~2.0.1",
     "js-yaml": ">=3.13.1",
     "minimist": ">=1.2.3"
