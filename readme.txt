@@ -2,8 +2,8 @@
 Contributors: brainstormforce
 Tags: docs, wpdocs, documentation, wpdocs, documentation
 Requires at least: 3.0  
-Tested up to: 5.3.2
-Stable tag: 1.0.4
+Tested up to: 5.4.2
+Stable tag: 1.0.5
 
 BSF Docs allows you to create documentation website within minute with ajax search.
 
@@ -18,6 +18,9 @@ Build documentation website with live search functionality. This plugin provides
 3. Activate the plugin via the WordPress Plugins page
 
 == Changelog ==
+
+= Version 1.0.5 =
+- Improvement: Introducing new action - 'bsf_docs_after_single_content' on single doc page after content.
 
 = Version 1.0.4 =
 - Improvement: Load scripts only on pages where shortcode is used.
