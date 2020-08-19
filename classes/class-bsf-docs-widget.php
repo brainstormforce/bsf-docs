@@ -25,7 +25,7 @@ class Bsf_Docs_Widget extends WP_Widget {
 		add_action( 'widgets_init', array( $this, 'bsf_docs_widgets_area' ) );
 
 		parent::__construct(
-			
+
 			// Base ID of your widget.
 			'bsf_docs_widget',
 			// Widget name will appear in UI.
@@ -145,7 +145,6 @@ class Bsf_Docs_Widget extends WP_Widget {
 } // Class bsf_docs_widget ends here.
 
 new Bsf_Docs_Widget();
-
 
 
 
