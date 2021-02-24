@@ -19,6 +19,9 @@ Build documentation website with live search functionality. This plugin provides
 
 == Changelog ==
 
+= Version 1.0.5 =
+- Fix: Issue of masonry layout height conflicting with bsf doc blog page.
+
 = Version 1.0.4 =
 - Improvement: Load scripts only on pages where shortcode is used.
 
