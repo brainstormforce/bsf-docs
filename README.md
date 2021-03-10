@@ -2,8 +2,8 @@
 **Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce)  
 **Tags:** docs, wpdocs, documentation, wpdocs, documentation  
 **Requires at least:** 3.0    
-**Tested up to:** 5.6  
-**Stable tag:** 1.0.4  
+**Tested up to:** 5.7  
+**Stable tag:** 1.0.5  
 
 BSF Docs allows you to create documentation website within minute with ajax search.
 
@@ -18,6 +18,9 @@ Build documentation website with live search functionality. This plugin provides
 3. Activate the plugin via the WordPress Plugins page
 
 ## Changelog ##
+
+### Version 1.0.5 ###
+- Fix: Issue of masonry layout height conflicting with bsf doc blog page.
 
 ### Version 1.0.4 ###
 - Improvement: Load scripts only on pages where shortcode is used.
