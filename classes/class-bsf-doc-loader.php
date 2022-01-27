@@ -272,7 +272,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 
 			$file = dirname( dirname( __FILE__ ) );
 
-			define( 'BSF_DOCS_VERSION', '1.0.5' );
+			define( 'BSF_DOCS_VERSION', '1.0.6' );
 			define( 'BSF_DOCS_DIR_NAME', plugin_basename( $file ) );
 			define( 'BSF_DOCS_BASE_FILE', trailingslashit( $file ) . BSF_DOCS_DIR_NAME . '.php' );
 			define( 'BSF_DOCS_BASE_DIR', plugin_dir_path( BSF_DOCS_BASE_FILE ) );
