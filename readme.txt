@@ -20,7 +20,7 @@ Build documentation website with live search functionality. This plugin provides
 == Changelog ==
 
 = Version 1.0.6 =
-- Improvement: Added compatibility with v5.9.
+- Improvement: Added compatibility for WordPress 5.9.
 
 = Version 1.0.5 =
 - Fix: Issue of masonry layout height conflicting with bsf doc blog page.
