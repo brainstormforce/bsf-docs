@@ -1,9 +1,9 @@
 # BSF Docs #
-**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce)  
-**Tags:** docs, wpdocs, documentation, wpdocs, documentation  
-**Requires at least:** 3.0    
-**Tested up to:** 5.9  
-**Stable tag:** 1.0.6  
+**Contributors:** [brainstormforce](https://profiles.wordpress.org/brainstormforce)
+**Tags:** docs, wpdocs, documentation, wpdocs, documentation
+**Requires at least:** 3.0
+**Tested up to:** 6.0
+**Stable tag:** 1.0.6
 
 BSF Docs allows you to create documentation website within minute with ajax search.
 
@@ -35,7 +35,7 @@ Build documentation website with live search functionality. This plugin provides
 - Fix: Taxonomies not displayed in the Block Editor.
 
 ### Version 1.0.1 ###
-- Fix: Category undefined issue fixed for WP-4.9 
+- Fix: Category undefined issue fixed for WP-4.9
 - Fix: Translation ready
 
 ### Version 1.0.0 ###
