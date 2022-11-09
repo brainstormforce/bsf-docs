@@ -1,6 +1,5 @@
-name: CI
+name: Code Analysis
 
-# Run the deployment only when code is committed to the branch.
 on: pull_request
 
 # Cancels all previous workflow runs for pull requests that have not completed.
@@ -11,27 +10,36 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
-  lint-and-audit:
-
+  analysis:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node: [ 14.17 ]
+        php: ['7.4']
+
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Set composer token
-      run: composer config github-oauth.github.com ${{ secrets.PRIVATE_ACCESS_TOKEN }} 
+      - name: Install composer dependencies
+        run: composer config github-oauth.github.com ${{ secrets.PRIVATE_ACCESS_TOKEN }} && composer install --prefer-dist --no-suggest --no-progress
 
-    - name: Composer Install
-      uses: ramsey/composer-install@v1
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          coverage: none
+          tools: composer, cs2pr
 
-    - name: PHPCS check
-      if: always()
-      uses: chekalsky/phpcs-action@v1
-      with:
-        phpcs_bin_path: './vendor/bin/phpcs'
+      - name: Install composer dependencies
+        run: composer config github-oauth.github.com ${{ secrets.PRIVATE_ACCESS_TOKEN }} && composer install --prefer-dist --no-suggest --no-progress
 
-    - name: PHP Syntax Errors
-      if: always()
-      run: if find . -name "*.php" ! -path "./vendor/*" ! -path "./admin/bsf-core/*" -exec php -l {} \; | grep "Errors parsing"; then exit 1; fi
+      - name: Run phpcs
+        id: phpcs
+        if: always()
+        run: ./vendor/bin/phpcs --report-full --report-checkstyle=./phpcs-report.xml
+
+      - name: Show PHPCS results in PR
+        if: ${{ always() && steps.phpcs.outcome == 'failure' }}
+        run: cs2pr ./phpcs-report.xml
