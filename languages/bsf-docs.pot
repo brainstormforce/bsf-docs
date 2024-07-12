@@ -1,14 +1,14 @@
-# Copyright (C) 2019 Brainstorm Force
+# Copyright (C) 2024 Pratik Chaskar
 # This file is distributed under the same license as the BSF Docs package.
 msgid ""
 msgstr ""
-"Project-Id-Version: BSF Docs 1.0.3\n"
+"Project-Id-Version: BSF Docs 1.0.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/bsf-docs\n"
-"POT-Creation-Date: 2019-01-10 06:21:56+00:00\n"
+"POT-Creation-Date: 2024-07-12 05:27:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -24,41 +24,41 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: classes/class-bsf-doc-loader.php:198 classes/class-bsf-doc-loader.php:199
+#: classes/class-bsf-doc-loader.php:199 classes/class-bsf-doc-loader.php:200
 msgid "Settings"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:32
+#: classes/class-bsf-docs-cat-widget.php:31
 msgid "BSF Docs Category Widget"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:35
+#: classes/class-bsf-docs-cat-widget.php:34
 msgid "A list or dropdown of BSF Docs categories."
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:49
+#: classes/class-bsf-docs-cat-widget.php:48
 #: classes/class-bsf-docs-post-type.php:47
 msgid "Categories"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:81
+#: classes/class-bsf-docs-cat-widget.php:80
 msgid "Select Category"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:159
-#: classes/class-bsf-docs-widget.php:94
+#: classes/class-bsf-docs-cat-widget.php:158
+#: classes/class-bsf-docs-widget.php:93
 msgid "Title:"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:163
+#: classes/class-bsf-docs-cat-widget.php:162
 msgid "Display as dropdown"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:166
+#: classes/class-bsf-docs-cat-widget.php:165
 msgid "Show post counts"
 msgstr ""
 
-#: classes/class-bsf-docs-cat-widget.php:169
+#: classes/class-bsf-docs-cat-widget.php:168
 msgid "Show hierarchy"
 msgstr ""
 
@@ -232,88 +232,88 @@ msgstr ""
 msgid "This is where you can add new docs to your site."
 msgstr ""
 
-#: classes/class-bsf-docs-widget.php:32
+#: classes/class-bsf-docs-widget.php:31
 msgid "BSF Docs Widget"
 msgstr ""
 
-#: classes/class-bsf-docs-widget.php:35
+#: classes/class-bsf-docs-widget.php:34
 msgid "Widget for recent Docs"
 msgstr ""
 
-#: classes/class-bsf-docs-widget.php:82
+#: classes/class-bsf-docs-widget.php:81
 msgid "Recent Docs"
 msgstr ""
 
-#: classes/class-bsf-docs-widget.php:134
+#: classes/class-bsf-docs-widget.php:133
 msgid "Docs Sidebar"
 msgstr ""
 
-#: classes/class-bsf-docs-widget.php:136
+#: classes/class-bsf-docs-widget.php:135
 msgid "Widgets in this area will be shown on all docs single posts and cateory."
 msgstr ""
 
-#: includes/bsf-docs-shortcode.php:28
+#: includes/bsf-docs-shortcode.php:30
 msgid "Search for answers..."
 msgstr ""
 
-#: includes/bsf-docs-shortcode.php:114 includes/taxonomy-bsf-docs-cat.php:91
+#: includes/bsf-docs-shortcode.php:117 includes/taxonomy-bsf-docs-cat.php:94
 #. translators: %s: article count term
 msgid "%1$s Articles"
 msgstr ""
 
-#: includes/bsf-docs-shortcode.php:170
+#: includes/bsf-docs-shortcode.php:173
 msgid "Sorry, no docs were found."
 msgstr ""
 
-#: includes/bsf-options-page.php:15
+#: includes/bsf-options-page.php:17
 msgid "Docs Settings"
 msgstr ""
 
-#: includes/bsf-options-page.php:17
+#: includes/bsf-options-page.php:19
 msgid "Live Search"
 msgstr ""
 
-#: includes/bsf-options-page.php:18
+#: includes/bsf-options-page.php:20
 msgid "Settings to control the live search functionality & it's search area."
 msgstr ""
 
-#: includes/bsf-options-page.php:24
+#: includes/bsf-options-page.php:26
 msgid "Enable Live Search"
 msgstr ""
 
-#: includes/bsf-options-page.php:36
+#: includes/bsf-options-page.php:38
 msgid "Search Within Post Types"
 msgstr ""
 
-#: includes/bsf-options-page.php:74
+#: includes/bsf-options-page.php:76
 msgid "Enable built-in single page template"
 msgstr ""
 
-#: includes/bsf-options-page.php:85
+#: includes/bsf-options-page.php:87
 msgid "Enable built-in category & tag page template"
 msgstr ""
 
-#: includes/bsf-options-page.php:96
+#: includes/bsf-options-page.php:98
 msgid "Turn Off Doc's Comments"
 msgstr ""
 
-#: includes/bsf-options-page.php:108
+#: includes/bsf-options-page.php:110
 msgid "Doc Archive Page Title"
 msgstr ""
 
-#: includes/bsf-options-page.php:121
+#: includes/bsf-options-page.php:123
 msgid "Shortcodes"
 msgstr ""
 
-#: includes/bsf-options-page.php:122
+#: includes/bsf-options-page.php:124
 msgid "Copy below shortcode and paste it into your post, page, or text widget."
 msgstr ""
 
-#: includes/bsf-options-page.php:127
+#: includes/bsf-options-page.php:129
 msgid "Display Live Search Box"
 msgstr ""
 
-#: includes/bsf-options-page.php:135
+#: includes/bsf-options-page.php:137
 msgid "Display Doc's Category List"
 msgstr ""
 
@@ -322,7 +322,7 @@ msgid "BSF Docs"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://brainstormforce.com/"
+msgid "http://pratikchaskar.com/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -333,11 +333,11 @@ msgid ""
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Brainstorm Force"
+msgid "Pratik Chaskar"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.brainstormforce.com"
+msgid "https://www.pratikchaskar.com"
 msgstr ""
 
 #: classes/class-bsf-docs-post-type.php:51

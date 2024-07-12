@@ -2,7 +2,7 @@
 /**
  * The template for archive docs page
  *
- * @author Brainstormforce
+ * @author Pratik Chaskar
  * @package Documentation/ArchiveTemplate
  */
 

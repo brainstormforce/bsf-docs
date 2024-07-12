@@ -2,7 +2,7 @@
 /**
  * Responsible for setting up constants, classes and includes.
  *
- * @author BrainstormForce
+ * @author Pratik Chaskar
  * @package Documentation/Loader
  */
 
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		/**
 		 * Plugin activation hook.
 		 *
-		 * @author BrainstormForce
+		 * @author Pratik Chaskar
 		 */
 		function activation() {
 			// Register post types.
@@ -215,7 +215,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * Get Archive Template for the docs base directory.
 		 *
 		 * @param int $archive_template Overirde archive templates.
-		 * @author BrainstormForce
+		 * @author Pratik Chaskar
 		 */
 		function get_bsf_docs_archive_template( $archive_template ) {
 
@@ -229,7 +229,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 		 * Get Single Page Template for docs base directory.
 		 *
 		 * @param int $single_template Overirde single templates.
-		 * @author BrainstormForce
+		 * @author Pratik Chaskar
 		 */
 		function get_bsf_docs_single_template( $single_template ) {
 
@@ -272,7 +272,7 @@ if ( ! class_exists( 'Bsf_Doc_Loader' ) ) {
 
 			$file = dirname( dirname( __FILE__ ) );
 
-			define( 'BSF_DOCS_VERSION', '1.0.6' );
+			define( 'BSF_DOCS_VERSION', '1.0.7' );
 			define( 'BSF_DOCS_DIR_NAME', plugin_basename( $file ) );
 			define( 'BSF_DOCS_BASE_FILE', trailingslashit( $file ) . BSF_DOCS_DIR_NAME . '.php' );
 			define( 'BSF_DOCS_BASE_DIR', plugin_dir_path( BSF_DOCS_BASE_FILE ) );

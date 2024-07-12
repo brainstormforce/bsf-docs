@@ -1,8 +1,8 @@
 {
   "name": "wp_docs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "Gruntfile.js",
-  "author": "Brainstorm Force",
+  "author": "Pratik Chaskar",
   "devDependencies": {
     "grunt": "^1.3.0",
     "grunt-wp-i18n": "~1.0.3",

@@ -6,7 +6,7 @@
  *
  * @class     BSF_Docs_post_Type
  * @category  Class
- * @author    Brainstormforce
+ * @author    Pratik Chaskar
  * @package   Documentation/PostType
  */
 
