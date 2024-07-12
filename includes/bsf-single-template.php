@@ -2,7 +2,7 @@
 /**
  * The template for single doc page
  *
- * @author Brainstormforce
+ * @author Pratik Chaskar
  * @package Documentation/SinglePage
  */
 

@@ -1,9 +1,9 @@
 <?php
 /**
  * Plugin Name: BSF Docs
- * Plugin URI: http://brainstormforce.com/
- * Author: Brainstorm Force
- * Author URI: https://www.brainstormforce.com
+ * Plugin URI: http://pratikchaskar.com/
+ * Author: Pratik Chaskar
+ * Author URI: https://www.pratikchaskar.com
  * Version: 1.0.6
  * Description: Easily build documentation website with AJAX based live search functionality. This plugin provides shortcodes to display category list & live search input box.
  * Text Domain: bsf-docs
